@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caroline Zimmer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #111a3d;
+      --navy-soft: #1d2857;
+      --lavender: #c9b6ff;
+      --lavender-light: #eee8ff;
+      --lavender-mid: #d9ccff;
+      --star: #fff1a8;
+      --blush: #ffdce8;
+      --paper: #fbf9ff;
+      --card: rgba(255,255,255,0.82);
+      --ink: #151935;
+      --muted: #66708f;
+      --rule: rgba(40, 49, 95, 0.14);
+      --shadow: 0 18px 60px rgba(17, 26, 61, 0.12);
+      --radius: 26px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(201, 182, 255, 0.42) 0 18%, transparent 36%),
+        radial-gradient(circle at 88% 12%, rgba(255, 220, 232, 0.34) 0 13%, transparent 30%),
+        linear-gradient(180deg, #fbf9ff 0%, #f4f0ff 48%, #fbf9ff 100%);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Subtle starfield, not polka dots */
+    body::before,
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::before {
+      background-image:
+        radial-gradient(circle, rgba(17, 26, 61, 0.28) 0 1px, transparent 1.6px),
+        radial-gradient(circle, rgba(201, 182, 255, 0.55) 0 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(255, 241, 168, 0.55) 0 1.3px, transparent 1.8px);
+      background-size: 160px 160px, 220px 220px, 280px 280px;
+      background-position: 20px 30px, 90px 120px, 180px 40px;
+      opacity: 0.28;
+    }
+
+    body::after {
+      background: linear-gradient(120deg, transparent 0 45%, rgba(255,255,255,0.36) 48%, transparent 51% 100%);
+      opacity: 0.22;
+      transform: translateX(-25%);
+    }
+
+    a { color: inherit; }
+
+    nav {
+      position: fixed;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      width: min(1120px, calc(100% - 2rem));
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.85rem 1rem 0.85rem 1.2rem;
+      background: rgba(251, 249, 255, 0.78);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.78);
+      box-shadow: 0 8px 30px rgba(17, 26, 61, 0.08);
+      border-radius: 999px;
+    }
+
+    .nav-logo {
+      font-family: 'Space Mono', monospace;
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--navy);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .nav-logo::before { content: '✦'; color: var(--lavender); }
+
+    .nav-links {
+      display: flex;
+      gap: 0.4rem;
+      list-style: none;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.66rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.55rem 0.75rem;
+      border-radius: 999px;
+      transition: 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--navy);
+      background: var(--lavender-light);
+    }
+
+    .hero,
+    section,
+    footer { position: relative; z-index: 1; }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 4rem;
+      width: min(1120px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 9rem 0 5rem;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.45rem 0.8rem;
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.7);
+      color: var(--navy-soft);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.6rem;
+    }
+
+    .eyebrow::before { content: '✦'; color: var(--lavender); }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3.7rem, 8vw, 7.4rem);
+      line-height: 0.9;
+      letter-spacing: -0.055em;
+      color: var(--navy);
+      margin-bottom: 1.55rem;
+    }
+
+    h1 em {
+      color: #8c73dd;
+      font-style: italic;
+      text-shadow: 0 8px 34px rgba(201,182,255,0.45);
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 590px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-cta { display: flex; gap: 0.9rem; flex-wrap: wrap; align-items: center; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      min-height: 44px;
+      padding: 0.75rem 1.1rem;
+      border-radius: 999px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition: 0.22s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: white;
+      box-shadow: 0 14px 30px rgba(17, 26, 61, 0.22);
+    }
+
+    .btn-primary:hover { transform: translateY(-2px); background: var(--navy-soft); }
+
+    .btn-ghost {
+      background: rgba(255,255,255,0.76);
+      color: var(--navy);
+      border-color: var(--rule);
+    }
+
+    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(140, 115, 221, 0.45); background: var(--lavender-light); }
+
+    .hero-card {
+      background: linear-gradient(160deg, rgba(17, 26, 61, 0.95), rgba(40, 48, 102, 0.92));
+      color: white;
+      border-radius: 34px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      border: 1px solid rgba(201,182,255,0.32);
+      border-radius: 50%;
+      top: -80px;
+      right: -75px;
+      box-shadow: inset 0 0 0 18px rgba(201,182,255,0.05);
+    }
+
+    .hero-card::after {
+      content: '✦';
+      position: absolute;
+      top: 2rem;
+      right: 2.25rem;
+      color: var(--star);
+      font-size: 1.4rem;
+      opacity: 0.95;
+    }
+
+    .snapshot-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--lavender-mid);
+      margin-bottom: 1.2rem;
+    }
+
+    .snapshot-list {
+      display: grid;
+      gap: 0.9rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .snapshot-item {
+      padding: 1rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+    }
+
+    .snapshot-label {
+      display: block;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.58);
+      margin-bottom: 0.15rem;
+    }
+
+    .snapshot-value {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      line-height: 1.15;
+    }
+
+    .section-inner {
+      width: min(1120px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 5.5rem 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 2.4rem;
+    }
+
+    .section-kicker {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: #8c73dd;
+      margin-bottom: 0.45rem;
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      color: var(--navy);
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      line-height: 1;
+      letter-spacing: -0.035em;
+    }
+
+    .section-note {
+      max-width: 360px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .project-card,
+    .course-semester,
+    .skill-group,
+    .exp-item,
+    .contact-panel {
+      background: var(--card);
+      border: 1px solid rgba(255,255,255,0.82);
+      box-shadow: 0 14px 40px rgba(17, 26, 61, 0.08);
+      border-radius: var(--radius);
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      min-height: 360px;
+      padding: 1rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .project-visual {
+      height: 150px;
+      border-radius: 20px;
+      background:
+        radial-gradient(circle at 74% 26%, rgba(255,241,168,0.92) 0 8px, transparent 9px),
+        radial-gradient(circle at 18% 28%, rgba(201,182,255,0.72) 0 22px, transparent 23px),
+        linear-gradient(135deg, rgba(17,26,61,0.96), rgba(140,115,221,0.72));
+      border: 1px solid rgba(17,26,61,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-visual::before {
+      content: '';
+      position: absolute;
+      width: 260px;
+      height: 90px;
+      border: 1px solid rgba(255,255,255,0.32);
+      border-radius: 50%;
+      transform: rotate(-18deg);
+      left: 55px;
+      top: 35px;
+    }
+
+    .project-visual::after {
+      content: '✦';
+      position: absolute;
+      left: 1.2rem;
+      bottom: 1rem;
+      color: var(--star);
+      font-size: 1.1rem;
+    }
+
+    .project-content { padding: 0.25rem 0.45rem 0.4rem; display: flex; flex-direction: column; gap: 0.85rem; flex: 1; }
+
+    .project-tag {
+      font-family: 'Space Mono', monospace;
+      color: #8c73dd;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .project-card h3 {
+      font-family: 'DM Serif Display', serif;
+      color: var(--navy);
+      font-size: 1.45rem;
+      line-height: 1.1;
+    }
+
+    .project-card p { color: var(--muted); font-size: 0.92rem; }
+
+    .project-meta { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: auto; }
+
+    .tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.06em;
+      padding: 0.3rem 0.58rem;
+      border-radius: 999px;
+      background: var(--lavender-light);
+      color: var(--navy-soft);
+    }
+
+    .project-open {
+      margin-top: 0.4rem;
+      align-self: flex-start;
+      background: transparent;
+      border: none;
+      color: var(--navy);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      padding: 0.35rem 0;
+    }
+
+    .project-open:hover { color: #8c73dd; }
+
+    .exp-list { display: grid; gap: 1rem; }
+    .exp-item { display: grid; grid-template-columns: 180px 1fr; gap: 1.5rem; padding: 1.7rem; }
+    .exp-date { font-family: 'Space Mono', monospace; color: #8c73dd; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .exp-body h3 { font-family: 'DM Serif Display', serif; font-size: 1.45rem; color: var(--navy); }
+    .role { font-family: 'Space Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0.15rem 0 0.6rem; }
+    .exp-body p { color: var(--muted); font-size: 0.94rem; }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+    .skill-group { padding: 1.5rem; }
+    .skill-group h4 { font-family: 'Space Mono', monospace; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: #8c73dd; margin-bottom: 0.9rem; }
+    .star-list { list-style: none; display: grid; gap: 0.5rem; }
+    .star-list li { color: var(--muted); font-size: 0.9rem; display: flex; gap: 0.5rem; align-items: flex-start; }
+    .star-list li::before { content: '✦'; color: #8c73dd; flex: 0 0 auto; font-size: 0.72rem; padding-top: 0.13rem; }
+
+    .coursework-wrap { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    .course-semester { padding: 1.45rem; }
+    .course-semester h3 { font-family: 'DM Serif Display', serif; color: var(--navy); font-size: 1.35rem; margin-bottom: 0.85rem; }
+    .course-semester .star-list { gap: 0.45rem; }
+    .course-semester li { font-size: 0.86rem; line-height: 1.45; }
+
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: stretch; }
+    .contact-panel { padding: 2rem; }
+    .contact-panel p { color: var(--muted); margin: 0.75rem 0 1.4rem; }
+    .contact-links { display: grid; gap: 0.7rem; }
+    .contact-link { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.1rem; border: 1px solid var(--rule); border-radius: 18px; background: rgba(255,255,255,0.72); text-decoration: none; color: var(--navy); transition: 0.2s ease; }
+    .contact-link:hover { transform: translateY(-2px); background: var(--lavender-light); }
+    .contact-link span { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    footer {
+      width: min(1120px, calc(100% - 2rem));
+      margin: 0 auto;
+      padding: 2rem 0 3rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      color: var(--muted);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    dialog {
+      width: min(880px, calc(100% - 2rem));
+      border: none;
+      border-radius: 30px;
+      padding: 0;
+      background: var(--paper);
+      box-shadow: 0 28px 90px rgba(17, 26, 61, 0.32);
+      overflow: hidden;
+      color: var(--ink);
+    }
+
+    dialog::backdrop { background: rgba(17, 26, 61, 0.45); backdrop-filter: blur(7px); }
+    .modal-inner { padding: 1.2rem; }
+    .modal-hero { min-height: 190px; border-radius: 22px; padding: 1.5rem; background: linear-gradient(135deg, var(--navy), #7763cd); color: white; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; }
+    .modal-hero::before { content: ''; position: absolute; width: 400px; height: 130px; border: 1px solid rgba(255,255,255,0.24); border-radius: 50%; transform: rotate(-16deg); right: -20px; top: 42px; }
+    .modal-hero h3 { font-family: 'DM Serif Display', serif; font-size: 2.1rem; line-height: 1; position: relative; z-index: 1; }
+    .modal-body { padding: 1.4rem 0.4rem 0.3rem; display: grid; gap: 1.2rem; }
+    .modal-body p { color: var(--muted); }
+    .modal-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.7rem; }
+    .photo-slot { min-height: 130px; border-radius: 18px; display: grid; place-items: center; text-align: center; padding: 1rem; background: var(--lavender-light); border: 1px dashed rgba(140, 115, 221, 0.45); color: var(--muted); font-size: 0.78rem; }
+    .modal-actions { display: flex; justify-content: space-between; gap: 1rem; align-items: center; padding-top: 0.4rem; }
+    .close-modal { border: none; background: var(--navy); color: white; border-radius: 999px; padding: 0.75rem 1rem; cursor: pointer; font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    @keyframes floatIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-text > *, .hero-card { animation: floatIn 0.7s ease forwards; opacity: 0; }
+    .hero-text > *:nth-child(1) { animation-delay: 0.08s; }
+    .hero-text > *:nth-child(2) { animation-delay: 0.18s; }
+    .hero-text > *:nth-child(3) { animation-delay: 0.28s; }
+    .hero-text > *:nth-child(4) { animation-delay: 0.38s; }
+    .hero-card { animation-delay: 0.26s; }
+
+    @media (max-width: 920px) {
+      nav { border-radius: 24px; align-items: flex-start; }
+      .nav-links { gap: 0.15rem; }
+      .hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 8rem; }
+      .projects-grid, .coursework-wrap, .contact-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .exp-item { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 620px) {
+      nav { position: static; transform: none; width: calc(100% - 1rem); margin: 0.5rem auto 0; flex-direction: column; gap: 0.6rem; }
+      .hero { padding-top: 3.5rem; }
+      .nav-links { justify-content: flex-start; }
+      .section-header, footer { flex-direction: column; align-items: flex-start; }
+      .skills-grid, .modal-gallery { grid-template-columns: 1fr; }
+      h1 { font-size: clamp(3.25rem, 18vw, 5rem); }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="#">C. Zimmer</a>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#coursework">Coursework</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <div class="hero-text">
+        <div class="eyebrow">Mechanical Engineering · Penn SEAS</div>
+        <h1>Caroline<br><em>Zimmer</em></h1>
+        <p class="hero-desc">
+          Mechanical engineering student interested in robotics, energy systems, advanced manufacturing, and building things that move. Currently studying at ETH Zürich and pursuing a B.S.E. in Mechanical Engineering at the University of Pennsylvania.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View Projects ✦</a>
+          <a href="Zimmer_Resume.pdf" class="btn btn-ghost" download>Download Resume</a>
+          <a href="mailto:czimmer@seas.upenn.edu" class="btn btn-ghost">Email Me</a>
+        </div>
+      </div>
+
+      <aside class="hero-card" aria-label="Quick snapshot">
+        <div class="snapshot-title">orbit snapshot</div>
+        <div class="snapshot-list">
+          <div class="snapshot-item"><span class="snapshot-label">School</span><span class="snapshot-value">University of Pennsylvania</span></div>
+          <div class="snapshot-item"><span class="snapshot-label">Current</span><span class="snapshot-value">ETH Zürich</span></div>
+          <div class="snapshot-item"><span class="snapshot-label">Major</span><span class="snapshot-value">Mechanical Engineering</span></div>
+          <div class="snapshot-item"><span class="snapshot-label">Minors</span><span class="snapshot-value">Math + Engineering Entrepreneurship</span></div>
+          <div class="snapshot-item"><span class="snapshot-label">Graduation</span><span class="snapshot-value">Class of 2027</span></div>
+        </div>
+      </aside>
+    </header>
+
+    <section id="projects">
+      <div class="section-inner">
+        <div class="section-header">
+          <div><div class="section-kicker">01 · selected builds</div><h2>Projects</h2></div>
+          <p class="section-note">Click a project to open a detail view. Replace the placeholder photo slots with your own images when you are ready.</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-visual" aria-hidden="true"></div>
+            <div class="project-content">
+              <span class="project-tag">Mechanical Design · Fall 2025</span>
+              <h3>Gamma-Type Stirling Engine</h3>
+              <p>Designed, modeled, and machined a functional Stirling engine assembly with GD&amp;T callouts, CNC toolpaths, and precision tolerance stack-up analysis.</p>
+              <div class="project-meta"><span class="tag">SolidWorks</span><span class="tag">Mastercam</span><span class="tag">CNC</span><span class="tag">GD&amp;T</span></div>
+              <button class="project-open" data-project="stirling">Read more →</button>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual" aria-hidden="true"></div>
+            <div class="project-content">
+              <span class="project-tag">Controls · Fall 2025</span>
+              <h3>BLDC Motor Balancing System</h3>
+              <p>Derived nonlinear dynamics, built a linearized state-space model, tuned a PID controller in MATLAB, and deployed the controller on physical hardware with IMU feedback.</p>
+              <div class="project-meta"><span class="tag">MATLAB</span><span class="tag">PID</span><span class="tag">State-Space</span><span class="tag">Embedded</span></div>
+              <button class="project-open" data-project="bldc">Read more →</button>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual" aria-hidden="true"></div>
+            <div class="project-content">
+              <span class="project-tag">Electrochemistry · Spring 2026</span>
+              <h3>Supercapacitor Assembly — ETH Zürich</h3>
+              <p>Hand-assembled and characterized a symmetric supercapacitor in a Swagelok cell using cyclic voltammetry and galvanostatic cycling.</p>
+              <div class="project-meta"><span class="tag">Energy Systems</span><span class="tag">MATLAB</span><span class="tag">CV</span><span class="tag">GCD</span></div>
+              <button class="project-open" data-project="supercap">Read more →</button>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual" aria-hidden="true"></div>
+            <div class="project-content">
+              <span class="project-tag">Propulsion · Spring 2025</span>
+              <h3>Bottle Rocket &amp; Propulsion Model</h3>
+              <p>Designed and tested butane-propelled water bottle rocket modifications and calibrated a Python propulsion model with empirical flight data.</p>
+              <div class="project-meta"><span class="tag">Python</span><span class="tag">SolidWorks</span><span class="tag">Aerodynamics</span><span class="tag">Simulation</span></div>
+              <button class="project-open" data-project="rocket">Read more →</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-inner">
+        <div class="section-header">
+          <div><div class="section-kicker">02 · experience</div><h2>Experience</h2></div>
+        </div>
+        <div class="exp-list">
+          <article class="exp-item">
+            <span class="exp-date">Summer 2025</span>
+            <div class="exp-body">
+              <h3>Enfra Solutions</h3>
+              <div class="role">Mechanical Engineer Intern</div>
+              <p>Delivered AutoCAD and Revit models for HVAC ductwork and piping systems across the Novant Health hospital network. Drafted energy savings reports integrating metered consumption data with utility bills to verify guaranteed efficiency targets.</p>
+            </div>
+          </article>
+          <article class="exp-item">
+            <span class="exp-date">2023 – 2025</span>
+            <div class="exp-body">
+              <h3>Engineers Without Borders at Penn</h3>
+              <div class="role">Project Team Member</div>
+              <p>Produced AutoCAD construction drawings for an ADA-compliant accessibility ramp, coordinating with professional advisors and local stakeholders to meet safety and accessibility standards for a community center.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-inner">
+        <div class="section-header">
+          <div><div class="section-kicker">03 · toolkit</div><h2>Technical Skills</h2></div>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-group"><h4>CAD / Modeling</h4><ul class="star-list"><li>SolidWorks</li><li>AutoCAD</li><li>Revit</li><li>COMSOL</li></ul></div>
+          <div class="skill-group"><h4>Programming</h4><ul class="star-list"><li>Python</li><li>MATLAB</li><li>Java</li><li>Arduino</li></ul></div>
+          <div class="skill-group"><h4>Manufacturing</h4><ul class="star-list"><li>CNC Mastercam</li><li>Lathe &amp; Mill</li><li>GD&amp;T</li><li>Precision Tolerancing</li></ul></div>
+          <div class="skill-group"><h4>Controls &amp; Systems</h4><ul class="star-list"><li>PID Design</li><li>State-Space Modeling</li><li>IMU Integration</li><li>Mechatronics</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="coursework">
+      <div class="section-inner">
+        <div class="section-header">
+          <div><div class="section-kicker">04 · coursework constellation</div><h2>Coursework</h2></div>
+          <p class="section-note">A semester-by-semester map of engineering, math, design, energy, and interdisciplinary coursework.</p>
+        </div>
+        <div class="coursework-wrap">
+          <article class="course-semester"><h3>Spring 2026 · ETH Zürich</h3><ul class="star-list"><li>Introduction to Energy Systems (151-0244-00L)</li><li>Experimental Methods for Engineers (151-0123-00L)</li><li>Finite Element Analysis (151-0518-00L)</li><li>Biomechatronics (376-0210-00L)</li><li>Visualization, Simulation and Interaction — Virtual Reality I (151-0244-00L)</li></ul></article>
+          <article class="course-semester"><h3>Fall 2025</h3><ul class="star-list"><li>Machine Design &amp; Manufacturing (MEAM 2010)</li><li>Fluid Mechanics (MEAM 3020)</li><li>Intro to Mechanical and Mechatronic Systems (MEAM 3200)</li><li>Mechanical Engineering Design Laboratory (MEAM 3470)</li><li>Engineering Ethics (EAS 2030)</li><li>Elementary German I (GRMN 0100)</li></ul></article>
+          <article class="course-semester"><h3>Spring 2025</h3><ul class="star-list"><li>Thermodynamics I (MEAM 2030)</li><li>Engineering Mechanics: Dynamics (MEAM 2110)</li><li>Mechanical Engineering Lab I (MEAM 2480)</li><li>Engineering Entrepreneurship (EAS 5450)</li><li>Linear Algebra (MATH 3120)</li></ul></article>
+          <article class="course-semester"><h3>Fall 2024</h3><ul class="star-list"><li>Statics and Strength of Materials (MEAM 2100)</li><li>Thermal-Fluids Engineering (MEAM 2020)</li><li>Mechanical Engineering Laboratory I (MEAM 2470)</li><li>Calculus IV (MATH 2410)</li><li>Modern Biotechnology for Engineers (ENGR 4500)</li><li>Pharmaceuticals and Global Health (ANTH 2340)</li></ul></article>
+          <article class="course-semester"><h3>Summer 2024</h3><ul class="star-list"><li>Probability (STAT 4300)</li></ul></article>
+          <article class="course-semester"><h3>Spring 2024</h3><ul class="star-list"><li>Engineering Electromagnetics &amp; Lab (ESE 1120)</li><li>Intro to Mechanical Design (MEAM 1010)</li><li>Calculus, Part III (MATH 2400)</li><li>Intro to Econ Macro (ECON 0200)</li><li>Critical Writing Seminar in JOUR: Hidden Influence of the World's Most Powerful Consulting Firm (WRIT 0570)</li></ul></article>
+          <article class="course-semester"><h3>Fall 2023</h3><ul class="star-list"><li>Intro to Mechanics (MEAM 1100)</li><li>Intro to Mechanics Lab (MEAM 1470)</li><li>Calculus, Part II (MATH 1410)</li><li>Intro Econ Micro (ECON 0100)</li><li>Molecular Biology (BIOL 1121)</li></ul></article>
+          <article class="course-semester"><h3>Advanced Placement Credit</h3><ul class="star-list"><li>Intro to Computer Programming (CIS 1100)</li><li>Calculus I (MATH 1400)</li></ul></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-inner">
+        <div class="contact-grid">
+          <div class="contact-panel">
+            <div class="section-kicker">05 · contact</div>
+            <h2>Let’s connect</h2>
+            <p>Open to mechanical engineering, robotics, energy systems, manufacturing, and research opportunities.</p>
+            <a href="mailto:czimmer@seas.upenn.edu" class="btn btn-primary">czimmer@seas.upenn.edu ✦</a>
+          </div>
+          <div class="contact-panel">
+            <div class="contact-links">
+              <a href="https://www.linkedin.com/in/carolinezimmer1/" target="_blank" class="contact-link">LinkedIn <span>profile ↗</span></a>
+              <a href="https://github.com/carolinezimmer" target="_blank" class="contact-link">GitHub <span>repos ↗</span></a>
+              <a href="Zimmer_Resume.pdf" download class="contact-link">Resume <span>download ↓</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Caroline Zimmer</p>
+    <p>B.S.E. Mechanical Engineering · University of Pennsylvania</p>
+  </footer>
+
+  <dialog id="project-modal">
+    <div class="modal-inner">
+      <div class="modal-hero"><h3 id="modal-title">Project Title</h3></div>
+      <div class="modal-body">
+        <p id="modal-description"></p>
+        <ul class="star-list" id="modal-details"></ul>
+        <div class="modal-gallery" id="modal-gallery"></div>
+        <div class="modal-actions">
+          <p style="font-size:0.8rem;color:var(--muted);">Tip: replace these slots with real project photos or renderings.</p>
+          <button class="close-modal" id="close-modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    const projects = {
+      stirling: {
+        title: 'Gamma-Type Stirling Engine',
+        description: 'Designed and machined a functional Gamma-type Stirling engine from scratch, moving from CAD assembly to manufacturing drawings to precision-machined components.',
+        details: ['Modeled assembly and part interfaces in SolidWorks.', 'Programmed CNC toolpaths in Mastercam.', 'Used lathe, mill, threading, and reaming operations.', 'Applied GD&T and tolerance stack-up analysis across critical interfaces.'],
+        photos: ['Add engine assembly photo', 'Add CAD rendering', 'Add machining/process photo']
+      },
+      bldc: {
+        title: 'BLDC Motor Balancing System',
+        description: 'Built a controls project around a BLDC motor-actuated rotating rod system, comparing simulated and experimental closed-loop behavior.',
+        details: ['Derived nonlinear equations of motion.', 'Linearized the system into a state-space model.', 'Designed and tuned a PID controller in MATLAB.', 'Deployed controller on hardware using IMU feedback.'],
+        photos: ['Add hardware setup photo', 'Add response plot', 'Add control diagram']
+      },
+      supercap: {
+        title: 'Supercapacitor Assembly — ETH Zürich',
+        description: 'Assembled and characterized a symmetric supercapacitor at ETH Zürich’s Electrochemical Energy Systems Laboratory.',
+        details: ['Used activated carbon electrode and electrolyte in a Swagelok cell configuration.', 'Performed cyclic voltammetry and galvanostatic cycling.', 'Measured gravimetric capacitance and coulombic efficiency.', 'Analyzed electrolyte degradation thresholds in MATLAB.'],
+        photos: ['Add lab setup photo', 'Add cell assembly photo', 'Add CV/GCD plot']
+      },
+      rocket: {
+        title: 'Bottle Rocket & Propulsion Model',
+        description: 'Designed, built, and tested butane-propelled water bottle rocket modifications while developing a calibrated Python flight model.',
+        details: ['Created design iterations in SolidWorks and DraftSight.', 'Integrated empirical flight data into a Python simulation.', 'Modeled aerodynamic behavior under varying launch conditions.', 'Used iterative experimentation to improve trajectory predictions.'],
+        photos: ['Add rocket photo', 'Add launch/testing photo', 'Add simulation plot']
+      }
+    };
+
+    const modal = document.getElementById('project-modal');
+    const title = document.getElementById('modal-title');
+    const description = document.getElementById('modal-description');
+    const details = document.getElementById('modal-details');
+    const gallery = document.getElementById('modal-gallery');
+    const closeModal = document.getElementById('close-modal');
+
+    document.querySelectorAll('.project-open').forEach((button) => {
+      button.addEventListener('click', () => {
+        const project = projects[button.dataset.project];
+        title.textContent = project.title;
+        description.textContent = project.description;
+        details.innerHTML = project.details.map(item => `<li>${item}</li>`).join('');
+        gallery.innerHTML = project.photos.map(item => `<div class="photo-slot">${item}</div>`).join('');
+        modal.showModal();
+      });
+    });
+
+    closeModal.addEventListener('click', () => modal.close());
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) modal.close();
+    });
+  </script>
+</body>
+</html>
