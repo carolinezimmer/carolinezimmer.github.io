@@ -396,13 +396,18 @@
 
     .contact-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; align-items: stretch; }
     .contact-panel {
-      padding: 3rem 2.5rem;
-      max-width: 760px;
+      padding: clamp(3.5rem, 7vw, 5.5rem) clamp(2rem, 6vw, 4.5rem);
+      max-width: 900px;
       margin: 0 auto;
       text-align: center;
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
     .contact-panel p { color: var(--muted); margin: 0.75rem 0 1.4rem; }
-    .contact-buttons { display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; }
+    .contact-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.8rem; }
 
     footer {
       width: min(1120px, calc(100% - 2rem));
@@ -517,6 +522,7 @@
         <p class="hero-desc">
           I’m a junior at the University of Pennsylvania studying Mechanical Engineering and Applied Mechanics, with minors in Math and Engineering Entrepreneurship. I’m studying abroad at ETH Zürich in Spring 2026, focusing on manufacturing and robotics. I’m interested in sustainable hardware solutions.
         </p>
+        <div class="hero-cta">
           <a href="#projects" class="btn btn-primary">View Projects</a>
           <a href="Zimmer_Resume.pdf" class="btn btn-ghost" download>Download Resume</a>
           <a href="#contact" class="btn btn-ghost">Contact Me</a>
@@ -680,10 +686,8 @@
       </div>
       <div class="modal-body">
         <p class="modal-lead" id="modal-description"></p>
-        <ul class="star-list" id="modal-details"></ul>
         <div class="modal-gallery" id="modal-gallery"></div>
         <div class="modal-actions">
-          <p style="font-size:0.8rem;color:var(--muted);">Project images can be replaced by adding files to the matching image folder.</p>
           <button class="close-modal" id="close-modal">Close</button>
         </div>
       </div>
@@ -697,14 +701,14 @@
         title: 'Gamma-Type Stirling Engine',
         description: 'During the Fall 2025 semester, I designed and manufactured a Stirling engine inspired by a carnival theme, with the rotating assembly modeled after a Ferris wheel. I created a full 3D assembly of the engine in SolidWorks, integrating both mechanical function and aesthetic design. I machined all major components, excluding fasteners and bearings, in UPenn’s precision manufacturing lab using the lathe, mill, and CNC programs in Mastercam and Prototrak. The two-piece bedplate silhouette was laser-cut by OshCut, and I laser-cut colorful acrylic inserts for the Ferris wheel and carriages to enhance the visual design. When heated with a blowtorch applied to the air chamber, the engine operated smoothly, with the flywheel reaching speeds above 1200 RPM on test day.',
         details: ['Created a complete SolidWorks assembly integrating function and carnival-inspired visual design.', 'Machined major components using lathe, mill, CNC, Mastercam, and Prototrak workflows.', 'Used OshCut laser-cutting for the two-piece bedplate silhouette.', 'Laser-cut colorful acrylic inserts for the Ferris wheel and carriages.', 'Achieved smooth engine operation above 1200 RPM during testing.'],
-        photos: ['images/projects/stirling/stirling-engine-actual-01.jpg', 'images/projects/stirling/stirling-engine-actual-02.jpg', 'images/projects/stirling/stirling-engine-actual-03.jpg', 'images/projects/stirling/stirling-engine-process-01-mastercam.jpg', 'images/projects/stirling/stirling-engine-process-02-wheelcnc.jpg', 'images/projects/stirling/stirling-engine-process-03-testday.jpg', 'images/projects/stirling/stirling-engine-render-01.jpg', 'images/projects/stirling/stirling-engine-render-02.jpg', 'images/projects/stirling/stirling-engine-render-03.jpg', 'images/projects/stirling/stirling-engine-process-04-connectingtab.mp4', 'images/projects/stirling/stirling-engine-process-05-weightcnc.mp4', 'images/projects/stirling/stirling-engine-process-06-runvideotest.mp4']
+        photos: ['images/projects/stirling/stirling-engine-actual-01.jpg', 'images/projects/stirling/stirling-engine-actual-02.jpg', 'images/projects/stirling/stirling-engine-actual-03.jpg', 'images/projects/stirling/stirling-engine-process-01-mastercam.JPG', 'images/projects/stirling/stirling-engine-process-02-wheelcnc.JPG', 'images/projects/stirling/stirling-engine-process-03-testday.JPG', 'images/projects/stirling/stirling-engine-render-01.jpg', 'images/projects/stirling/stirling-engine-render-02.jpg', 'images/projects/stirling/stirling-engine-render-03.jpg', 'images/projects/stirling/stirling-engine-process-04-connectingtab.MP4', 'images/projects/stirling/stirling-engine-process-05-weightcnc.MP4', 'images/projects/stirling/stirling-engine-process-06-runvideotest.MP4']
       },
       supercap: {
         subtitle: 'Electrochemical Energy Systems · ETH Zürich · Spring 2026',
         title: 'Supercapacitor Fabrication & Characterization',
         description: 'In this lab at ETH Zürich’s Electrochemical Energy Systems Laboratory, we hand-assembled symmetric supercapacitors from scratch using activated carbon electrodes, a glass fiber separator, and a sulfuric acid electrolyte in a Swagelok cell configuration. Once assembled, we connected the cell to a BioLogic potentiostat and ran cyclic voltammetry at scan rates ranging from 1 to 100 mV/s to measure gravimetric capacitance and observe how charge storage behavior changes with speed. We also tested the effect of increasing the voltage window beyond the electrolyte’s stability limit, watching parasitic reactions appear in real time in the CV curves. Finally, we performed galvanostatic cycling to calculate coulombic efficiency and assess cycle life. We processed and plotted the data in MATLAB, and our report connected experimental results to theoretical models such as the Helmholtz double layer framework.',
         details: ['Assembled symmetric supercapacitors using activated carbon electrodes, separator, and sulfuric acid electrolyte.', 'Used a Swagelok cell configuration connected to a BioLogic potentiostat.', 'Ran cyclic voltammetry from 1 to 100 mV/s to measure gravimetric capacitance.', 'Observed electrolyte stability limits and parasitic reactions in CV curves.', 'Used galvanostatic cycling and MATLAB analysis to assess efficiency and cycle behavior.'],
-        photos: ['images/projects/supercapacitor/supercapacitor-01.jpg', 'images/projects/supercapacitor/supercapacitor-02.jpg', 'images/projects/supercapacitor/supercapacitor-03.jpg']
+        photos: ['images/projects/supercapacitor/supercapacitor-01.JPG', 'images/projects/supercapacitor/supercapacitor-02.JPG', 'images/projects/supercapacitor/supercapacitor-03.JPG']
       },
       pid: {
         subtitle: 'Controls · Mechatronics · Fall 2025',
@@ -750,7 +754,6 @@
         subtitle.textContent = project.subtitle;
         title.textContent = project.title;
         description.textContent = project.description;
-        details.innerHTML = project.details.map(item => `<li>${item}</li>`).join('');
         gallery.innerHTML = project.photos.map((src, index) => {
           const isVideo = src.toLowerCase().endsWith('.mp4');
           return `
