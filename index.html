@@ -120,7 +120,7 @@
     .hero {
       min-height: 100vh;
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: 1.25fr 0.75fr;
       align-items: center;
       gap: 3.5rem;
       width: min(1120px, calc(100% - 2rem));
@@ -152,10 +152,6 @@
       margin-bottom: 1.55rem;
     }
 
-    h1 em {
-      color: var(--lavender-deep);
-      font-style: italic;
-    }
 
     .hero-desc {
       font-size: 1.05rem;
@@ -222,7 +218,7 @@
 
     .profile-photo {
       width: 100%;
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 1 / 1;
       object-fit: cover;
       object-position: center;
       border-radius: 22px;
@@ -230,55 +226,7 @@
       background: var(--lavender-light);
     }
 
-    .photo-caption {
-      padding: 0.95rem 0.4rem 0.2rem;
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
 
-    .hero-card {
-      padding: 1.6rem 1.8rem;
-    }
-
-    .hero-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-top: 5px solid var(--navy);
-      pointer-events: none;
-    }
-
-    .snapshot-list {
-      display: grid;
-      gap: 0.7rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .snapshot-item {
-      padding: 0.75rem 0;
-      background: transparent;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .snapshot-item:last-child { border-bottom: none; }
-
-    .snapshot-label {
-      display: block;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.11em;
-      text-transform: uppercase;
-      color: var(--lavender-deep);
-      margin-bottom: 0.12rem;
-    }
-
-    .snapshot-value {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.18rem;
-      line-height: 1.15;
-      color: var(--navy);
-    }
 
     .section-inner {
       width: min(1120px, calc(100% - 2rem));
@@ -436,9 +384,6 @@
     .role { font-family: 'Space Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0.15rem 0 0.6rem; }
     .exp-body p { color: var(--muted); font-size: 0.94rem; }
 
-    .skills-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
-    .skill-group { padding: 1.5rem; }
-    .skill-group h4 { font-family: 'Space Mono', monospace; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lavender-deep); margin-bottom: 0.9rem; }
     .star-list { list-style: none; display: grid; gap: 0.5rem; }
     .star-list li { color: var(--muted); font-size: 0.9rem; display: flex; gap: 0.5rem; align-items: flex-start; }
     .star-list li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--lavender-deep); flex: 0 0 auto; margin-top: 0.72em; }
@@ -533,9 +478,9 @@
       .nav-links { gap: 0.15rem; }
       .hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 8rem; }
       .coursework-wrap { grid-template-columns: 1fr; }
-      .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .exp-item { grid-template-columns: 1fr; }
-      .profile-photo { aspect-ratio: 16 / 10; }
+      .profile-card { max-width: 360px; margin: 0 auto; }
+      .profile-photo { aspect-ratio: 4 / 3; }
     }
 
     @media (max-width: 620px) {
@@ -543,7 +488,7 @@
       .hero { padding-top: 3.5rem; }
       .nav-links { justify-content: flex-start; }
       .section-header, footer, .modal-actions { flex-direction: column; align-items: flex-start; }
-      .skills-grid, .modal-gallery, .projects-grid { grid-template-columns: 1fr; }
+      .modal-gallery, .projects-grid { grid-template-columns: 1fr; }
       h1 { font-size: clamp(3.25rem, 18vw, 5rem); }
     }
   </style>
@@ -555,7 +500,8 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#coursework">Coursework</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://www.linkedin.com/in/carolinezimmer1/" target="_blank">LinkedIn</a></li>
+      <li><a href="mailto:czimmer@seas.upenn.edu">Email</a></li>
     </ul>
   </nav>
 
@@ -563,30 +509,19 @@
     <header class="hero" id="about">
       <div class="hero-text">
         <div class="eyebrow">Mechanical Engineering · UPenn SEAS</div>
-        <h1>Caroline<br><em>Zimmer</em></h1>
+        <h1>Caroline<br>Zimmer</h1>
         <p class="hero-desc">
           I’m a junior at the University of Pennsylvania studying Mechanical Engineering and Applied Mechanics, with minors in Math and Engineering Entrepreneurship. I’m studying abroad at ETH Zürich in Spring 2026, focusing on manufacturing and robotics. I’m interested in sustainable hardware solutions.
         </p>
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="Zimmer_Resume.pdf" class="btn btn-ghost" download>Download Resume</a>
+        $1
+          <a href="https://www.linkedin.com/in/carolinezimmer1/" target="_blank" class="btn btn-ghost">LinkedIn ↗</a>
+          <a href="mailto:czimmer@seas.upenn.edu" class="btn btn-ghost">Email</a>
         </div>
       </div>
 
       <div class="hero-side">
         <aside class="profile-card" aria-label="Photo of Caroline Zimmer">
           <img class="profile-photo" src="images/caroline-zimmer-headshot.jpg" alt="Caroline Zimmer">
-          <p class="photo-caption">Mechanical engineering student focused on hands-on design, manufacturing, robotics, and sustainable hardware systems.</p>
-        </aside>
-
-        <aside class="hero-card" aria-label="Quick profile details">
-          <div class="snapshot-list">
-            <div class="snapshot-item"><span class="snapshot-label">School</span><span class="snapshot-value">University of Pennsylvania</span></div>
-            <div class="snapshot-item"><span class="snapshot-label">Current Exchange Semester</span><span class="snapshot-value">ETH Zürich</span></div>
-            <div class="snapshot-item"><span class="snapshot-label">Major</span><span class="snapshot-value">Mechanical Engineering</span></div>
-            <div class="snapshot-item"><span class="snapshot-label">Minors</span><span class="snapshot-value">Mathematics + Engineering Entrepreneurship</span></div>
-            <div class="snapshot-item"><span class="snapshot-label">Graduation Year</span><span class="snapshot-value">Class of 2027</span></div>
-          </div>
         </aside>
       </div>
     </header>
@@ -694,25 +629,10 @@
       </div>
     </section>
 
-    <section id="skills">
-      <div class="section-inner">
-        <div class="section-header">
-          <div><div class="section-kicker">03 · toolkit</div><h2>Technical Skills</h2></div>
-        </div>
-        <div class="skills-grid">
-          <div class="skill-group"><h4>CAD / Modeling</h4><ul class="star-list"><li>SolidWorks</li><li>AutoCAD</li><li>Revit</li><li>COMSOL</li></ul></div>
-          <div class="skill-group"><h4>Programming</h4><ul class="star-list"><li>Python</li><li>MATLAB</li><li>Java</li><li>Arduino</li></ul></div>
-          <div class="skill-group"><h4>Manufacturing</h4><ul class="star-list"><li>CNC Mastercam</li><li>Lathe &amp; Mill</li><li>GD&amp;T</li><li>Precision Tolerancing</li></ul></div>
-          <div class="skill-group"><h4>Controls &amp; Systems</h4><ul class="star-list"><li>PID Design</li><li>State-Space Modeling</li><li>IMU Integration</li><li>Mechatronics</li></ul></div>
-        </div>
-      </div>
-    </section>
-
     <section id="coursework">
       <div class="section-inner">
         <div class="section-header">
           <div><div class="section-kicker">04 · coursework</div><h2>Coursework</h2></div>
-          <p class="section-note">Engineering, math, design, and interdisciplinary coursework</p>
         </div>
         <div class="coursework-wrap">
           <article class="course-semester"><h3>Spring 2026 · ETH Zürich</h3><ul class="star-list"><li>Introduction to Energy Systems (151-0244-00L)</li><li>Experimental Methods for Engineers (151-0123-00L)</li><li>Finite Element Analysis (151-0518-00L)</li><li>Biomechatronics (376-0210-00L)</li><li>Visualization, Simulation and Interaction — Virtual Reality I (151-0244-00L)</li></ul></article>
@@ -733,7 +653,6 @@
           <div class="contact-panel">
             <div class="section-kicker">05 · contact</div>
             <h2>Let’s connect</h2>
-            <p>Open to mechanical engineering, robotics, energy systems, manufacturing, and research opportunities.</p>
             <div class="contact-buttons">
               <a href="mailto:czimmer@seas.upenn.edu" class="btn btn-primary">Email Me</a>
               <a href="https://www.linkedin.com/in/carolinezimmer1/" target="_blank" class="btn btn-ghost">LinkedIn ↗</a>
