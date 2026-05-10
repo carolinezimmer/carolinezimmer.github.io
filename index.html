@@ -13,10 +13,10 @@
       --navy-soft: #1d2857;
       --lavender: #b9a4f5;
       --lavender-deep: #7d67c8;
-      --lavender-light: #f0ebff;
+      --lavender-light: #f1edff;
       --lavender-mid: #d9ccff;
       --paper: #fbf9ff;
-      --surface: rgba(255,255,255,0.88);
+      --surface: rgba(255,255,255,0.9);
       --surface-solid: #ffffff;
       --ink: #151935;
       --muted: #66708f;
@@ -31,7 +31,7 @@
     body {
       min-height: 100vh;
       background:
-        linear-gradient(135deg, rgba(240,235,255,0.9) 0%, rgba(251,249,255,0.98) 34%, rgba(255,255,255,0.98) 100%);
+        linear-gradient(135deg, rgba(241,237,255,0.95) 0%, rgba(251,249,255,0.98) 34%, rgba(255,255,255,0.98) 100%);
       color: var(--ink);
       font-family: 'Inter', sans-serif;
       line-height: 1.7;
@@ -45,12 +45,12 @@
       pointer-events: none;
       z-index: 0;
       background:
-        radial-gradient(circle at 10% 10%, rgba(185,164,245,0.22), transparent 26%),
+        radial-gradient(circle at 10% 10%, rgba(185,164,245,0.20), transparent 26%),
         radial-gradient(circle at 92% 6%, rgba(29,40,87,0.08), transparent 28%),
-        linear-gradient(rgba(17,26,61,0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(17,26,61,0.035) 1px, transparent 1px);
-      background-size: auto, auto, 72px 72px, 72px 72px;
-      opacity: 0.72;
+        linear-gradient(rgba(17,26,61,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(17,26,61,0.03) 1px, transparent 1px);
+      background-size: auto, auto, 76px 76px, 76px 76px;
+      opacity: 0.7;
     }
 
     a { color: inherit; }
@@ -66,9 +66,9 @@
       justify-content: space-between;
       align-items: center;
       padding: 0.85rem 1rem 0.85rem 1.2rem;
-      background: rgba(255,255,255,0.82);
+      background: rgba(255,255,255,0.84);
       backdrop-filter: blur(16px);
-      border: 1px solid rgba(255,255,255,0.9);
+      border: 1px solid rgba(255,255,255,0.92);
       box-shadow: 0 8px 30px rgba(17, 26, 61, 0.08);
       border-radius: 999px;
     }
@@ -120,9 +120,9 @@
     .hero {
       min-height: 100vh;
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.05fr 0.95fr;
       align-items: center;
-      gap: 4rem;
+      gap: 3.5rem;
       width: min(1120px, calc(100% - 2rem));
       margin: 0 auto;
       padding: 9rem 0 5rem;
@@ -134,7 +134,7 @@
       padding: 0.45rem 0.8rem;
       border: 1px solid var(--rule);
       border-radius: 999px;
-      background: rgba(255,255,255,0.75);
+      background: rgba(255,255,255,0.76);
       color: var(--navy-soft);
       font-family: 'Space Mono', monospace;
       font-size: 0.72rem;
@@ -160,7 +160,7 @@
     .hero-desc {
       font-size: 1.05rem;
       color: var(--muted);
-      max-width: 590px;
+      max-width: 600px;
       margin-bottom: 2rem;
     }
 
@@ -200,15 +200,44 @@
 
     .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(125, 103, 200, 0.42); background: var(--lavender-light); }
 
+    .hero-side {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .profile-card,
     .hero-card {
-      background: rgba(255,255,255,0.84);
+      background: rgba(255,255,255,0.88);
       color: var(--ink);
       border-radius: 30px;
-      padding: 1.8rem;
       box-shadow: var(--shadow);
       overflow: hidden;
       position: relative;
       border: 1px solid rgba(255,255,255,0.92);
+    }
+
+    .profile-card {
+      padding: 1rem;
+    }
+
+    .profile-photo {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 22px;
+      display: block;
+      background: var(--lavender-light);
+    }
+
+    .photo-caption {
+      padding: 0.95rem 0.4rem 0.2rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .hero-card {
+      padding: 1.6rem 1.8rem;
     }
 
     .hero-card::before {
@@ -221,13 +250,13 @@
 
     .snapshot-list {
       display: grid;
-      gap: 0.85rem;
+      gap: 0.7rem;
       position: relative;
       z-index: 1;
     }
 
     .snapshot-item {
-      padding: 0.95rem 0;
+      padding: 0.75rem 0;
       background: transparent;
       border-bottom: 1px solid var(--rule);
     }
@@ -237,7 +266,7 @@
     .snapshot-label {
       display: block;
       font-family: 'Space Mono', monospace;
-      font-size: 0.62rem;
+      font-size: 0.6rem;
       letter-spacing: 0.11em;
       text-transform: uppercase;
       color: var(--lavender-deep);
@@ -246,7 +275,7 @@
 
     .snapshot-value {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.28rem;
+      font-size: 1.18rem;
       line-height: 1.15;
       color: var(--navy);
     }
@@ -283,14 +312,14 @@
     }
 
     .section-note {
-      max-width: 360px;
+      max-width: 390px;
       color: var(--muted);
       font-size: 0.92rem;
     }
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1rem;
     }
 
@@ -309,24 +338,31 @@
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      min-height: 350px;
+      min-height: 360px;
       padding: 1rem;
       overflow: hidden;
       position: relative;
     }
 
     .project-visual {
-      height: 138px;
+      height: 150px;
       border-radius: 20px;
-      background:
-        linear-gradient(135deg, rgba(17,26,61,0.96), rgba(29,40,87,0.90)),
-        linear-gradient(90deg, transparent 0 48%, rgba(255,255,255,0.24) 48% 52%, transparent 52% 100%);
       border: 1px solid rgba(17,26,61,0.08);
       position: relative;
       overflow: hidden;
+      background: linear-gradient(135deg, rgba(17,26,61,0.95), rgba(125,103,200,0.74));
     }
 
-    .project-visual::before {
+    .project-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0.92;
+      mix-blend-mode: normal;
+    }
+
+    .project-visual.no-image::before {
       content: '';
       position: absolute;
       inset: 18px;
@@ -334,7 +370,7 @@
       border-radius: 16px;
     }
 
-    .project-visual::after {
+    .project-visual.no-image::after {
       content: '';
       position: absolute;
       left: 1.2rem;
@@ -351,7 +387,7 @@
     .project-tag {
       font-family: 'Space Mono', monospace;
       color: var(--lavender-deep);
-      font-size: 0.68rem;
+      font-size: 0.64rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
@@ -359,17 +395,17 @@
     .project-card h3 {
       font-family: 'DM Serif Display', serif;
       color: var(--navy);
-      font-size: 1.45rem;
+      font-size: 1.35rem;
       line-height: 1.1;
     }
 
-    .project-card p { color: var(--muted); font-size: 0.92rem; }
+    .project-card p { color: var(--muted); font-size: 0.9rem; }
 
     .project-meta { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: auto; }
 
     .tag {
       font-family: 'Space Mono', monospace;
-      font-size: 0.62rem;
+      font-size: 0.6rem;
       letter-spacing: 0.06em;
       padding: 0.3rem 0.58rem;
       border-radius: 999px;
@@ -433,51 +469,81 @@
     }
 
     dialog {
-      width: min(880px, calc(100% - 2rem));
+      width: min(980px, calc(100% - 2rem));
+      max-height: min(86vh, 920px);
       border: none;
       border-radius: 30px;
       padding: 0;
-      background: var(--paper);
-      box-shadow: 0 28px 90px rgba(17, 26, 61, 0.32);
-      overflow: hidden;
+      background: white;
+      box-shadow: 0 28px 90px rgba(17, 26, 61, 0.30);
+      overflow: auto;
       color: var(--ink);
     }
 
-    dialog::backdrop { background: rgba(17, 26, 61, 0.45); backdrop-filter: blur(7px); }
+    dialog::backdrop { background: rgba(17, 26, 61, 0.44); backdrop-filter: blur(7px); }
     .modal-inner { padding: 1.2rem; }
-    .modal-hero { min-height: 190px; border-radius: 22px; padding: 1.5rem; background: linear-gradient(135deg, var(--navy), var(--lavender-deep)); color: white; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; }
-    .modal-hero::before { content: ''; position: absolute; inset: 20px; border: 1px solid rgba(255,255,255,0.18); border-radius: 18px; }
-    .modal-hero h3 { font-family: 'DM Serif Display', serif; font-size: 2.1rem; line-height: 1; position: relative; z-index: 1; }
+    .modal-hero {
+      min-height: 170px;
+      border-radius: 22px;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, var(--lavender-light), #ffffff);
+      color: var(--navy);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--rule);
+    }
+    .modal-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 7px; background: linear-gradient(90deg, var(--navy), var(--lavender-deep)); }
+    .modal-hero h3 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 4vw, 3rem); line-height: 1; position: relative; z-index: 1; }
+    .modal-subtitle { font-family: 'Space Mono', monospace; color: var(--lavender-deep); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
     .modal-body { padding: 1.4rem 0.4rem 0.3rem; display: grid; gap: 1.2rem; }
     .modal-body p { color: var(--muted); }
+    .modal-lead { font-size: 0.98rem; }
     .modal-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.7rem; }
-    .photo-slot { min-height: 130px; border-radius: 18px; display: grid; place-items: center; text-align: center; padding: 1rem; background: var(--lavender-light); border: 1px dashed rgba(125, 103, 200, 0.42); color: var(--muted); font-size: 0.78rem; }
+    .photo-slot {
+      min-height: 145px;
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--lavender-light);
+      border: 1px solid rgba(125, 103, 200, 0.22);
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+    .photo-slot img { width: 100%; height: 100%; min-height: 145px; object-fit: cover; display: block; }
+    .photo-slot.placeholder { display: grid; place-items: center; text-align: center; padding: 1rem; border-style: dashed; }
     .modal-actions { display: flex; justify-content: space-between; gap: 1rem; align-items: center; padding-top: 0.4rem; }
     .close-modal { border: none; background: var(--navy); color: white; border-radius: 999px; padding: 0.75rem 1rem; cursor: pointer; font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; }
 
     @keyframes floatIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
-    .hero-text > *, .hero-card { animation: floatIn 0.7s ease forwards; opacity: 0; }
+    .hero-text > *, .hero-side { animation: floatIn 0.7s ease forwards; opacity: 0; }
     .hero-text > *:nth-child(1) { animation-delay: 0.08s; }
     .hero-text > *:nth-child(2) { animation-delay: 0.18s; }
     .hero-text > *:nth-child(3) { animation-delay: 0.28s; }
     .hero-text > *:nth-child(4) { animation-delay: 0.38s; }
-    .hero-card { animation-delay: 0.26s; }
+    .hero-side { animation-delay: 0.24s; }
+
+    @media (max-width: 1080px) {
+      .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
 
     @media (max-width: 920px) {
       nav { border-radius: 24px; align-items: flex-start; }
       .nav-links { gap: 0.15rem; }
       .hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 8rem; }
-      .projects-grid, .coursework-wrap { grid-template-columns: 1fr; }
+      .coursework-wrap { grid-template-columns: 1fr; }
       .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .exp-item { grid-template-columns: 1fr; }
+      .profile-photo { aspect-ratio: 16 / 10; }
     }
 
     @media (max-width: 620px) {
       nav { position: static; transform: none; width: calc(100% - 1rem); margin: 0.5rem auto 0; flex-direction: column; gap: 0.6rem; }
       .hero { padding-top: 3.5rem; }
       .nav-links { justify-content: flex-start; }
-      .section-header, footer { flex-direction: column; align-items: flex-start; }
-      .skills-grid, .modal-gallery { grid-template-columns: 1fr; }
+      .section-header, footer, .modal-actions { flex-direction: column; align-items: flex-start; }
+      .skills-grid, .modal-gallery, .projects-grid { grid-template-columns: 1fr; }
       h1 { font-size: clamp(3.25rem, 18vw, 5rem); }
     }
   </style>
@@ -494,7 +560,7 @@
   </nav>
 
   <main>
-    <header class="hero">
+    <header class="hero" id="about">
       <div class="hero-text">
         <div class="eyebrow">Mechanical Engineering · UPenn SEAS</div>
         <h1>Caroline<br><em>Zimmer</em></h1>
@@ -507,66 +573,95 @@
         </div>
       </div>
 
-      <aside class="hero-card" aria-label="Quick profile details">
-        <div class="snapshot-list">
-          <div class="snapshot-item"><span class="snapshot-label">School</span><span class="snapshot-value">University of Pennsylvania</span></div>
-          <div class="snapshot-item"><span class="snapshot-label">Current Exchange Semester</span><span class="snapshot-value">ETH Zürich</span></div>
-          <div class="snapshot-item"><span class="snapshot-label">Major</span><span class="snapshot-value">Mechanical Engineering</span></div>
-          <div class="snapshot-item"><span class="snapshot-label">Minors</span><span class="snapshot-value">Mathematics + Engineering Entrepreneurship</span></div>
-          <div class="snapshot-item"><span class="snapshot-label">Graduation Year</span><span class="snapshot-value">Class of 2027</span></div>
-        </div>
-      </aside>
+      <div class="hero-side">
+        <aside class="profile-card" aria-label="Photo of Caroline Zimmer">
+          <img class="profile-photo" src="images/caroline-zimmer-headshot.jpg" alt="Caroline Zimmer">
+          <p class="photo-caption">Mechanical engineering student focused on hands-on design, manufacturing, robotics, and sustainable hardware systems.</p>
+        </aside>
+
+        <aside class="hero-card" aria-label="Quick profile details">
+          <div class="snapshot-list">
+            <div class="snapshot-item"><span class="snapshot-label">School</span><span class="snapshot-value">University of Pennsylvania</span></div>
+            <div class="snapshot-item"><span class="snapshot-label">Current Exchange Semester</span><span class="snapshot-value">ETH Zürich</span></div>
+            <div class="snapshot-item"><span class="snapshot-label">Major</span><span class="snapshot-value">Mechanical Engineering</span></div>
+            <div class="snapshot-item"><span class="snapshot-label">Minors</span><span class="snapshot-value">Mathematics + Engineering Entrepreneurship</span></div>
+            <div class="snapshot-item"><span class="snapshot-label">Graduation Year</span><span class="snapshot-value">Class of 2027</span></div>
+          </div>
+        </aside>
+      </div>
     </header>
 
     <section id="projects">
       <div class="section-inner">
         <div class="section-header">
           <div><div class="section-kicker">01 · selected builds</div><h2>Projects</h2></div>
-          <p class="section-note">Click a project to open a detail view.</p>
+          <p class="section-note">Hands-on mechanical design, manufacturing, controls, energy systems, and experimental engineering projects.</p>
         </div>
 
         <div class="projects-grid">
           <article class="project-card">
-            <div class="project-visual" aria-hidden="true"></div>
+            <div class="project-visual"><img src="images/projects/stirling/stirling-engine-actual-01.jpg" alt="Gamma-Type Stirling Engine"></div>
             <div class="project-content">
               <span class="project-tag">Mechanical Design · Fall 2025</span>
               <h3>Gamma-Type Stirling Engine</h3>
-              <p>Designed, modeled, and machined a functional Stirling engine assembly with GD&amp;T callouts, CNC toolpaths, and precision tolerance stack-up analysis.</p>
+              <p>Designed and manufactured a carnival-inspired Stirling engine with a Ferris wheel rotating assembly, combining mechanical function with visual design.</p>
               <div class="project-meta"><span class="tag">SolidWorks</span><span class="tag">Mastercam</span><span class="tag">CNC</span><span class="tag">GD&amp;T</span></div>
               <button class="project-open" data-project="stirling">Read more →</button>
             </div>
           </article>
 
           <article class="project-card">
-            <div class="project-visual" aria-hidden="true"></div>
-            <div class="project-content">
-              <span class="project-tag">Controls · Fall 2025</span>
-              <h3>BLDC Motor Balancing System</h3>
-              <p>Derived nonlinear dynamics, built a linearized state-space model, tuned a PID controller in MATLAB, and deployed the controller on physical hardware with IMU feedback.</p>
-              <div class="project-meta"><span class="tag">MATLAB</span><span class="tag">PID</span><span class="tag">State-Space</span></div>
-              <button class="project-open" data-project="bldc">Read more →</button>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-visual" aria-hidden="true"></div>
+            <div class="project-visual"><img src="images/projects/supercapacitor/supercapacitor-01.jpg" alt="Supercapacitor fabrication and characterization"></div>
             <div class="project-content">
               <span class="project-tag">Electrochemistry · Spring 2026</span>
-              <h3>Supercapacitor Assembly — ETH Zürich</h3>
-              <p>Hand-assembled and characterized a symmetric supercapacitor in a Swagelok cell using cyclic voltammetry and galvanostatic cycling.</p>
-              <div class="project-meta"><span class="tag">Energy Systems</span><span class="tag">MATLAB</span></div>
+              <h3>Supercapacitor Fabrication &amp; Characterization</h3>
+              <p>Hand-assembled and characterized symmetric supercapacitors at ETH Zürich using CV, galvanostatic cycling, and MATLAB analysis.</p>
+              <div class="project-meta"><span class="tag">Energy Systems</span><span class="tag">MATLAB</span><span class="tag">CV</span></div>
               <button class="project-open" data-project="supercap">Read more →</button>
             </div>
           </article>
 
           <article class="project-card">
-            <div class="project-visual" aria-hidden="true"></div>
+            <div class="project-visual"><img src="images/projects/pid-controller/pid-controller-01.jpg" alt="PID controller balancing project"></div>
             <div class="project-content">
-              <span class="project-tag">Propulsion · Spring 2025</span>
-              <h3>Bottle Rocket &amp; Propulsion Model</h3>
-              <p>Designed and tested butane-propelled water bottle rocket modifications and calibrated a Python propulsion model with empirical flight data.</p>
-              <div class="project-meta"><span class="tag">Python</span><span class="tag">SolidWorks</span><span class="tag">Simulation</span></div>
-              <button class="project-open" data-project="rocket">Read more →</button>
+              <span class="project-tag">Controls · Fall 2025</span>
+              <h3>PID Controller Balancing System</h3>
+              <p>Designed and deployed a closed-loop controller to balance a rotating rod actuated by a brushless DC motor using live IMU feedback.</p>
+              <div class="project-meta"><span class="tag">MATLAB</span><span class="tag">PID</span><span class="tag">State-Space</span><span class="tag">IMU</span></div>
+              <button class="project-open" data-project="pid">Read more →</button>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual"><img src="images/projects/wind-turbine/wind-turbine-01.jpg" alt="Vertical axis wind turbine"></div>
+            <div class="project-content">
+              <span class="project-tag">Experimental Design · Fall 2025</span>
+              <h3>Vertical Axis Wind Turbine</h3>
+              <p>Designed and tested a small-scale Darrieus wind turbine for wind tunnel data collection and power output scaling.</p>
+              <div class="project-meta"><span class="tag">SolidWorks</span><span class="tag">NACA 0015</span><span class="tag">Testing</span></div>
+              <button class="project-open" data-project="wind">Read more →</button>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual"><img src="images/projects/water-tower/water-tower-01.jpg" alt="Gravity-driven water tower"></div>
+            <div class="project-content">
+              <span class="project-tag">Design Competition · Spring 2024</span>
+              <h3>Water Tower Design</h3>
+              <p>Built a gravity-driven water tower balancing structural stability, reservoir height, and nozzle performance for a fluid power competition.</p>
+              <div class="project-meta"><span class="tag">Python</span><span class="tag">Fluids</span><span class="tag">3D Printing</span></div>
+              <button class="project-open" data-project="water">Read more →</button>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual"><img src="images/projects/bungee/bungee-01.jpg" alt="Bungee design and testing"></div>
+            <div class="project-content">
+              <span class="project-tag">Modeling &amp; Testing · Spring 2024</span>
+              <h3>Bungee Design &amp; Testing</h3>
+              <p>Designed, tested, and modeled a custom bungee cord system to meet drop clearance and acceleration constraints.</p>
+              <div class="project-meta"><span class="tag">Python</span><span class="tag">MTS Testing</span><span class="tag">Dynamics</span></div>
+              <button class="project-open" data-project="bungee">Read more →</button>
             </div>
           </article>
         </div>
@@ -656,13 +751,16 @@
 
   <dialog id="project-modal">
     <div class="modal-inner">
-      <div class="modal-hero"><h3 id="modal-title">Project Title</h3></div>
+      <div class="modal-hero">
+        <div class="modal-subtitle" id="modal-subtitle">Project Area</div>
+        <h3 id="modal-title">Project Title</h3>
+      </div>
       <div class="modal-body">
-        <p id="modal-description"></p>
+        <p class="modal-lead" id="modal-description"></p>
         <ul class="star-list" id="modal-details"></ul>
         <div class="modal-gallery" id="modal-gallery"></div>
         <div class="modal-actions">
-          <p style="font-size:0.8rem;color:var(--muted);">Tip: replace these slots with real project photos or renderings.</p>
+          <p style="font-size:0.8rem;color:var(--muted);">Project images can be replaced by adding files to the matching image folder.</p>
           <button class="close-modal" id="close-modal">Close</button>
         </div>
       </div>
@@ -672,33 +770,52 @@
   <script>
     const projects = {
       stirling: {
+        subtitle: 'Mechanical Design · Manufacturing · Fall 2025',
         title: 'Gamma-Type Stirling Engine',
-        description: 'Designed and machined a functional Gamma-type Stirling engine from scratch, moving from CAD assembly to manufacturing drawings to precision-machined components.',
-        details: ['Modeled assembly and part interfaces in SolidWorks.', 'Programmed CNC toolpaths in Mastercam.', 'Used lathe, mill, threading, and reaming operations.', 'Applied GD&T and tolerance stack-up analysis across critical interfaces.'],
-        photos: ['Add engine assembly photo', 'Add CAD rendering', 'Add machining/process photo']
-      },
-      bldc: {
-        title: 'BLDC Motor Balancing System',
-        description: 'Built a controls project around a BLDC motor-actuated rotating rod system, comparing simulated and experimental closed-loop behavior.',
-        details: ['Derived nonlinear equations of motion.', 'Linearized the system into a state-space model.', 'Designed and tuned a PID controller in MATLAB.', 'Deployed controller on hardware using IMU feedback.'],
-        photos: ['Add hardware setup photo', 'Add response plot', 'Add control diagram']
+        description: 'During the Fall 2025 semester, I designed and manufactured a Stirling engine inspired by a carnival theme, with the rotating assembly modeled after a Ferris wheel. I created a full 3D assembly of the engine in SolidWorks, integrating both mechanical function and aesthetic design. I machined all major components, excluding fasteners and bearings, in UPenn’s precision manufacturing lab using the lathe, mill, and CNC programs in Mastercam and Prototrak. The two-piece bedplate silhouette was laser-cut by OshCut, and I laser-cut colorful acrylic inserts for the Ferris wheel and carriages to enhance the visual design. When heated with a blowtorch applied to the air chamber, the engine operated smoothly, with the flywheel reaching speeds above 1200 RPM on test day.',
+        details: ['Created a complete SolidWorks assembly integrating function and carnival-inspired visual design.', 'Machined major components using lathe, mill, CNC, Mastercam, and Prototrak workflows.', 'Used OshCut laser-cutting for the two-piece bedplate silhouette.', 'Laser-cut colorful acrylic inserts for the Ferris wheel and carriages.', 'Achieved smooth engine operation above 1200 RPM during testing.'],
+        photos: ['images/projects/stirling/stirling-engine-actual-01.jpg', 'images/projects/stirling/stirling-engine-actual-02.jpg', 'images/projects/stirling/stirling-engine-actual-03.jpg', 'images/projects/stirling/stirling-engine-process-01.jpg', 'images/projects/stirling/stirling-engine-process-02.jpg', 'images/projects/stirling/stirling-engine-process-03.jpg', 'images/projects/stirling/stirling-engine-render-01.jpg', 'images/projects/stirling/stirling-engine-render-02.jpg', 'images/projects/stirling/stirling-engine-render-03.jpg']
       },
       supercap: {
-        title: 'Supercapacitor Assembly — ETH Zürich',
-        description: 'Assembled and characterized a symmetric supercapacitor at ETH Zürich’s Electrochemical Energy Systems Laboratory.',
-        details: ['Used activated carbon electrode and electrolyte in a Swagelok cell configuration.', 'Performed cyclic voltammetry and galvanostatic cycling.', 'Measured gravimetric capacitance and coulombic efficiency.', 'Analyzed electrolyte degradation thresholds in MATLAB.'],
-        photos: ['Add lab setup photo', 'Add cell assembly photo', 'Add CV/GCD plot']
+        subtitle: 'Electrochemical Energy Systems · ETH Zürich · Spring 2026',
+        title: 'Supercapacitor Fabrication & Characterization',
+        description: 'In this lab at ETH Zürich’s Electrochemical Energy Systems Laboratory, we hand-assembled symmetric supercapacitors from scratch using activated carbon electrodes, a glass fiber separator, and a sulfuric acid electrolyte in a Swagelok cell configuration. Once assembled, we connected the cell to a BioLogic potentiostat and ran cyclic voltammetry at scan rates ranging from 1 to 100 mV/s to measure gravimetric capacitance and observe how charge storage behavior changes with speed. We also tested the effect of increasing the voltage window beyond the electrolyte’s stability limit, watching parasitic reactions appear in real time in the CV curves. Finally, we performed galvanostatic cycling to calculate coulombic efficiency and assess cycle life. We processed and plotted the data in MATLAB, and our report connected experimental results to theoretical models such as the Helmholtz double layer framework.',
+        details: ['Assembled symmetric supercapacitors using activated carbon electrodes, separator, and sulfuric acid electrolyte.', 'Used a Swagelok cell configuration connected to a BioLogic potentiostat.', 'Ran cyclic voltammetry from 1 to 100 mV/s to measure gravimetric capacitance.', 'Observed electrolyte stability limits and parasitic reactions in CV curves.', 'Used galvanostatic cycling and MATLAB analysis to assess efficiency and cycle behavior.'],
+        photos: ['images/projects/supercapacitor/supercapacitor-01.jpg', 'images/projects/supercapacitor/supercapacitor-02.jpg', 'images/projects/supercapacitor/supercapacitor-03.jpg']
       },
-      rocket: {
-        title: 'Bottle Rocket & Propulsion Model',
-        description: 'Designed, built, and tested butane-propelled water bottle rocket modifications while developing a calibrated Python flight model.',
-        details: ['Created design iterations in SolidWorks and DraftSight.', 'Integrated empirical flight data into a Python simulation.', 'Modeled aerodynamic behavior under varying launch conditions.', 'Used iterative experimentation to improve trajectory predictions.'],
-        photos: ['Add rocket photo', 'Add launch/testing photo', 'Add simulation plot']
+      pid: {
+        subtitle: 'Controls · Mechatronics · Fall 2025',
+        title: 'PID Controller Balancing System',
+        description: 'The goal of this Mechatronics project was to design and deploy a closed-loop controller that would balance a rotating rod actuated by a brushless DC motor, first in simulation then on physical hardware. In the first phase, we derived the full nonlinear equations of motion by hand, computing rotational inertia, summing gravitational and friction torques, and linearizing the system around equilibrium to produce a transfer function. We then implemented a discrete-time PID controller in MATLAB and used the built-in PID tuner to select three gain sets optimized for fastest response, minimum overshoot, and a balanced compromise, running nine closed-loop simulations across different perturbation and noise conditions to analyze stability and robustness trade-offs. In the second phase, we took our controller off the simulation and onto the real mechanism, commanding actual motor throttle based on live IMU angle feedback. We tested all three gain sets on the physical hardware and compared the experimental theta plots to our simulation results. Bridging the gap between simulation and hardware was the most instructive part, as sensor noise, actuator saturation, and real mechanical dynamics all showed up in ways the linearized model did not fully capture.',
+        details: ['Derived nonlinear equations of motion and linearized the system around equilibrium.', 'Implemented a discrete-time PID controller in MATLAB.', 'Compared gain sets optimized for speed, overshoot reduction, and balanced performance.', 'Ran closed-loop simulations under perturbation and noise conditions.', 'Deployed the controller on hardware using live IMU angle feedback and motor throttle commands.'],
+        photos: ['images/projects/pid-controller/pid-controller-01.jpg']
+      },
+      wind: {
+        subtitle: 'Experimental Design · Wind Energy · Fall 2025',
+        title: 'Vertical Axis Wind Turbine',
+        description: 'As part of a lab project, our team designed and built a small-scale wind turbine to fit inside a wind tunnel for data collection. The objective was to use experimental results to scale the design to a larger turbine and predict its power output. We selected a three-bladed Darrieus configuration with a NACA 0015 airfoil cross-section for each blade. I modeled both turbine sizes in SolidWorks using plot data of a NACA 0015 airfoil and laser-cut the connectors and airfoil cross-sections for fabrication. During testing, our team assembled the turbines using dowels and plastic wrap to accurately replicate the geometry of the small-scale model. After gathering power output data from our large scale wind turbine, we compared our power coefficient with our previous model.',
+        details: ['Selected a three-bladed Darrieus configuration with NACA 0015 airfoil geometry.', 'Modeled small and large turbine sizes in SolidWorks.', 'Used airfoil coordinate data to create blade cross-sections.', 'Laser-cut connectors and airfoil cross-sections for fabrication.', 'Collected wind tunnel data and compared power coefficient to the model.'],
+        photos: ['images/projects/wind-turbine/wind-turbine-01.jpg', 'images/projects/wind-turbine/wind-turbine-02.jpg', 'images/projects/wind-turbine/wind-turbine-03.jpg', 'images/projects/wind-turbine/wind-turbine-04.jpg', 'images/projects/wind-turbine/wind-turbine-05.jpg', 'images/projects/wind-turbine/wind-turbine-06.jpg']
+      },
+      water: {
+        subtitle: 'Fluids · Structural Design · Spring 2024',
+        title: 'Water Tower Design',
+        description: 'Our project team designed and built a gravity-driven water tower that balanced structural stability with fluid performance. The goal was to optimize the tower height and nozzle diameter to maximize both endurance and jet power in a head-to-head competition, where teams used their water streams to push a block along a track. The truss-based tower, featuring 3D-printed joints and cross-bracing, minimized buckling while supporting a raised reservoir that discharged through an optimized 7.62 mm nozzle. Using Python models based on pump data and Torricelli’s law, we predicted the system’s fill and discharge behavior. The final design achieved a flow rate of 0.149 L/s, maintained structural stability under load, and advanced to the semifinal round of the competition.',
+        details: ['Designed a truss-based tower with 3D-printed joints and cross-bracing.', 'Optimized tower height and nozzle diameter for endurance and jet power.', 'Used a 7.62 mm nozzle to control discharge behavior.', 'Built Python models using pump data and Torricelli’s law.', 'Achieved a flow rate of 0.149 L/s and advanced to the semifinal round.'],
+        photos: ['images/projects/water-tower/water-tower-01.jpg', 'images/projects/water-tower/water-tower-02.jpg', 'images/projects/water-tower/water-tower-03.jpg']
+      },
+      bungee: {
+        subtitle: 'Dynamics · Experimental Testing · Spring 2024',
+        title: 'Bungee Design & Testing',
+        description: 'Our team designed and tested a custom bungee cord system and developed a Python model to predict safe and effective configurations based on drop height, mass, and maximum acceleration. The goal was to ensure the jumper stopped as close to the ground as possible without exceeding a 4g acceleration limit. We characterized various rubber band configurations using the MTS machine, balancing durability and stiffness. The final knotless design used looped bands folded in half, providing strong elasticity without excessive stiffness or stress concentrations. MTS testing yielded a stiffness of 35.1 N/m per cord element, which we used to model cords arranged in series and parallel combinations. The Python model simulated energy balance and elastic extension to determine feasible cord setups meeting safety and stretch constraints. On demo day, the jumper’s 1 kg mass produced 2–3g acceleration, safely under the limit, with a 0.63 m clearance above the crash pad, closely matching the model’s prediction.',
+        details: ['Developed a Python model to predict bungee cord configurations from drop height, mass, and acceleration constraints.', 'Used MTS testing to characterize rubber band stiffness and durability.', 'Designed a knotless looped-band configuration to reduce stress concentrations.', 'Modeled series and parallel cord arrangements using measured stiffness data.', 'Achieved 2–3g acceleration and 0.63 m clearance during demo testing.'],
+        photos: ['images/projects/bungee/bungee-01.jpg', 'images/projects/bungee/bungee-02.jpg']
       }
     };
 
     const modal = document.getElementById('project-modal');
     const title = document.getElementById('modal-title');
+    const subtitle = document.getElementById('modal-subtitle');
     const description = document.getElementById('modal-description');
     const details = document.getElementById('modal-details');
     const gallery = document.getElementById('modal-gallery');
@@ -707,10 +824,15 @@
     document.querySelectorAll('.project-open').forEach((button) => {
       button.addEventListener('click', () => {
         const project = projects[button.dataset.project];
+        subtitle.textContent = project.subtitle;
         title.textContent = project.title;
         description.textContent = project.description;
         details.innerHTML = project.details.map(item => `<li>${item}</li>`).join('');
-        gallery.innerHTML = project.photos.map(item => `<div class="photo-slot">${item}</div>`).join('');
+        gallery.innerHTML = project.photos.map((src, index) => `
+          <div class="photo-slot">
+            <img src="${src}" alt="${project.title} project image ${index + 1}" onerror="this.parentElement.classList.add('placeholder'); this.remove(); this.parentElement.textContent='Add image: ${src}';">
+          </div>
+        `).join('');
         modal.showModal();
       });
     });
