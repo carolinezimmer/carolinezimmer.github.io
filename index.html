@@ -85,6 +85,15 @@
       display: inline-flex;
       align-items: center;
       min-height: 34px;
+      padding: 0.55rem 0.75rem;
+      border-radius: 999px;
+      transition: 0.2s ease;
+    }
+
+    .nav-logo:hover,
+    .nav-logo.active {
+      color: var(--navy);
+      background: var(--lavender-light);
     }
 
     .nav-links {
@@ -108,10 +117,12 @@
       transition: 0.2s ease;
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover,
+    .nav-links a.active {
       color: var(--navy);
       background: var(--lavender-light);
     }
+
 
     .hero,
     section,
@@ -145,7 +156,7 @@
 
     h1 {
       font-family: 'DM Serif Display', serif;
-      font-size: clamp(3.7rem, 8vw, 7.4rem);
+      font-size: clamp(3.25rem, 7vw, 6.4rem);
       line-height: 0.9;
       letter-spacing: -0.055em;
       color: var(--navy);
@@ -155,9 +166,18 @@
 
     .hero-desc {
       font-size: 1.05rem;
-      color: var(--muted);
+      color: var(--navy);
       max-width: 600px;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-meta {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--lavender-deep);
+      margin-bottom: 1.7rem;
     }
 
     .hero-cta { display: flex; gap: 0.9rem; flex-wrap: wrap; align-items: center; }
@@ -189,12 +209,16 @@
     .btn-primary:hover { transform: translateY(-2px); background: var(--navy-soft); }
 
     .btn-ghost {
-      background: rgba(255,255,255,0.78);
+      background: var(--lavender-light);
       color: var(--navy);
-      border-color: var(--rule);
+      border-color: rgba(125, 103, 200, 0.24);
     }
 
-    .btn-ghost:hover { transform: translateY(-2px); border-color: rgba(125, 103, 200, 0.42); background: var(--lavender-light); }
+    .btn-ghost:hover {
+      transform: translateY(-2px);
+      border-color: rgba(125, 103, 200, 0.42);
+      background: var(--lavender-mid);
+    }
 
     .hero-side {
       display: grid;
@@ -251,6 +275,7 @@
       margin-bottom: 0.45rem;
     }
 
+
     h2 {
       font-family: 'DM Serif Display', serif;
       color: var(--navy);
@@ -286,11 +311,19 @@
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      min-height: 360px;
+      min-height: 330px;
       padding: 1rem;
       overflow: hidden;
       position: relative;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
     }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 22px 58px rgba(17, 26, 61, 0.12);
+      border-color: rgba(185,164,245,0.5);
+    }
+
 
     .project-visual {
       height: 150px;
@@ -377,11 +410,13 @@
 
     .project-open:hover { color: var(--lavender-deep); }
 
-    .exp-list { display: grid; gap: 1rem; }
+    .exp-list { display: grid; gap: 1rem; position: relative; }
+
+
     .exp-item { display: grid; grid-template-columns: 180px 1fr; gap: 1.5rem; padding: 1.7rem; }
     .exp-date { font-family: 'Space Mono', monospace; color: var(--lavender-deep); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; }
     .exp-body h3 { font-family: 'DM Serif Display', serif; font-size: 1.45rem; color: var(--navy); }
-    .role { font-family: 'Space Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0.15rem 0 0.6rem; }
+    .role { font-family: 'Space Mono', monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); margin: 0.15rem 0 0.6rem; }
     .exp-body p { color: var(--muted); font-size: 0.94rem; }
 
     .star-list { list-style: none; display: grid; gap: 0.5rem; }
@@ -468,8 +503,61 @@
     }
     .photo-slot img, .photo-slot video { width: 100%; height: 100%; min-height: 145px; object-fit: cover; display: block; }
     .photo-slot.placeholder { display: grid; place-items: center; text-align: center; padding: 1rem; border-style: dashed; }
-    .modal-actions { display: flex; justify-content: space-between; gap: 1rem; align-items: center; padding-top: 0.4rem; }
+    .modal-actions { display: flex; justify-content: flex-end; gap: 1rem; align-items: center; padding-top: 0.4rem; }
     .close-modal { border: none; background: var(--navy); color: white; border-radius: 999px; padding: 0.75rem 1rem; cursor: pointer; font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    .media-button {
+      width: 100%;
+      height: 100%;
+      min-height: 145px;
+      border: 0;
+      padding: 0;
+      background: transparent;
+      cursor: zoom-in;
+      display: block;
+    }
+
+    .media-button:focus-visible {
+      outline: 3px solid var(--lavender-deep);
+      outline-offset: 3px;
+    }
+
+    .lightbox-dialog {
+      width: min(1120px, calc(100% - 2rem));
+      max-height: 90vh;
+      background: white;
+      border-radius: 24px;
+      padding: 0;
+    }
+
+    .lightbox-inner {
+      padding: 1rem;
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .lightbox-media {
+      max-height: 76vh;
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--lavender-light);
+      display: grid;
+      place-items: center;
+    }
+
+    .lightbox-media img,
+    .lightbox-media video {
+      width: 100%;
+      max-height: 76vh;
+      object-fit: contain;
+      display: block;
+    }
+
+    .lightbox-actions {
+      display: flex;
+      justify-content: flex-end;
+    }
+
 
     @keyframes floatIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
     .hero-text > *, .hero-side { animation: floatIn 0.7s ease forwards; opacity: 0; }
@@ -505,7 +593,7 @@
 </head>
 <body>
   <nav>
-    <a class="nav-logo" href="#">Caroline Zimmer</a>
+    <a class="nav-logo" href="#about">Caroline Zimmer</a>
     <ul class="nav-links">
       <li><a href="#projects">Projects</a></li>
       <li><a href="#experience">Experience</a></li>
@@ -516,12 +604,11 @@
 
   <main>
     <header class="hero" id="about">
-      <div class="hero-text">
-        <div class="eyebrow">Mechanical Engineering · UPenn SEAS</div>
-        <h1>Caroline<br>Zimmer</h1>
+      <div class="hero-text">        <h1>Caroline<br>Zimmer</h1>
         <p class="hero-desc">
           I’m a junior at the University of Pennsylvania studying Mechanical Engineering and Applied Mechanics, with minors in Math and Engineering Entrepreneurship. I’m studying abroad at ETH Zürich in Spring 2026, focusing on manufacturing and robotics. I’m interested in sustainable hardware solutions.
         </p>
+        <p class="hero-meta">UPenn Mechanical Engineering · Class of 2027 · GPA: 3.70/4.00</p>
         <div class="hero-cta">
           <a href="#projects" class="btn btn-primary">View Projects</a>
           <a href="Zimmer_Resume.pdf" class="btn btn-ghost" download>Download Resume</a>
@@ -539,30 +626,17 @@
     <section id="projects">
       <div class="section-inner">
         <div class="section-header">
-          <div><div class="section-kicker">01 · selected builds</div><h2>Projects</h2></div>
-          <p class="section-note">Hands-on mechanical design, manufacturing, controls, energy systems, and experimental engineering projects.</p>
+          <div><h2>Projects</h2></div>
         </div>
 
         <div class="projects-grid">
           <article class="project-card">
-            <div class="project-visual"><img src="images/projects/stirling/stirling-engine-render-01.jpg" alt="Gamma-Type Stirling Engine"></div>
+            <div class="project-visual"><img src="images/projects/stirling/stirling-engine-actual-01.jpg" alt="Gamma-Type Stirling Engine"></div>
             <div class="project-content">
               <span class="project-tag">Mechanical Design · Fall 2025</span>
               <h3>Gamma-Type Stirling Engine</h3>
-              <p>Designed and manufactured a carnival-inspired Stirling engine with a Ferris wheel rotating assembly, combining mechanical function with visual design.</p>
               <div class="project-meta"><span class="tag">SolidWorks</span><span class="tag">Mastercam</span><span class="tag">CNC</span><span class="tag">GD&amp;T</span></div>
               <button class="project-open" data-project="stirling">Read more →</button>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-visual"><img src="images/projects/supercapacitor/supercapacitor-01.JPG" alt="Supercapacitor fabrication and characterization"></div>
-            <div class="project-content">
-              <span class="project-tag">Electrochemistry · Spring 2026</span>
-              <h3>Supercapacitor Fabrication &amp; Characterization</h3>
-              <p>Hand-assembled and characterized symmetric supercapacitors at ETH Zürich using CV, galvanostatic cycling, and MATLAB analysis.</p>
-              <div class="project-meta"><span class="tag">Energy Systems</span><span class="tag">MATLAB</span><span class="tag">CV</span></div>
-              <button class="project-open" data-project="supercap">Read more →</button>
             </div>
           </article>
 
@@ -571,9 +645,18 @@
             <div class="project-content">
               <span class="project-tag">Controls · Fall 2025</span>
               <h3>PID Controller Balancing System</h3>
-              <p>Designed and deployed a closed-loop controller to balance a rotating rod actuated by a brushless DC motor using live IMU feedback.</p>
-              <div class="project-meta"><span class="tag">MATLAB</span><span class="tag">PID</span><span class="tag">State-Space</span><span class="tag">IMU</span></div>
+              <div class="project-meta"><span class="tag">MATLAB</span><span class="tag">PID</span><span class="tag">State-Space</span></div>
               <button class="project-open" data-project="pid">Read more →</button>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-visual"><img src="images/projects/supercapacitor/supercapacitor-01.JPG" alt="Supercapacitor fabrication and characterization"></div>
+            <div class="project-content">
+              <span class="project-tag">Electrochemistry · Spring 2026</span>
+              <h3>Supercapacitor Fabrication &amp; Characterization</h3>
+              <div class="project-meta"><span class="tag">Energy Systems</span><span class="tag">MATLAB</span></div>
+              <button class="project-open" data-project="supercap">Read more →</button>
             </div>
           </article>
 
@@ -582,19 +665,17 @@
             <div class="project-content">
               <span class="project-tag">Experimental Design · Fall 2025</span>
               <h3>Vertical Axis Wind Turbine</h3>
-              <p>Designed and tested a small-scale Darrieus wind turbine for wind tunnel data collection and power output scaling.</p>
-              <div class="project-meta"><span class="tag">SolidWorks</span><span class="tag">NACA 0015</span><span class="tag">Testing</span></div>
+              <div class="project-meta"><span class="tag">SolidWorks</span><span class="tag">3D Printing</span></div>
               <button class="project-open" data-project="wind">Read more →</button>
             </div>
           </article>
 
           <article class="project-card">
-            <div class="project-visual"><img src="images/projects/water-tower/water-tower-02.png" alt="Gravity-driven water tower"></div>
+            <div class="project-visual"><img src="images/projects/water-tower/water-tower-01.jpg" alt="Gravity-driven water tower"></div>
             <div class="project-content">
               <span class="project-tag">Design Competition · Spring 2024</span>
               <h3>Water Tower Design</h3>
-              <p>Built a gravity-driven water tower balancing structural stability, reservoir height, and nozzle performance for a fluid power competition.</p>
-              <div class="project-meta"><span class="tag">Python</span><span class="tag">Fluids</span><span class="tag">3D Printing</span></div>
+              <div class="project-meta"><span class="tag">Python</span><span class="tag">FEA</span><span class="tag">3D Printing</span></div>
               <button class="project-open" data-project="water">Read more →</button>
             </div>
           </article>
@@ -604,8 +685,7 @@
             <div class="project-content">
               <span class="project-tag">Modeling &amp; Testing · Spring 2024</span>
               <h3>Bungee Design &amp; Testing</h3>
-              <p>Designed, tested, and modeled a custom bungee cord system to meet drop clearance and acceleration constraints.</p>
-              <div class="project-meta"><span class="tag">Python</span><span class="tag">MTS Testing</span><span class="tag">Dynamics</span></div>
+              <div class="project-meta"><span class="tag">Python</span><span class="tag">MTS Testing</span></div>
               <button class="project-open" data-project="bungee">Read more →</button>
             </div>
           </article>
@@ -616,7 +696,7 @@
     <section id="experience">
       <div class="section-inner">
         <div class="section-header">
-          <div><div class="section-kicker">02 · experience</div><h2>Experience</h2></div>
+          <div><h2>Experience</h2></div>
         </div>
         <div class="exp-list">
           <article class="exp-item">
@@ -624,15 +704,22 @@
             <div class="exp-body">
               <h3>Enfra Solutions</h3>
               <div class="role">Mechanical Engineer Intern</div>
-              <p>Delivered AutoCAD and Revit models for HVAC ductwork and piping systems across the Novant Health hospital network. Drafted energy savings reports integrating metered consumption data with utility bills to verify guaranteed efficiency targets.</p>
+              <ul class="star-list">
+                <li>Delivered finalized AutoCAD models of complete HVAC ductwork and piping systems for construction plans within the Novant Health hospital network, contributing to the largest Energy-as-a-Service transaction in U.S. healthcare history and advancing energy-saving infrastructure for clinical environments.</li>
+                <li>Created comprehensive 3D models of existing ductwork and piping layouts in Revit, coordinating with mechanical teams and point cloud data in ReCap to ensure spatial accuracy and support future renovation planning.</li>
+                <li>Drafted detailed reports quantifying energy and monetary savings by integrating metered energy consumption data with utility bills, verifying that facility performance met guaranteed energy efficiency targets.</li>
+              </ul>
             </div>
           </article>
           <article class="exp-item">
-            <span class="exp-date">2023 – 2025</span>
+            <span class="exp-date">Fall 2023 – Spring 2025</span>
             <div class="exp-body">
               <h3>Engineers Without Borders at UPenn</h3>
               <div class="role">Project Team Member</div>
-              <p>Produced AutoCAD construction drawings for an ADA-compliant accessibility ramp, coordinating with professional advisors and local stakeholders to meet safety and accessibility standards for a community center.</p>
+              <ul class="star-list">
+                <li>Produced AutoCAD models of construction plans for an ADA-compliant ramp for a local community center.</li>
+                <li>Collaborated with multidisciplinary engineering teams and professional advisors to align projects with community, safety, and ADA standards, while expanding access for individuals with limited mobility.</li>
+              </ul>
             </div>
           </article>
         </div>
@@ -642,10 +729,10 @@
     <section id="coursework">
       <div class="section-inner">
         <div class="section-header">
-          <div><div class="section-kicker">04 · coursework</div><h2>Coursework</h2></div>
+          <div><h2>Coursework</h2></div>
         </div>
         <div class="coursework-wrap">
-          <article class="course-semester"><h3>Spring 2026 · ETH Zürich</h3><ul class="star-list"><li>Introduction to Energy Systems (151-0244-00L)</li><li>Experimental Methods for Engineers (151-0123-00L)</li><li>Finite Element Analysis (151-0518-00L)</li><li>Biomechatronics (376-0210-00L)</li><li>Visualization, Simulation and Interaction — Virtual Reality I (151-0244-00L)</li></ul></article>
+          <article class="course-semester"><h3>Spring 2026 · ETH Zürich</h3><ul class="star-list"><li>Introduction to Energy Systems (151-0244-00L)</li><li>Experimental Methods for Engineers (151-0123-00L)</li><li>Introduction to Finite Element Analysis (151-0518-00L)</li><li>Biomechatronics (376-0210-00L)</li><li>Visualization, Simulation and Interaction — Virtual Reality I (151-0244-00L)</li></ul></article>
           <article class="course-semester"><h3>Fall 2025</h3><ul class="star-list"><li>Machine Design &amp; Manufacturing (MEAM 2010)</li><li>Fluid Mechanics (MEAM 3020)</li><li>Intro to Mechanical and Mechatronic Systems (MEAM 3200)</li><li>Mechanical Engineering Design Laboratory (MEAM 3470)</li><li>Engineering Ethics (EAS 2030)</li><li>Elementary German I (GRMN 0100)</li></ul></article>
           <article class="course-semester"><h3>Spring 2025</h3><ul class="star-list"><li>Thermodynamics I (MEAM 2030)</li><li>Engineering Mechanics: Dynamics (MEAM 2110)</li><li>Mechanical Engineering Lab I (MEAM 2480)</li><li>Engineering Entrepreneurship (EAS 5450)</li><li>Linear Algebra (MATH 3120)</li></ul></article>
           <article class="course-semester"><h3>Fall 2024</h3><ul class="star-list"><li>Statics and Strength of Materials (MEAM 2100)</li><li>Thermal-Fluids Engineering (MEAM 2020)</li><li>Mechanical Engineering Laboratory I (MEAM 2470)</li><li>Calculus IV (MATH 2410)</li><li>Modern Biotechnology for Engineers (ENGR 4500)</li><li>Pharmaceuticals and Global Health (ANTH 2340)</li></ul></article>
@@ -661,7 +748,6 @@
       <div class="section-inner">
         <div class="contact-grid">
           <div class="contact-panel">
-            <div class="section-kicker">05 · contact</div>
             <h2>Let’s connect</h2>
             <div class="contact-buttons">
               <a href="mailto:czimmer@seas.upenn.edu" class="btn btn-primary">Email Me</a>
@@ -690,6 +776,15 @@
         <div class="modal-actions">
           <button class="close-modal" id="close-modal">Close</button>
         </div>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="image-lightbox" class="lightbox-dialog">
+    <div class="lightbox-inner">
+      <div class="lightbox-media" id="lightbox-media"></div>
+      <div class="lightbox-actions">
+        <button class="close-modal" id="close-lightbox">Close</button>
       </div>
     </div>
   </dialog>
@@ -729,7 +824,7 @@
         title: 'Water Tower Design',
         description: 'Our project team designed and built a gravity-driven water tower that balanced structural stability with fluid performance. The goal was to optimize the tower height and nozzle diameter to maximize both endurance and jet power in a head-to-head competition, where teams used their water streams to push a block along a track. The truss-based tower, featuring 3D-printed joints and cross-bracing, minimized buckling while supporting a raised reservoir that discharged through an optimized 7.62 mm nozzle. Using Python models based on pump data and Torricelli’s law, we predicted the system’s fill and discharge behavior. The final design achieved a flow rate of 0.149 L/s, maintained structural stability under load, and advanced to the semifinal round of the competition.',
         details: ['Designed a truss-based tower with 3D-printed joints and cross-bracing.', 'Optimized tower height and nozzle diameter for endurance and jet power.', 'Used a 7.62 mm nozzle to control discharge behavior.', 'Built Python models using pump data and Torricelli’s law.', 'Achieved a flow rate of 0.149 L/s and advanced to the semifinal round.'],
-        photos: ['images/projects/water-tower/water-tower-01.png', 'images/projects/water-tower/water-tower-02.png', 'images/projects/water-tower/water-tower-03.png']
+        photos: ['images/projects/water-tower/water-tower-01.jpg', 'images/projects/water-tower/water-tower-02.jpg', 'images/projects/water-tower/water-tower-03.jpg']
       },
       bungee: {
         subtitle: 'Dynamics · Experimental Testing · Spring 2024',
@@ -747,6 +842,43 @@
     const details = document.getElementById('modal-details');
     const gallery = document.getElementById('modal-gallery');
     const closeModal = document.getElementById('close-modal');
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    const navLogo = document.querySelector('.nav-logo');
+    const observedSections = document.querySelectorAll('header[id], section[id]');
+    const imageLightbox = document.getElementById('image-lightbox');
+    const lightboxMedia = document.getElementById('lightbox-media');
+    const closeLightbox = document.getElementById('close-lightbox');
+
+    const setActiveSection = (id) => {
+      navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${id}`));
+      navLogo.classList.toggle('active', id === 'about');
+    };
+
+    const updateActiveNav = () => {
+      const offset = 160;
+      let currentId = 'about';
+
+      observedSections.forEach(section => {
+        const sectionTop = section.offsetTop - offset;
+        if (window.scrollY >= sectionTop) currentId = section.id;
+      });
+
+      const nearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 24;
+      if (nearBottom) currentId = 'contact';
+
+      setActiveSection(currentId);
+    };
+
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    window.addEventListener('resize', updateActiveNav);
+    updateActiveNav();
+
+    const openLightbox = (src, isVideo, altText) => {
+      lightboxMedia.innerHTML = isVideo
+        ? `<video src="${src}" controls autoplay playsinline></video>`
+        : `<img src="${src}" alt="${altText}">`;
+      imageLightbox.showModal();
+    };
 
     document.querySelectorAll('.project-open').forEach((button) => {
       button.addEventListener('click', () => {
@@ -756,15 +888,28 @@
         description.textContent = project.description;
         gallery.innerHTML = project.photos.map((src, index) => {
           const isVideo = src.toLowerCase().endsWith('.mp4');
+          const altText = `${project.title} project image ${index + 1}`;
           return `
             <div class="photo-slot">
-              ${isVideo
-                ? `<video src="${src}" controls muted playsinline onerror="this.parentElement.classList.add('placeholder'); this.remove(); this.parentElement.textContent='Add video: ${src}';"></video>`
-                : `<img src="${src}" alt="${project.title} project image ${index + 1}" onerror="this.parentElement.classList.add('placeholder'); this.remove(); this.parentElement.textContent='Add image: ${src}';">`
-              }
+              <button class="media-button" type="button" data-src="${src}" data-type="${isVideo ? 'video' : 'image'}" data-alt="${altText}">
+                ${isVideo
+                  ? `<video src="${src}" muted playsinline onerror="this.closest('.photo-slot').classList.add('placeholder'); this.closest('.media-button').remove(); this.closest('.photo-slot').textContent='Add video: ${src}';"></video>`
+                  : `<img src="${src}" alt="${altText}" onerror="this.closest('.photo-slot').classList.add('placeholder'); this.closest('.media-button').remove(); this.closest('.photo-slot').textContent='Add image: ${src}';">`
+                }
+              </button>
             </div>
           `;
         }).join('');
+
+        gallery.querySelectorAll('.media-button').forEach(mediaButton => {
+          mediaButton.addEventListener('click', () => {
+            openLightbox(
+              mediaButton.dataset.src,
+              mediaButton.dataset.type === 'video',
+              mediaButton.dataset.alt
+            );
+          });
+        });
         modal.showModal();
       });
     });
@@ -772,6 +917,15 @@
     closeModal.addEventListener('click', () => modal.close());
     modal.addEventListener('click', (event) => {
       if (event.target === modal) modal.close();
+    });
+
+    closeLightbox.addEventListener('click', () => imageLightbox.close());
+    imageLightbox.addEventListener('click', (event) => {
+      if (event.target === imageLightbox) imageLightbox.close();
+    });
+
+    imageLightbox.addEventListener('close', () => {
+      lightboxMedia.innerHTML = '';
     });
   </script>
 </body>
