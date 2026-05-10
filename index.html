@@ -456,7 +456,7 @@
       color: var(--muted);
       font-size: 0.78rem;
     }
-    .photo-slot img { width: 100%; height: 100%; min-height: 145px; object-fit: cover; display: block; }
+    .photo-slot img, .photo-slot video { width: 100%; height: 100%; min-height: 145px; object-fit: cover; display: block; }
     .photo-slot.placeholder { display: grid; place-items: center; text-align: center; padding: 1rem; border-style: dashed; }
     .modal-actions { display: flex; justify-content: space-between; gap: 1rem; align-items: center; padding-top: 0.4rem; }
     .close-modal { border: none; background: var(--navy); color: white; border-radius: 999px; padding: 0.75rem 1rem; cursor: pointer; font-family: 'Space Mono', monospace; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; }
@@ -693,7 +693,7 @@
         title: 'Gamma-Type Stirling Engine',
         description: 'During the Fall 2025 semester, I designed and manufactured a Stirling engine inspired by a carnival theme, with the rotating assembly modeled after a Ferris wheel. I created a full 3D assembly of the engine in SolidWorks, integrating both mechanical function and aesthetic design. I machined all major components, excluding fasteners and bearings, in UPenn’s precision manufacturing lab using the lathe, mill, and CNC programs in Mastercam and Prototrak. The two-piece bedplate silhouette was laser-cut by OshCut, and I laser-cut colorful acrylic inserts for the Ferris wheel and carriages to enhance the visual design. When heated with a blowtorch applied to the air chamber, the engine operated smoothly, with the flywheel reaching speeds above 1200 RPM on test day.',
         details: ['Created a complete SolidWorks assembly integrating function and carnival-inspired visual design.', 'Machined major components using lathe, mill, CNC, Mastercam, and Prototrak workflows.', 'Used OshCut laser-cutting for the two-piece bedplate silhouette.', 'Laser-cut colorful acrylic inserts for the Ferris wheel and carriages.', 'Achieved smooth engine operation above 1200 RPM during testing.'],
-        photos: ['images/projects/stirling/stirling-engine-actual-01.jpg', 'images/projects/stirling/stirling-engine-actual-02.jpg', 'images/projects/stirling/stirling-engine-actual-03.jpg', 'images/projects/stirling/stirling-engine-process-01.jpg', 'images/projects/stirling/stirling-engine-process-02.jpg', 'images/projects/stirling/stirling-engine-process-03.jpg', 'images/projects/stirling/stirling-engine-render-01.jpg', 'images/projects/stirling/stirling-engine-render-02.jpg', 'images/projects/stirling/stirling-engine-render-03.jpg']
+        photos: ['images/projects/stirling/stirling-engine-actual-01.jpg', 'images/projects/stirling/stirling-engine-actual-02.jpg', 'images/projects/stirling/stirling-engine-actual-03.jpg', 'images/projects/stirling/stirling-engine-process-01-mastercam.jpg', 'images/projects/stirling/stirling-engine-process-02-wheelcnc.jpg', 'images/projects/stirling/stirling-engine-process-03-testday.jpg', 'images/projects/stirling/stirling-engine-render-01.jpg', 'images/projects/stirling/stirling-engine-render-02.jpg', 'images/projects/stirling/stirling-engine-render-03.jpg', 'images/projects/stirling/stirling-engine-process-04-connectingtab.mp4', 'images/projects/stirling/stirling-engine-process-05-weightcnc.mp4', 'images/projects/stirling/stirling-engine-process-06-runvideotest.mp4']
       },
       supercap: {
         subtitle: 'Electrochemical Energy Systems · ETH Zürich · Spring 2026',
@@ -747,11 +747,17 @@
         title.textContent = project.title;
         description.textContent = project.description;
         details.innerHTML = project.details.map(item => `<li>${item}</li>`).join('');
-        gallery.innerHTML = project.photos.map((src, index) => `
-          <div class="photo-slot">
-            <img src="${src}" alt="${project.title} project image ${index + 1}" onerror="this.parentElement.classList.add('placeholder'); this.remove(); this.parentElement.textContent='Add image: ${src}';">
-          </div>
-        `).join('');
+        gallery.innerHTML = project.photos.map((src, index) => {
+          const isVideo = src.toLowerCase().endsWith('.mp4');
+          return `
+            <div class="photo-slot">
+              ${isVideo
+                ? `<video src="${src}" controls muted playsinline onerror="this.parentElement.classList.add('placeholder'); this.remove(); this.parentElement.textContent='Add video: ${src}';"></video>`
+                : `<img src="${src}" alt="${project.title} project image ${index + 1}" onerror="this.parentElement.classList.add('placeholder'); this.remove(); this.parentElement.textContent='Add image: ${src}';">`
+              }
+            </div>
+          `;
+        }).join('');
         modal.showModal();
       });
     });
