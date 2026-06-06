@@ -43,7 +43,7 @@ export default function Home() {
             fontWeight: 400,
           }}>
           Caroline<br />
-          <span style={{ color: "var(--text-muted)", fontStyle: "italic" }}>Zimmer.</span>
+          <span style={{ color: "var(--text-muted)"}}>Zimmer.</span>
         </motion.h1>
 
         <motion.p
@@ -56,9 +56,10 @@ export default function Home() {
             lineHeight: 1.75,
             marginBottom: "3rem",
           }}>
-          I build things that move, sense, and convert energy.
-          Concentrating in dynamics, controls, and robotics.
-          Currently at ETH Zürich.
+          I’m a junior at the University of Pennsylvania studying Mechanical Engineering
+           and Applied Mechanics, with minors in Math and Engineering Entrepreneurship. 
+           I studied abroad at ETH Zürich in Spring 2026, focusing on manufacturing and robotics. 
+           I’m interested in sustainable hardware solutions.
         </motion.p>
 
         <motion.div
