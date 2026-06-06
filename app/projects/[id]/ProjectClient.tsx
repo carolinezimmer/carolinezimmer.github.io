@@ -40,10 +40,18 @@ export function ProjectClient({ project, next, prev }: { project: Project; next:
           </div>
         </motion.div>
 
-        {project.images.length === 0 && (
+        {project.images.length === 0 ? (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15 }}
             style={{ width: "100%", aspectRatio: "16/9", background: "var(--bg-subtle)", border: "1px solid var(--border)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "3rem" }}>
             <p style={{ fontFamily: "'Roboto Mono', monospace", fontSize: "0.65rem", color: "var(--text-faint)", letterSpacing: "0.1em" }}>PHOTOS COMING SOON</p>
+          </motion.div>
+        ) : (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15 }}
+            style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1px", background: "var(--border)", border: "1px solid var(--border)", marginBottom: "3rem" }}>
+            {project.images.map((src, i) => (
+              <img key={i} src={src} alt={`${project.title} ${i + 1}`}
+                style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", display: "block" }} />
+            ))}
           </motion.div>
         )}
 

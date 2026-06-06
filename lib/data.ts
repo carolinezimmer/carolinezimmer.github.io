@@ -15,10 +15,6 @@ export const projects = [
       "/images/projects/stirling/stirling-engine-render-01.jpg",
       "/images/projects/stirling/stirling-engine-render-02.jpg",
       "/images/projects/stirling/stirling-engine-render-03.jpg",
-      "/images/projects/stirling/stirling-engine-render-01.jpg",
-      "/images/projects/stirling/stirling-engine-render-02.jpg",
-      "/images/projects/stirling/stirling-engine-render-03.jpg",
-
     ],
   },
   {
