@@ -117,48 +117,6 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Stats row */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.55 }}
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "0.75rem",
-            marginTop: "5rem",
-            maxWidth: "540px",
-          }}
-        >
-          {[
-            { label: "GPA", value: "3.70" },
-            { label: "Graduation", value: "2027" },
-            { label: "Currently", value: "Zürich" },
-          ].map((s) => (
-            <div key={s.label} style={{
-              background: "var(--bg-card)",
-              borderRadius: "var(--radius-card)",
-              border: "1px solid var(--border)",
-              padding: "1.4rem 1.5rem",
-              display: "flex",
-              flexDirection: "column",
-              gap: "0.4rem",
-            }}>
-              <span style={{
-                fontFamily: "’Roboto Mono’, monospace",
-                fontSize: "0.62rem",
-                letterSpacing: "0.15em",
-                color: "var(--text-faint)",
-                textTransform: "uppercase",
-              }}>{s.label}</span>
-              <span style={{
-                fontFamily: "’Roboto Mono’, monospace",
-                fontSize: "1.6rem",
-                color: "var(--text)",
-                lineHeight: 1,
-              }}>{s.value}</span>
-            </div>
-          ))}
-        </motion.div>
       </section>
 
       {/* ── SELECTED PROJECTS ── */}
