@@ -111,7 +111,6 @@ export default function Home() {
                 objectFit: "cover",
                 objectPosition: "center top",
                 display: "block",
-                filter: "grayscale(100%)",
                 WebkitMaskImage: "linear-gradient(to right, transparent, black 25%), linear-gradient(to left, transparent, black 25%), linear-gradient(to bottom, transparent, black 25%), linear-gradient(to top, transparent, black 25%)",
                 WebkitMaskComposite: "destination-in, destination-in, destination-in",
                 maskImage: "linear-gradient(to right, transparent, black 25%), linear-gradient(to left, transparent, black 25%), linear-gradient(to bottom, transparent, black 25%), linear-gradient(to top, transparent, black 25%)",
