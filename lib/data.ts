@@ -76,6 +76,7 @@ export const projects = [
       "/images/projects/water-tower/water-tower-01.png",
       "/images/projects/water-tower/water-tower-02.png",
       "/images/projects/water-tower/water-tower-03.png",
+      "/images/projects/water-tower/water-tower-04.png",
     ],
   },
   {
