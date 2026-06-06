@@ -111,7 +111,10 @@ export default function Home() {
                 objectFit: "cover",
                 objectPosition: "center top",
                 filter: "grayscale(100%)",
-                border: "1px solid var(--border)",
+                WebkitMaskImage: "linear-gradient(to right, transparent, black 18%), linear-gradient(to bottom, black 60%, transparent)",
+                WebkitMaskComposite: "destination-in",
+                maskImage: "linear-gradient(to right, transparent, black 18%), linear-gradient(to bottom, black 60%, transparent)",
+                maskComposite: "intersect",
               }}
             />
           </motion.div>
