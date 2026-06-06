@@ -93,17 +93,6 @@ export const projects = [
       "/images/projects/bungee/bungee-02.jpg",
     ],
   },
-  {
-    id: "bottle-rocket",
-    title: "Bottle Rocket & Propulsion Simulation",
-    category: "Propulsion & Simulation",
-    semester: "Spring 2025",
-    shortDesc: "Built and iterated on a butane-propelled water rocket, then developed a calibrated propulsion simulation in Python to predict flight trajectories.",
-    longDesc: "Designed and built a butane-propelled water bottle rocket with modifications informed by aerodynamic intuition — nose cone geometry, fin sizing, water fill fraction. The interesting part was the simulation: built a propulsion model in Python that integrated thrust curves derived from pressure measurements with a 6-DOF flight dynamics model, then iterated the model parameters to match empirical flight data from instrumented launches. Once the simulation was calibrated, it was actually predictive — adjusting launch angle or water fraction in the model gave accurate trajectory estimates before committing to a physical test. That feedback loop between experiment and simulation is the part that mattered.",
-    tags: ["Python", "SolidWorks", "Aerodynamics", "Propulsion", "Simulation"],
-    color: "#6b3fa0",
-    images: [],
-  },
 ];
 
 export const experience = [

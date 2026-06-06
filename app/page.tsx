@@ -16,81 +16,106 @@ export default function Home() {
         maxWidth: "960px",
         margin: "0 auto",
       }}>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          style={{
-            fontFamily: "'Roboto Mono', monospace",
-            fontSize: "0.72rem",
-            letterSpacing: "0.15em",
-            color: "var(--accent)",
-            marginBottom: "1.5rem",
-            textTransform: "uppercase",
-          }}>
-          Mechanical Engineer · Penn SEAS · Class of 2027
-        </motion.p>
+        <div style={{ display: "flex", alignItems: "center", gap: "4rem" }}>
+          {/* Text content */}
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              style={{
+                fontFamily: "’Roboto Mono’, monospace",
+                fontSize: "0.72rem",
+                letterSpacing: "0.15em",
+                color: "var(--accent)",
+                marginBottom: "1.5rem",
+                textTransform: "uppercase",
+              }}>
+              Mechanical Engineer · Penn SEAS · Class of 2027
+            </motion.p>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          style={{
-            fontFamily: "'Roboto Mono', monospace",
-            fontSize: "clamp(3.5rem, 8vw, 7rem)",
-            lineHeight: 1.0,
-            letterSpacing: "-0.02em",
-            color: "var(--text)",
-            marginBottom: "2rem",
-            fontWeight: 400,
-          }}>
-          Caroline<br />
-          <span style={{ color: "var(--text-muted)"}}>Zimmer.</span>
-        </motion.h1>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              style={{
+                fontFamily: "’Roboto Mono’, monospace",
+                fontSize: "clamp(3.5rem, 8vw, 7rem)",
+                lineHeight: 1.0,
+                letterSpacing: "-0.02em",
+                color: "var(--text)",
+                marginBottom: "2rem",
+                fontWeight: 400,
+              }}>
+              Caroline<br />
+              <span style={{ color: "var(--text-muted)"}}>Zimmer.</span>
+            </motion.h1>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          style={{
-            fontSize: "1.1rem",
-            color: "var(--text-muted)",
-            maxWidth: "480px",
-            lineHeight: 1.75,
-            marginBottom: "3rem",
-          }}>
-          I’m a junior at the University of Pennsylvania studying Mechanical Engineering and Applied Mechanics, with minors in Math and Engineering Entrepreneurship. In Spring 2026, I’m studying abroad at ETH Zürich, a world-renowned engineering institution where I’m broadening my technical perspective in an international environment. I’m focusing my coursework on manufacturing and robotics, and I’m especially interested in sustainable hardware solutions that combine strong mechanical design with practical impact.
-        </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              style={{
+                fontSize: "1.1rem",
+                color: "var(--text-muted)",
+                maxWidth: "480px",
+                lineHeight: 1.75,
+                marginBottom: "3rem",
+              }}>
+              I’m a junior at the University of Pennsylvania studying Mechanical Engineering and Applied Mechanics, with minors in Math and Engineering Entrepreneurship. In Spring 2026, I’m studying abroad at ETH Zürich, a world-renowned engineering institution where I’m broadening my technical perspective in an international environment. I’m focusing my coursework on manufacturing and robotics, and I’m especially interested in sustainable hardware solutions that combine strong mechanical design with practical impact.
+            </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}
-        >
-          <Link href="/projects" style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "0.4rem",
-            padding: "0.7rem 1.5rem",
-            background: "var(--accent)",
-            color: "#ffffff",
-            borderRadius: "980px",
-            fontSize: "0.9rem",
-            fontWeight: 500,
-            transition: "opacity 0.2s",
-          }}>
-            View Projects
-          </Link>
-          <a href="mailto:czimmer@seas.upenn.edu" style={{
-            display: "inline-flex",
-            alignItems: "center",
-            padding: "0.7rem 1.5rem",
-            border: "1px solid var(--border-strong)",
-            borderRadius: "980px",
-            color: "var(--text-muted)",
-            fontSize: "0.9rem",
-            transition: "border-color 0.2s, color 0.2s",
-          }}>
-            Get in touch
-          </a>
-        </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}
+            >
+              <Link href="/projects" style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.4rem",
+                padding: "0.7rem 1.5rem",
+                background: "var(--accent)",
+                color: "#ffffff",
+                borderRadius: "980px",
+                fontSize: "0.9rem",
+                fontWeight: 500,
+                transition: "opacity 0.2s",
+              }}>
+                View Projects
+              </Link>
+              <a href="mailto:czimmer@seas.upenn.edu" style={{
+                display: "inline-flex",
+                alignItems: "center",
+                padding: "0.7rem 1.5rem",
+                border: "1px solid var(--border-strong)",
+                borderRadius: "980px",
+                color: "var(--text-muted)",
+                fontSize: "0.9rem",
+                transition: "border-color 0.2s, color 0.2s",
+              }}>
+                Get in touch
+              </a>
+            </motion.div>
+          </div>
+
+          {/* Headshot */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            style={{ flexShrink: 0 }}
+          >
+            <img
+              src="/images/caroline-zimmer-headshot.jpg"
+              alt="Caroline Zimmer"
+              style={{
+                width: "260px",
+                height: "320px",
+                objectFit: "cover",
+                objectPosition: "center top",
+                filter: "grayscale(100%)",
+                border: "1px solid var(--border)",
+              }}
+            />
+          </motion.div>
+        </div>
 
         {/* Stats row */}
         <motion.div
@@ -119,14 +144,14 @@ export default function Home() {
               gap: "0.4rem",
             }}>
               <span style={{
-                fontFamily: "'Roboto Mono', monospace",
+                fontFamily: "’Roboto Mono’, monospace",
                 fontSize: "0.62rem",
                 letterSpacing: "0.15em",
                 color: "var(--text-faint)",
                 textTransform: "uppercase",
               }}>{s.label}</span>
               <span style={{
-                fontFamily: "'Roboto Mono', monospace",
+                fontFamily: "’Roboto Mono’, monospace",
                 fontSize: "1.6rem",
                 color: "var(--text)",
                 lineHeight: 1,
