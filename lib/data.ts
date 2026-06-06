@@ -1,14 +1,25 @@
 export const projects = [
   {
     id: "stirling-engine",
-    title: "Gamma-Type Stirling Engine",
-    category: "Mechanical Design",
+    title: "Stirling Engine",
+    category: "Machine Design & Manufacturing",
     semester: "Fall 2025",
-    shortDesc: "Designed and machined a fully functional Stirling engine from raw stock, applying GD&T and tolerance stack-up across every critical interface.",
-    longDesc: "Starting from a blank sheet in SolidWorks, I designed every component of a Gamma-type Stirling engine — displacer, power piston, crankshaft, flywheel, and hot/cold caps — then machined the full assembly from raw aluminum and brass stock. The project demanded real precision: tolerance stack-up analysis at every mating interface to guarantee the engine would actually run. Programmed CNC toolpaths in Mastercam and executed high-precision operations including OD/ID turning, face milling, threading, and reaming. GD&T callouts on the drawings weren't decorative — they drove fitment decisions that determined whether the engine sealed and cycled correctly.",
+    shortDesc: "Designed, modeled, and machined a fully functional Stirling engine.",
+    longDesc: "During the Fall 2025 semester, I designed and manufactured a Stirling engine inspired by a carnival theme, with the rotating assembly modeled after a Ferris wheel. I created a full 3D assembly of the engine in SolidWorks, integrating both mechanical function and aesthetic design. I machined all major components, excluding fasteners and bearings, in UPenn’s precision manufacturing lab using the lathe, mill, and CNC programs in Mastercam and Prototrak. The two-piece bedplate silhouette was laser-cut by OshCut, and I laser-cut colorful acrylic inserts for the Ferris wheel and carriages to enhance the visual design. When heated with a blowtorch applied to the air chamber, the engine operates smoothly, with the flywheel reaching speeds above 1200 RPM on test day.",
     tags: ["SolidWorks", "Mastercam", "CNC", "GD&T", "Tolerance Analysis"],
     color: "#c84b2f",
-    images: [],
+    images: [
+      "/images/projects/stirling/stirling-engine-actual-01.jpg",
+      "/images/projects/stirling/stirling-engine-actual-02.jpg",
+      "/images/projects/stirling/stirling-engine-actual-03.jpg",
+      "/images/projects/stirling/stirling-engine-render-01.jpg",
+      "/images/projects/stirling/stirling-engine-render-02.jpg",
+      "/images/projects/stirling/stirling-engine-render-03.jpg",
+      "/images/projects/stirling/stirling-engine-render-01.jpg",
+      "/images/projects/stirling/stirling-engine-render-02.jpg",
+      "/images/projects/stirling/stirling-engine-render-03.jpg",
+
+    ],
   },
   {
     id: "bldc-balancing",
