@@ -100,7 +100,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            style={{ flexShrink: 0, width: "260px", height: "320px", borderRadius: "50%", overflow: "hidden" }}
+            style={{ flexShrink: 0, width: "260px", height: "320px", borderRadius: "40%", overflow: "hidden" }}
           >
             <img
               src="/images/caroline-zimmer-headshot.jpg"
