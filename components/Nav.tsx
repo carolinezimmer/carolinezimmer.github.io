@@ -14,14 +14,8 @@ export function Nav() {
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  useEffect(() => { setMounted(true); }, []);
 
   return (
     <nav
@@ -29,65 +23,71 @@ export function Nav() {
         position: "fixed",
         top: 0, left: 0, right: 0,
         zIndex: 100,
+        height: "52px",
+        background: "var(--nav-bg)",
+        borderBottom: "1px solid var(--border)",
+        backdropFilter: "saturate(180%) blur(20px)",
+        WebkitBackdropFilter: "saturate(180%) blur(20px)",
+      }}
+    >
+      <div style={{
+        maxWidth: "1100px",
+        margin: "0 auto",
+        height: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: "0 2.5rem",
-        height: "60px",
-        background: scrolled ? "var(--bg)" : "transparent",
-        borderBottom: scrolled ? "1px solid var(--border)" : "1px solid transparent",
-        transition: "background 0.3s, border-color 0.3s",
-        backdropFilter: scrolled ? "blur(12px)" : "none",
-      }}
-    >
-      <Link
-        href="/"
-        style={{
-          fontFamily: "'Geist Mono', monospace",
-          fontSize: "0.75rem",
-          letterSpacing: "0.1em",
-          color: "var(--text)",
-          fontWeight: 500,
-        }}
-      >
-        CZ
-      </Link>
+        padding: "0 2rem",
+      }}>
+        <Link
+          href="/"
+          style={{
+            fontFamily: "'Roboto Mono', monospace",
+            fontSize: "0.78rem",
+            letterSpacing: "0.12em",
+            color: "var(--text)",
+            fontWeight: 500,
+          }}
+        >
+          CZ
+        </Link>
 
-      <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
-        {links.map((l) => (
-          <Link
-            key={l.href}
-            href={l.href}
-            style={{
-              fontFamily: "'Geist Mono', monospace",
-              fontSize: "0.72rem",
-              letterSpacing: "0.08em",
-              color: pathname === l.href ? "var(--accent)" : "var(--text-muted)",
-              transition: "color 0.2s",
-            }}
-          >
-            {l.label}
-          </Link>
-        ))}
+        <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              style={{
+                fontSize: "0.85rem",
+                color: pathname === l.href ? "var(--text)" : "var(--text-muted)",
+                fontWeight: pathname === l.href ? 500 : 400,
+                transition: "color 0.2s",
+              }}
+            >
+              {l.label}
+            </Link>
+          ))}
+        </div>
 
-        {mounted && (
+        {mounted ? (
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             style={{
-              background: "none",
-              border: "1px solid var(--border)",
+              background: "var(--bg-card)",
+              border: "1px solid var(--border-strong)",
+              borderRadius: "980px",
               color: "var(--text-muted)",
               cursor: "pointer",
-              padding: "0.3rem 0.6rem",
-              fontFamily: "'Geist Mono', monospace",
-              fontSize: "0.65rem",
-              letterSpacing: "0.08em",
-              transition: "border-color 0.2s, color 0.2s",
+              padding: "0.3rem 0.85rem",
+              fontSize: "0.75rem",
+              transition: "background 0.2s, color 0.2s",
             }}
             aria-label="Toggle theme"
           >
-            {theme === "dark" ? "light" : "dark"}
+            {theme === "dark" ? "Light" : "Dark"}
           </button>
+        ) : (
+          <div style={{ width: "60px" }} />
         )}
       </div>
     </nav>

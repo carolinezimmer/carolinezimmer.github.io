@@ -15,7 +15,7 @@ export default function Projects() {
           style={{ marginBottom: "4rem", paddingBottom: "2rem", borderBottom: "1px solid var(--border)" }}
         >
           <p style={{
-            fontFamily: "'Geist Mono', monospace",
+            fontFamily: "'Roboto Mono', monospace",
             fontSize: "0.68rem",
             letterSpacing: "0.15em",
             color: "var(--text-faint)",
@@ -23,7 +23,7 @@ export default function Projects() {
             textTransform: "uppercase",
           }}>Work</p>
           <h1 style={{
-            fontFamily: "'Instrument Serif', serif",
+            fontFamily: "'Roboto Mono', monospace",
             fontSize: "clamp(2.5rem, 5vw, 4rem)",
             fontWeight: 400,
             color: "var(--text)",
@@ -31,7 +31,7 @@ export default function Projects() {
           }}>Projects</h1>
         </motion.div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "1px", background: "var(--border)", border: "1px solid var(--border)" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
           {projects.map((p, i) => (
             <Link key={p.id} href={`/projects/${p.id}`}>
               <motion.div
@@ -39,7 +39,9 @@ export default function Projects() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.07, duration: 0.4, ease: "easeOut" }}
                 style={{
-                  background: "var(--bg)",
+                  background: "var(--bg-card)",
+                  borderRadius: "var(--radius-card)",
+                  border: "1px solid var(--border)",
                   padding: "2.2rem 2rem",
                   display: "grid",
                   gridTemplateColumns: "1fr auto",
@@ -48,26 +50,27 @@ export default function Projects() {
                   cursor: "pointer",
                   transition: "background 0.15s",
                 }}
-                whileHover={{ backgroundColor: "var(--bg-hover)" } as never}
+                onMouseEnter={e => (e.currentTarget.style.background = "var(--bg-hover)")}
+                onMouseLeave={e => (e.currentTarget.style.background = "var(--bg-card)")}
               >
                 <div>
                   <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "0.6rem" }}>
                     <span style={{
-                      fontFamily: "'Geist Mono', monospace",
+                      fontFamily: "'Roboto Mono', monospace",
                       fontSize: "0.62rem",
                       letterSpacing: "0.12em",
                       color: "var(--accent)",
                       textTransform: "uppercase",
                     }}>{p.category}</span>
                     <span style={{
-                      fontFamily: "'Geist Mono', monospace",
+                      fontFamily: "'Roboto Mono', monospace",
                       fontSize: "0.62rem",
                       color: "var(--text-faint)",
                     }}>{p.semester}</span>
                   </div>
 
                   <h2 style={{
-                    fontFamily: "'Instrument Serif', serif",
+                    fontFamily: "'Roboto Mono', monospace",
                     fontSize: "1.5rem",
                     fontWeight: 400,
                     color: "var(--text)",
@@ -86,11 +89,12 @@ export default function Projects() {
                   <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem" }}>
                     {p.tags.map(t => (
                       <span key={t} style={{
-                        fontFamily: "'Geist Mono', monospace",
+                        fontFamily: "'Roboto Mono', monospace",
                         fontSize: "0.6rem",
                         letterSpacing: "0.06em",
-                        padding: "0.2rem 0.6rem",
-                        border: "1px solid var(--border)",
+                        padding: "0.2rem 0.65rem",
+                        border: "1px solid var(--border-strong)",
+                        borderRadius: "980px",
                         color: "var(--text-faint)",
                       }}>{t}</span>
                     ))}

@@ -16,7 +16,7 @@ export default function Experience() {
         >
           <div>
             <p style={{
-              fontFamily: "'Geist Mono', monospace",
+              fontFamily: "'Roboto Mono', monospace",
               fontSize: "0.68rem",
               letterSpacing: "0.15em",
               color: "var(--text-faint)",
@@ -24,7 +24,7 @@ export default function Experience() {
               textTransform: "uppercase",
             }}>Background</p>
             <h1 style={{
-              fontFamily: "'Instrument Serif', serif",
+              fontFamily: "'Roboto Mono', monospace",
               fontSize: "clamp(2.5rem, 5vw, 4rem)",
               fontWeight: 400,
               color: "var(--text)",
@@ -40,7 +40,7 @@ export default function Experience() {
               gap: "0.5rem",
               padding: "0.65rem 1.2rem",
               border: "1px solid var(--border)",
-              fontFamily: "'Geist Mono', monospace",
+              fontFamily: "'Roboto Mono', monospace",
               fontSize: "0.65rem",
               letterSpacing: "0.1em",
               color: "var(--text-muted)",
@@ -63,7 +63,7 @@ export default function Experience() {
           style={{ marginBottom: "4rem" }}
         >
           <h2 style={{
-            fontFamily: "'Geist Mono', monospace",
+            fontFamily: "'Roboto Mono', monospace",
             fontSize: "0.68rem",
             letterSpacing: "0.15em",
             color: "var(--text-faint)",
@@ -71,7 +71,7 @@ export default function Experience() {
             marginBottom: "1.5rem",
           }}>Education</h2>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "1px", background: "var(--border)", border: "1px solid var(--border)" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
             {[
               {
                 school: "University of Pennsylvania",
@@ -87,7 +87,9 @@ export default function Experience() {
               },
             ].map((e, i) => (
               <div key={i} style={{
-                background: "var(--bg)",
+                background: "var(--bg-card)",
+                borderRadius: "var(--radius-card)",
+                border: "1px solid var(--border)",
                 padding: "1.8rem 2rem",
                 display: "grid",
                 gridTemplateColumns: "1fr 120px",
@@ -96,14 +98,14 @@ export default function Experience() {
               }}>
                 <div>
                   <h3 style={{
-                    fontFamily: "'Instrument Serif', serif",
+                    fontFamily: "'Roboto Mono', monospace",
                     fontSize: "1.2rem",
                     fontWeight: 400,
                     color: "var(--text)",
                     marginBottom: "0.2rem",
                   }}>{e.school}</h3>
                   <p style={{
-                    fontFamily: "'Geist Mono', monospace",
+                    fontFamily: "'Roboto Mono', monospace",
                     fontSize: "0.65rem",
                     letterSpacing: "0.08em",
                     color: "var(--accent)",
@@ -113,7 +115,7 @@ export default function Experience() {
                   <p style={{ fontSize: "0.85rem", color: "var(--text-muted)", lineHeight: 1.6 }}>{e.detail}</p>
                 </div>
                 <span style={{
-                  fontFamily: "'Geist Mono', monospace",
+                  fontFamily: "'Roboto Mono', monospace",
                   fontSize: "0.65rem",
                   color: "var(--text-faint)",
                   textAlign: "right",
@@ -132,7 +134,7 @@ export default function Experience() {
           style={{ marginBottom: "4rem" }}
         >
           <h2 style={{
-            fontFamily: "'Geist Mono', monospace",
+            fontFamily: "'Roboto Mono', monospace",
             fontSize: "0.68rem",
             letterSpacing: "0.15em",
             color: "var(--text-faint)",
@@ -140,7 +142,7 @@ export default function Experience() {
             marginBottom: "1.5rem",
           }}>Work & Research</h2>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "1px", background: "var(--border)", border: "1px solid var(--border)" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
             {experience.map((e, i) => (
               <motion.div
                 key={i}
@@ -148,7 +150,9 @@ export default function Experience() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 + i * 0.07 }}
                 style={{
-                  background: "var(--bg)",
+                  background: "var(--bg-card)",
+                  borderRadius: "var(--radius-card)",
+                  border: "1px solid var(--border)",
                   padding: "2rem",
                   display: "grid",
                   gridTemplateColumns: "1fr 140px",
@@ -158,14 +162,14 @@ export default function Experience() {
               >
                 <div>
                   <h3 style={{
-                    fontFamily: "'Instrument Serif', serif",
+                    fontFamily: "'Roboto Mono', monospace",
                     fontSize: "1.25rem",
                     fontWeight: 400,
                     color: "var(--text)",
                     marginBottom: "0.2rem",
                   }}>{e.company}</h3>
                   <p style={{
-                    fontFamily: "'Geist Mono', monospace",
+                    fontFamily: "'Roboto Mono', monospace",
                     fontSize: "0.62rem",
                     letterSpacing: "0.08em",
                     color: "var(--accent)",
@@ -180,11 +184,12 @@ export default function Experience() {
                   <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem", marginTop: "1rem" }}>
                     {e.tags.map(t => (
                       <span key={t} style={{
-                        fontFamily: "'Geist Mono', monospace",
+                        fontFamily: "'Roboto Mono', monospace",
                         fontSize: "0.58rem",
                         letterSpacing: "0.06em",
-                        padding: "0.2rem 0.55rem",
-                        border: "1px solid var(--border)",
+                        padding: "0.2rem 0.6rem",
+                        border: "1px solid var(--border-strong)",
+                        borderRadius: "980px",
                         color: "var(--text-faint)",
                       }}>{t}</span>
                     ))}
@@ -192,14 +197,14 @@ export default function Experience() {
                 </div>
                 <div style={{ textAlign: "right" }}>
                   <span style={{
-                    fontFamily: "'Geist Mono', monospace",
+                    fontFamily: "'Roboto Mono', monospace",
                     fontSize: "0.62rem",
                     color: "var(--text-faint)",
                     display: "block",
                     marginBottom: "0.3rem",
                   }}>{e.period}</span>
                   <span style={{
-                    fontFamily: "'Geist Mono', monospace",
+                    fontFamily: "'Roboto Mono', monospace",
                     fontSize: "0.58rem",
                     color: "var(--text-faint)",
                   }}>{e.location}</span>
@@ -216,7 +221,7 @@ export default function Experience() {
           transition={{ delay: 0.28, duration: 0.5 }}
         >
           <h2 style={{
-            fontFamily: "'Geist Mono', monospace",
+            fontFamily: "'Roboto Mono', monospace",
             fontSize: "0.68rem",
             letterSpacing: "0.15em",
             color: "var(--text-faint)",
@@ -227,14 +232,12 @@ export default function Experience() {
           <div style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
-            gap: "1px",
-            background: "var(--border)",
-            border: "1px solid var(--border)",
+            gap: "0.75rem",
           }}>
             {Object.entries(skills).map(([category, items]) => (
-              <div key={category} style={{ background: "var(--bg)", padding: "1.5rem" }}>
+              <div key={category} style={{ background: "var(--bg-card)", borderRadius: "var(--radius-card)", border: "1px solid var(--border)", padding: "1.5rem" }}>
                 <p style={{
-                  fontFamily: "'Geist Mono', monospace",
+                  fontFamily: "'Roboto Mono', monospace",
                   fontSize: "0.62rem",
                   letterSpacing: "0.12em",
                   color: "var(--accent)",

@@ -13,28 +13,29 @@ export default function Home() {
         flexDirection: "column",
         justifyContent: "center",
         padding: "8rem 2.5rem 4rem",
-        maxWidth: "900px",
+        maxWidth: "960px",
         margin: "0 auto",
       }}>
         <motion.p
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           style={{
-            fontFamily: "'Geist Mono', monospace",
+            fontFamily: "'Roboto Mono', monospace",
             fontSize: "0.72rem",
             letterSpacing: "0.15em",
             color: "var(--accent)",
             marginBottom: "1.5rem",
+            textTransform: "uppercase",
           }}>
-          MECHANICAL ENGINEER · PENN SEAS · CLASS OF 2027
+          Mechanical Engineer · Penn SEAS · Class of 2027
         </motion.p>
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           style={{
-            fontFamily: "'Instrument Serif', serif",
-            fontSize: "clamp(3rem, 7vw, 6.5rem)",
+            fontFamily: "'Roboto Mono', monospace",
+            fontSize: "clamp(3.5rem, 8vw, 7rem)",
             lineHeight: 1.0,
             letterSpacing: "-0.02em",
             color: "var(--text)",
@@ -49,7 +50,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           style={{
-            fontSize: "1.05rem",
+            fontSize: "1.1rem",
             color: "var(--text-muted)",
             maxWidth: "480px",
             lineHeight: 1.75,
@@ -63,34 +64,33 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}
+          style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}
         >
           <Link href="/projects" style={{
             display: "inline-flex",
             alignItems: "center",
-            gap: "0.5rem",
-            padding: "0.75rem 1.5rem",
-            background: "var(--text)",
-            color: "var(--bg)",
-            fontFamily: "'Geist Mono', monospace",
-            fontSize: "0.72rem",
-            letterSpacing: "0.1em",
+            gap: "0.4rem",
+            padding: "0.7rem 1.5rem",
+            background: "var(--accent)",
+            color: "#ffffff",
+            borderRadius: "980px",
+            fontSize: "0.9rem",
+            fontWeight: 500,
             transition: "opacity 0.2s",
           }}>
-            VIEW PROJECTS →
+            View Projects
           </Link>
           <a href="mailto:czimmer@seas.upenn.edu" style={{
             display: "inline-flex",
             alignItems: "center",
-            padding: "0.75rem 1.5rem",
-            border: "1px solid var(--border)",
+            padding: "0.7rem 1.5rem",
+            border: "1px solid var(--border-strong)",
+            borderRadius: "980px",
             color: "var(--text-muted)",
-            fontFamily: "'Geist Mono', monospace",
-            fontSize: "0.72rem",
-            letterSpacing: "0.1em",
+            fontSize: "0.9rem",
             transition: "border-color 0.2s, color 0.2s",
           }}>
-            GET IN TOUCH
+            Get in touch
           </a>
         </motion.div>
 
@@ -101,11 +101,9 @@ export default function Home() {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "1px",
-            background: "var(--border)",
-            border: "1px solid var(--border)",
+            gap: "0.75rem",
             marginTop: "5rem",
-            maxWidth: "560px",
+            maxWidth: "540px",
           }}
         >
           {[
@@ -114,21 +112,23 @@ export default function Home() {
             { label: "Currently", value: "Zürich" },
           ].map((s) => (
             <div key={s.label} style={{
-              background: "var(--bg)",
+              background: "var(--bg-card)",
+              borderRadius: "var(--radius-card)",
+              border: "1px solid var(--border)",
               padding: "1.4rem 1.5rem",
               display: "flex",
               flexDirection: "column",
               gap: "0.4rem",
             }}>
               <span style={{
-                fontFamily: "'Geist Mono', monospace",
+                fontFamily: "'Roboto Mono', monospace",
                 fontSize: "0.62rem",
                 letterSpacing: "0.15em",
                 color: "var(--text-faint)",
                 textTransform: "uppercase",
               }}>{s.label}</span>
               <span style={{
-                fontFamily: "'Instrument Serif', serif",
+                fontFamily: "'Roboto Mono', monospace",
                 fontSize: "1.6rem",
                 color: "var(--text)",
                 lineHeight: 1,
@@ -142,47 +142,50 @@ export default function Home() {
       <section style={{
         borderTop: "1px solid var(--border)",
         padding: "5rem 2.5rem",
-        maxWidth: "900px",
+        maxWidth: "960px",
         margin: "0 auto",
       }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "3rem" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "2.5rem" }}>
           <h2 style={{
-            fontFamily: "'Instrument Serif', serif",
+            fontFamily: "'Roboto Mono', monospace",
             fontSize: "2rem",
             fontWeight: 400,
             color: "var(--text)",
           }}>Selected Projects</h2>
           <Link href="/projects" style={{
-            fontFamily: "'Geist Mono', monospace",
-            fontSize: "0.68rem",
-            letterSpacing: "0.1em",
-            color: "var(--text-muted)",
+            fontSize: "0.85rem",
+            color: "var(--accent)",
+            transition: "opacity 0.2s",
           }}>
-            ALL PROJECTS →
+            All projects →
           </Link>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "1px", background: "var(--border)", border: "1px solid var(--border)" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
           {projects.slice(0, 3).map((p, i) => (
             <Link key={p.id} href={`/projects/${p.id}`} style={{ display: "block" }}>
               <motion.div
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 + i * 0.08, duration: 0.4 }}
-                whileHover={{ backgroundColor: "var(--bg-hover)" } as never}
                 style={{
-                  background: "var(--bg)",
+                  background: "var(--bg-card)",
+                  borderRadius: "var(--radius-card)",
+                  border: "1px solid var(--border)",
                   padding: "1.8rem 2rem",
                   display: "grid",
                   gridTemplateColumns: "1fr auto",
                   alignItems: "center",
                   gap: "2rem",
                   cursor: "pointer",
+                  transition: "background 0.15s",
                 }}
+                onMouseEnter={e => (e.currentTarget.style.background = "var(--bg-hover)")}
+                onMouseLeave={e => (e.currentTarget.style.background = "var(--bg-card)")}
               >
                 <div>
                   <p style={{
-                    fontFamily: "'Geist Mono', monospace",
+                    fontFamily: "'Roboto Mono', monospace",
                     fontSize: "0.62rem",
                     letterSpacing: "0.12em",
                     color: "var(--accent)",
@@ -190,15 +193,15 @@ export default function Home() {
                     textTransform: "uppercase",
                   }}>{p.category} · {p.semester}</p>
                   <h3 style={{
-                    fontFamily: "'Instrument Serif', serif",
+                    fontFamily: "'Roboto Mono', monospace",
                     fontSize: "1.3rem",
                     fontWeight: 400,
                     color: "var(--text)",
                     marginBottom: "0.5rem",
                   }}>{p.title}</h3>
-                  <p style={{ fontSize: "0.85rem", color: "var(--text-muted)", lineHeight: 1.6 }}>{p.shortDesc}</p>
+                  <p style={{ fontSize: "0.88rem", color: "var(--text-muted)", lineHeight: 1.6 }}>{p.shortDesc}</p>
                 </div>
-                <span style={{ color: "var(--text-faint)", fontSize: "1.2rem", flexShrink: 0 }}>→</span>
+                <span style={{ color: "var(--accent)", fontSize: "1.1rem", flexShrink: 0 }}>→</span>
               </motion.div>
             </Link>
           ))}
@@ -208,12 +211,14 @@ export default function Home() {
       {/* ── FOOTER ── */}
       <footer style={{
         borderTop: "1px solid var(--border)",
-        padding: "2rem 2.5rem",
+        padding: "2.5rem 2.5rem",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
+        maxWidth: "960px",
+        margin: "0 auto",
       }}>
-        <p style={{ fontFamily: "'Geist Mono', monospace", fontSize: "0.65rem", color: "var(--text-faint)", letterSpacing: "0.08em" }}>
+        <p style={{ fontSize: "0.8rem", color: "var(--text-faint)" }}>
           © 2026 Caroline Zimmer
         </p>
         <div style={{ display: "flex", gap: "1.5rem" }}>
@@ -224,9 +229,7 @@ export default function Home() {
           ].map((l) => (
             <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer"
               style={{
-                fontFamily: "'Geist Mono', monospace",
-                fontSize: "0.65rem",
-                letterSpacing: "0.08em",
+                fontSize: "0.8rem",
                 color: "var(--text-faint)",
                 transition: "color 0.2s",
               }}
