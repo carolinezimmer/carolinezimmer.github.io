@@ -30,7 +30,7 @@ export default function Home() {
                 marginBottom: "1.5rem",
                 textTransform: "uppercase",
               }}>
-              Mechanical Engineer · Penn SEAS · Class of 2027
+              UPenn Mechanical Engineering · Class of 2027 · GPA: 3.70/4.00
             </motion.p>
 
             <motion.h1
