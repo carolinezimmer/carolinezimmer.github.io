@@ -100,7 +100,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            style={{ flexShrink: 0 }}
+            style={{ flexShrink: 0, borderRadius: "12px", overflow: "hidden" }}
           >
             <img
               src="/images/caroline-zimmer-headshot.jpg"
@@ -110,11 +110,12 @@ export default function Home() {
                 height: "320px",
                 objectFit: "cover",
                 objectPosition: "center top",
+                display: "block",
                 filter: "grayscale(100%)",
-                WebkitMaskImage: "linear-gradient(to right, transparent, black 18%), linear-gradient(to bottom, black 60%, transparent)",
-                WebkitMaskComposite: "destination-in",
-                maskImage: "linear-gradient(to right, transparent, black 18%), linear-gradient(to bottom, black 60%, transparent)",
-                maskComposite: "intersect",
+                WebkitMaskImage: "linear-gradient(to right, transparent, black 25%), linear-gradient(to left, transparent, black 25%), linear-gradient(to bottom, transparent, black 25%), linear-gradient(to top, transparent, black 25%)",
+                WebkitMaskComposite: "destination-in, destination-in, destination-in",
+                maskImage: "linear-gradient(to right, transparent, black 25%), linear-gradient(to left, transparent, black 25%), linear-gradient(to bottom, transparent, black 25%), linear-gradient(to top, transparent, black 25%)",
+                maskComposite: "intersect, intersect, intersect",
               }}
             />
           </motion.div>
