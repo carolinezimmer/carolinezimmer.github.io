@@ -50,7 +50,7 @@ export function ProjectClient({ project, next, prev }: { project: Project; next:
             style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1px", background: "var(--border)", border: "1px solid var(--border)", marginBottom: "3rem" }}>
             {project.images.map((src, i) => (
               <img key={i} src={src} alt={`${project.title} ${i + 1}`}
-                style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", display: "block" }} />
+                style={{ width: "100%", aspectRatio: "4/3", objectFit: "cover", display: "block", gridColumn: project.images.length % 2 === 1 && i === project.images.length - 1 ? "1 / -1" : "auto" }} />
             ))}
           </motion.div>
         )}
