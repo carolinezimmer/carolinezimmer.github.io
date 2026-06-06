@@ -37,7 +37,11 @@ export const projects = [
     longDesc: "At ETH Zürich's Electrochemical Energy Systems Laboratory, I assembled a symmetric supercapacitor from scratch using activated carbon electrodes in a Swagelok cell configuration — a format that demands careful attention to electrode loading, electrolyte filling, and cell sealing to avoid contamination or parasitic resistance. Characterized the device using cyclic voltammetry across multiple scan rates and galvanostatic charge-discharge cycling to extract gravimetric capacitance, coulombic efficiency, and electrolyte degradation onset. Analyzed all data in MATLAB. The project required understanding not just what the measurements show, but what physical mechanisms drive them — double-layer capacitance, ESR, and electrolyte breakdown.",
     tags: ["Electrochemistry", "Cyclic Voltammetry", "MATLAB", "Energy Storage"],
     color: "#2a7a4b",
-    images: [],
+    images: [
+      "/images/projects/supercapacitor/supercapacitor-01.JPG",
+      "/images/projects/supercapacitor/supercapacitor-02.JPG",
+      "/images/projects/supercapacitor/supercapacitor-03.JPG",
+    ],
   },
   {
     id: "bottle-rocket",
