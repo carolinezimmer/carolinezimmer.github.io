@@ -56,10 +56,7 @@ export default function Home() {
             lineHeight: 1.75,
             marginBottom: "3rem",
           }}>
-          I’m a junior at the University of Pennsylvania studying Mechanical Engineering
-           and Applied Mechanics, with minors in Math and Engineering Entrepreneurship. 
-           I studied abroad at ETH Zürich in Spring 2026, focusing on manufacturing and robotics. 
-           I’m interested in sustainable hardware solutions.
+          I’m a junior at the University of Pennsylvania studying Mechanical Engineering and Applied Mechanics, with minors in Math and Engineering Entrepreneurship. In Spring 2026, I’m studying abroad at ETH Zürich, a world-renowned engineering institution where I’m broadening my technical perspective in an international environment. I’m focusing my coursework on manufacturing and robotics, and I’m especially interested in sustainable hardware solutions that combine strong mechanical design with practical impact.
         </motion.p>
 
         <motion.div
