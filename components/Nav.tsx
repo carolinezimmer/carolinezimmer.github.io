@@ -20,6 +20,7 @@ export function Nav() {
   useEffect(() => { setMounted(true); }, []);
 
   return (
+    <>
     <nav
       style={{
         position: "fixed",
@@ -110,5 +111,6 @@ export function Nav() {
       zIndex: 90,
       pointerEvents: "none",
     }} />
+    </>
   );
 }
