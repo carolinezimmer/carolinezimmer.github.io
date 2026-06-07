@@ -14,6 +14,7 @@ export function Nav() {
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   useEffect(() => { setMounted(true); }, []);
 
@@ -41,12 +42,16 @@ export function Nav() {
       }}>
         <Link
           href="/"
+          onMouseEnter={() => setHoveredItem("cz")}
+          onMouseLeave={() => setHoveredItem(null)}
           style={{
-            fontFamily: "'Roboto Mono', monospace",
-            fontSize: "0.78rem",
-            letterSpacing: "0.12em",
+            fontFamily: hoveredItem === "cz" ? "'Cormorant Garamond', serif" : "'Roboto Mono', monospace",
+            fontStyle: hoveredItem === "cz" ? "italic" : "normal",
+            fontWeight: hoveredItem === "cz" ? 500 : 500,
+            fontSize: hoveredItem === "cz" ? "1rem" : "0.78rem",
+            letterSpacing: hoveredItem === "cz" ? "0" : "0.12em",
             color: "var(--text)",
-            fontWeight: 500,
+            transition: "font-size 0.15s, letter-spacing 0.15s",
           }}
         >
           CZ
@@ -57,11 +62,15 @@ export function Nav() {
             <Link
               key={l.href}
               href={l.href}
+              onMouseEnter={() => setHoveredItem(l.href)}
+              onMouseLeave={() => setHoveredItem(null)}
               style={{
-                fontSize: "0.85rem",
+                fontFamily: hoveredItem === l.href ? "'Cormorant Garamond', serif" : "inherit",
+                fontStyle: hoveredItem === l.href ? "italic" : "normal",
+                fontWeight: hoveredItem === l.href ? 500 : (pathname === l.href ? 500 : 400),
+                fontSize: hoveredItem === l.href ? "1.05rem" : "0.85rem",
                 color: pathname === l.href ? "var(--text)" : "var(--text-muted)",
-                fontWeight: pathname === l.href ? 500 : 400,
-                transition: "color 0.2s",
+                transition: "font-size 0.15s, color 0.2s",
               }}
             >
               {l.label}

@@ -23,9 +23,9 @@ export default function Projects() {
             textTransform: "uppercase",
           }}>Work</p>
           <h1 style={{
-            fontFamily: "'Roboto Mono', monospace",
+            fontFamily: "'Inter', sans-serif",
             fontSize: "clamp(2.5rem, 5vw, 4rem)",
-            fontWeight: 400,
+            fontWeight: 600,
             color: "var(--text)",
             lineHeight: 1.1,
           }}>Projects</h1>
@@ -70,9 +70,9 @@ export default function Projects() {
                   </div>
 
                   <h2 style={{
-                    fontFamily: "'Roboto Mono', monospace",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "1.5rem",
-                    fontWeight: 400,
+                    fontWeight: 600,
                     color: "var(--text)",
                     marginBottom: "0.7rem",
                     lineHeight: 1.2,

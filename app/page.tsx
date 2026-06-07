@@ -37,13 +37,13 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               style={{
-                fontFamily: "’Roboto Mono’, monospace",
+                fontFamily: "’Inter’, sans-serif",
                 fontSize: "clamp(3.5rem, 8vw, 7rem)",
                 lineHeight: 1.0,
                 letterSpacing: "-0.02em",
                 color: "var(--text)",
                 marginBottom: "2rem",
-                fontWeight: 400,
+                fontWeight: 600,
               }}>
               Caroline<br />
               <span style={{ color: "var(--text-muted)"}}>Zimmer.</span>
@@ -127,9 +127,9 @@ export default function Home() {
       }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "2.5rem" }}>
           <h2 style={{
-            fontFamily: "'Roboto Mono', monospace",
+            fontFamily: "'Inter', sans-serif",
             fontSize: "2rem",
-            fontWeight: 400,
+            fontWeight: 600,
             color: "var(--text)",
           }}>Selected Projects</h2>
           <Link href="/projects" style={{
@@ -173,9 +173,9 @@ export default function Home() {
                     textTransform: "uppercase",
                   }}>{p.category} · {p.semester}</p>
                   <h3 style={{
-                    fontFamily: "'Roboto Mono', monospace",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "1.3rem",
-                    fontWeight: 400,
+                    fontWeight: 600,
                     color: "var(--text)",
                     marginBottom: "0.5rem",
                   }}>{p.title}</h3>

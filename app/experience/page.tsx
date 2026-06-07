@@ -24,9 +24,9 @@ export default function Experience() {
               textTransform: "uppercase",
             }}>Background</p>
             <h1 style={{
-              fontFamily: "'Roboto Mono', monospace",
+              fontFamily: "'Inter', sans-serif",
               fontSize: "clamp(2.5rem, 5vw, 4rem)",
-              fontWeight: 400,
+              fontWeight: 600,
               color: "var(--text)",
               lineHeight: 1.1,
             }}>Experience</h1>
@@ -98,9 +98,9 @@ export default function Experience() {
               }}>
                 <div>
                   <h3 style={{
-                    fontFamily: "'Roboto Mono', monospace",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "1.2rem",
-                    fontWeight: 400,
+                    fontWeight: 600,
                     color: "var(--text)",
                     marginBottom: "0.2rem",
                   }}>{e.school}</h3>
@@ -162,9 +162,9 @@ export default function Experience() {
               >
                 <div>
                   <h3 style={{
-                    fontFamily: "'Roboto Mono', monospace",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "1.25rem",
-                    fontWeight: 400,
+                    fontWeight: 600,
                     color: "var(--text)",
                     marginBottom: "0.2rem",
                   }}>{e.company}</h3>
