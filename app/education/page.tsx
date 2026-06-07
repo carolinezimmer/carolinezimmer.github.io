@@ -1,6 +1,27 @@
 "use client";
 import { motion } from "framer-motion";
 
+const schools = [
+  {
+    school: "University of Pennsylvania",
+    degree: "BSE Mechanical Engineering",
+    detail: "GPA: 3.70 · Concentration: Dynamics, Controls & Robotics · Minors: Mathematics, Engineering Entrepreneurship",
+    period: "Fall 2023 – Spring 2027",
+  },
+  {
+    school: "University of Pennsylvania",
+    degree: "MSE Mechanical Engineering",
+    detail: "",
+    period: "Fall 2026 – Fall 2027",
+  },
+  {
+    school: "ETH Zürich",
+    degree: "Exchange Student",
+    detail: "Electrochemical Energy Systems · Supercapacitor Fabrication & Characterization",
+    period: "Spring 2026",
+  },
+];
+
 export default function Education() {
   return (
     <div style={{ paddingTop: "60px", minHeight: "100vh" }}>
@@ -13,15 +34,13 @@ export default function Education() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           style={{ marginBottom: "4rem", paddingBottom: "2rem", borderBottom: "1px solid var(--border)", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}
         >
-          <div>
-            <h1 style={{
-              fontFamily: "'Inter', sans-serif",
-              fontSize: "clamp(2.5rem, 5vw, 4rem)",
-              fontWeight: 600,
-              color: "var(--text)",
-              lineHeight: 1.1,
-            }}>Education</h1>
-          </div>
+          <h1 style={{
+            fontFamily: "'Inter', sans-serif",
+            fontSize: "clamp(2.5rem, 5vw, 4rem)",
+            fontWeight: 600,
+            color: "var(--text)",
+            lineHeight: 1.1,
+          }}>Education</h1>
           <a
             href="/courses"
             style={{
@@ -43,42 +62,22 @@ export default function Education() {
           </a>
         </motion.div>
 
-        {/* Education cards */}
+        {/* Education list */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.5 }}
         >
-          <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-            {[
-              {
-                school: "University of Pennsylvania",
-                degree: "BSE Mechanical Engineering",
-                detail: "GPA: 3.70 · Concentration: Dynamics, Controls & Robotics · Minors: Mathematics, Engineering Entrepreneurship",
-                period: "Fall 2023 – Spring 2027",
-              },
-              {
-                school: "University of Pennsylvania",
-                degree: "MSE Mechanical Engineering",
-                detail: "",
-                period: "2026 – 2027",
-              },
-              {
-                school: "ETH Zürich",
-                degree: "Exchange Student",
-                detail: "Electrochemical Energy Systems · Supercapacitor Fabrication & Characterization",
-                period: "Spring 2026",
-              },
-            ].map((e, i) => (
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            {schools.map((e, i) => (
               <div key={i} style={{
-                background: "var(--bg-card)",
-                borderRadius: "var(--radius-card)",
-                border: "1px solid var(--border)",
-                padding: "1.8rem 2rem",
                 display: "grid",
-                gridTemplateColumns: "1fr 120px",
-                gap: "1rem",
+                gridTemplateColumns: "1fr auto",
+                gap: "2rem",
                 alignItems: "start",
+                paddingTop: i === 0 ? "0" : "2rem",
+                paddingBottom: "2rem",
+                borderBottom: i < schools.length - 1 ? "1px solid var(--border)" : "none",
               }}>
                 <div>
                   <h3 style={{
@@ -91,14 +90,14 @@ export default function Education() {
                   <p style={{
                     fontSize: "0.8rem",
                     color: "var(--accent)",
-                    marginBottom: "0.6rem",
+                    marginBottom: e.detail ? "0.6rem" : "0",
                   }}>{e.degree}</p>
-                  <p style={{ fontSize: "0.85rem", color: "var(--text-muted)", lineHeight: 1.6 }}>{e.detail}</p>
+                  {e.detail && <p style={{ fontSize: "0.85rem", color: "var(--text-muted)", lineHeight: 1.6 }}>{e.detail}</p>}
                 </div>
                 <span style={{
                   fontSize: "0.8rem",
                   color: "var(--text-faint)",
-                  textAlign: "right",
+                  whiteSpace: "nowrap",
                   paddingTop: "0.15rem",
                 }}>{e.period}</span>
               </div>
