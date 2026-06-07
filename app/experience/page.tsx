@@ -31,19 +31,17 @@ export default function Experience() {
               alignItems: "center",
               gap: "0.5rem",
               padding: "0.65rem 1.2rem",
-              border: "1px solid var(--border)",
-              fontFamily: "'Roboto Mono', monospace",
-              fontSize: "0.65rem",
-              letterSpacing: "0.1em",
-              color: "var(--text-muted)",
-              transition: "border-color 0.2s, color 0.2s",
+              border: "1px solid var(--accent)",
+              fontSize: "0.85rem",
+              color: "var(--accent)",
+              transition: "opacity 0.2s",
               textDecoration: "none",
               flexShrink: 0,
             }}
-            onMouseEnter={e => { e.currentTarget.style.borderColor = "var(--text)"; e.currentTarget.style.color = "var(--text)"; }}
-            onMouseLeave={e => { e.currentTarget.style.borderColor = "var(--border)"; e.currentTarget.style.color = "var(--text-muted)"; }}
+            onMouseEnter={e => { e.currentTarget.style.opacity = "0.7"; }}
+            onMouseLeave={e => { e.currentTarget.style.opacity = "1"; }}
           >
-            ↓ RESUME PDF
+            ↓ Resume PDF
           </a>
         </motion.div>
 
