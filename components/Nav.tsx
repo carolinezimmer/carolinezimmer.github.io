@@ -70,7 +70,7 @@ export function Nav() {
                 fontStyle: hoveredItem === l.href ? "italic" : "normal",
                 fontWeight: hoveredItem === l.href ? 500 : (pathname === l.href ? 500 : 400),
                 fontSize: hoveredItem === l.href ? "1.05rem" : "0.85rem",
-                color: pathname === l.href ? "var(--text)" : "var(--text-muted)",
+                color: "var(--text)",
                 transition: "font-size 0.15s, color 0.2s",
               }}
             >
