@@ -51,7 +51,7 @@ export default function Home() {
             alignItems: "center",
             gap: "0.35em",
           }}>
-          <span>Caroline<br /><span style={{ color: "var(--text-muted)" }}>Zimmer</span></span>
+          <span>Caroline<br />Zimmer</span>
           {mounted && theme === "dark" && (
             <img src="/ghost.gif" alt="" style={{ height: "1.7em", flexShrink: 0, filter: "drop-shadow(0 0 8px rgba(255,255,255,0.45)) drop-shadow(0 0 20px rgba(255,255,255,0.2))" }} />
           )}
@@ -93,11 +93,12 @@ export default function Home() {
             display: "inline-flex",
             alignItems: "center",
             padding: "0.7rem 1.5rem",
-            border: "1px solid var(--border-strong)",
+            background: "var(--text)",
             borderRadius: "980px",
-            color: "var(--text-muted)",
+            color: "var(--bg)",
             fontSize: "0.9rem",
-            transition: "border-color 0.2s, color 0.2s",
+            fontWeight: 500,
+            transition: "opacity 0.2s",
           }}>
             Contact Me
           </a>
@@ -105,11 +106,12 @@ export default function Home() {
             display: "inline-flex",
             alignItems: "center",
             padding: "0.7rem 1.5rem",
-            border: "1px solid var(--border-strong)",
+            background: "var(--text)",
             borderRadius: "980px",
-            color: "var(--text-muted)",
+            color: "var(--bg)",
             fontSize: "0.9rem",
-            transition: "border-color 0.2s, color 0.2s",
+            fontWeight: 500,
+            transition: "opacity 0.2s",
           }}>
             Resume
           </a>
