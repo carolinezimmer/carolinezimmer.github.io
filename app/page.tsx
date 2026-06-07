@@ -151,19 +151,17 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 + i * 0.08, duration: 0.4 }}
                 style={{
-                  background: "var(--bg-card)",
-                  borderRadius: "var(--radius-card)",
-                  border: "1px solid var(--border)",
-                  padding: "1.8rem 2rem",
+                  padding: "1.8rem 1rem",
                   display: "grid",
                   gridTemplateColumns: "1fr auto",
                   alignItems: "center",
                   gap: "2rem",
                   cursor: "pointer",
+                  borderRadius: "var(--radius-sm)",
                   transition: "background 0.15s",
                 }}
                 onMouseEnter={e => (e.currentTarget.style.background = "var(--bg-hover)")}
-                onMouseLeave={e => (e.currentTarget.style.background = "var(--bg-card)")}
+                onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
               >
                 <div>
                   <p style={{

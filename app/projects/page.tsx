@@ -23,7 +23,7 @@ export default function Projects() {
           }}>Projects</h1>
         </motion.div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+        <div style={{ display: "flex", flexDirection: "column" }}>
           {projects.map((p, i) => (
             <Link key={p.id} href={`/projects/${p.id}`}>
               <motion.div
@@ -31,30 +31,22 @@ export default function Projects() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.07, duration: 0.4, ease: "easeOut" }}
                 style={{
-                  background: "var(--bg-card)",
-                  borderRadius: "var(--radius-card)",
-                  border: "1px solid var(--border)",
-                  padding: "2.2rem 2rem",
+                  padding: "2rem 1rem",
                   display: "grid",
                   gridTemplateColumns: "1fr auto",
                   alignItems: "start",
                   gap: "2rem",
                   cursor: "pointer",
+                  borderRadius: "var(--radius-sm)",
                   transition: "background 0.15s",
                 }}
                 onMouseEnter={e => (e.currentTarget.style.background = "var(--bg-hover)")}
-                onMouseLeave={e => (e.currentTarget.style.background = "var(--bg-card)")}
+                onMouseLeave={e => (e.currentTarget.style.background = "transparent")}
               >
                 <div>
                   <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "0.6rem" }}>
-                    <span style={{
-                      fontSize: "0.75rem",
-                      color: "var(--accent)",
-                    }}>{p.category}</span>
-                    <span style={{
-                      fontSize: "0.75rem",
-                      color: "var(--text-faint)",
-                    }}>{p.semester}</span>
+                    <span style={{ fontSize: "0.75rem", color: "var(--accent)" }}>{p.category}</span>
+                    <span style={{ fontSize: "0.75rem", color: "var(--text-faint)" }}>{p.semester}</span>
                   </div>
 
                   <h2 style={{
