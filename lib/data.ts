@@ -110,7 +110,7 @@ export const experience = [
   {
     company: "Engineers Without Borders at Penn",
     role: "Project Team Member",
-    period: "Sept 2023 – May 2025",
+    period: "Fall 2023 – Spring 2025",
     location: "Philadelphia, PA",
     bullets: [
       "Produced AutoCAD construction drawings for an ADA-compliant accessibility ramp, coordinating with professional advisors and local stakeholders to meet safety and accessibility standards.",
