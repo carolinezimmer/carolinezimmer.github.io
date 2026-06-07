@@ -118,12 +118,12 @@ export default function Courses() {
               transition={{ delay: i * 0.06, duration: 0.4 }}
             >
               <div style={{ display: "flex", alignItems: "baseline", gap: "1rem", marginBottom: "1rem" }}>
-                <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: "1.1rem", fontWeight: 600, color: "var(--text)" }}>{s.term}</h2>
+                <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: "1.1rem", fontWeight: 600, color: "var(--accent)" }}>{s.term}</h2>
                 {s.institution && (
                   <span style={{ fontSize: "0.8rem", color: "var(--text-faint)" }}>{s.institution}</span>
                 )}
               </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0", borderLeft: "2px solid var(--accent)", paddingLeft: "1rem", opacity: 0.9 }}>
                 {s.courses.map((c) => (
                   <div key={c.code} style={{
                     display: "flex",
@@ -133,7 +133,7 @@ export default function Courses() {
                     gap: "2rem",
                   }}>
                     <span style={{ fontSize: "0.95rem", color: "var(--text-muted)" }}>{c.name}</span>
-                    <span style={{ fontSize: "0.8rem", color: "var(--text-faint)", flexShrink: 0 }}>{c.code}</span>
+                    <span style={{ fontSize: "0.8rem", color: "var(--accent)", flexShrink: 0, opacity: 0.7 }}>{c.code}</span>
                   </div>
                 ))}
               </div>
