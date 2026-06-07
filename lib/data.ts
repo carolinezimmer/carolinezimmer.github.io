@@ -37,7 +37,7 @@ export const projects = [
     semester: "Spring 2026",
     shortDesc: "Hand-assembled and characterized a symmetric supercapacitor at ETH Zürich’s Electrochemical Energy Systems Laboratory.",
     longDesc: "In this lab at ETH Zürich’s Electrochemical Energy Systems Laboratory, we hand-assembled symmetric supercapacitors from scratch using activated carbon electrodes, a glass fiber separator, and a sulfuric acid electrolyte in a Swagelok cell configuration. Once assembled, we connected the cell to a BioLogic potentiostat and ran cyclic voltammetry at scan rates ranging from 1 to 100 mV/s to measure gravimetric capacitance and observe how charge storage behavior changes with speed. We also tested the effect of increasing the voltage window beyond the electrolyte’s stability limit, watching parasitic reactions appear in real time in the CV curves. Finally, we performed galvanostatic cycling to calculate coulombic efficiency and assess cycle life. We processed and plotted the data in MATLAB, and our report connected experimental results to theoretical models such as the Helmholtz double layer framework.",
-    tags: ["Cyclic Voltammetry", "MATLAB"],
+    tags: ["Cyclic Voltammetry", "Galvanostatic Cycling", "MATLAB"],
     color: "#2a7a4b",
     images: [
       "/images/projects/supercapacitor/supercapacitor-01.JPG",
@@ -52,7 +52,7 @@ export const projects = [
     semester: "Fall 2025",
     shortDesc: "Designed and built a small-scale Darrieus wind turbine for wind tunnel testing, then scaled predictions to a larger turbine.",
     longDesc: "As part of a lab project, our team designed and built a small-scale wind turbine to fit inside a wind tunnel for data collection. The objective was to use experimental results to scale the design to a larger turbine and predict its power output. We selected a three-bladed Darrieus configuration with a NACA 0015 airfoil cross-section for each blade. I modeled both turbine sizes in SolidWorks using plot data of a NACA 0015 airfoil and laser-cut the connectors and airfoil cross-sections for fabrication. During testing, our team assembled the turbines using dowels and plastic wrap to accurately replicate the geometry of the small-scale model. After gathering power output data from our large scale wind turbine, we compared our power coefficient with our previous model.",
-    tags: ["SolidWorks", "Experimental Design"],
+    tags: ["SolidWorks", "Wind Tunnel Testing", "Experimental Design"],
     color: "#3a7a5a",
     images: [
       "/images/projects/wind-turbine/wind-turbine-01.jpg",

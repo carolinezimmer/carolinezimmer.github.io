@@ -4,7 +4,7 @@ import { CursorSpotlight } from "@/components/CursorSpotlight";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
       <CursorSpotlight />
       {children}
     </ThemeProvider>
