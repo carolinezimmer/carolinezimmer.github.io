@@ -44,9 +44,6 @@ body {
   transition: background 0.3s, color 0.3s;
   -webkit-font-smoothing: antialiased;
 }
-@media (hover: hover) {
-  * { cursor: none !important; }
-}
 ::selection { background: var(--accent); color: white; }
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
