@@ -52,11 +52,28 @@ export default function Experience() {
           transition={{ delay: 0.1, duration: 0.5 }}
           style={{ marginBottom: "4rem" }}
         >
-          <h2 style={{
-            fontSize: "0.8rem",
-            color: "var(--text-faint)",
-            marginBottom: "1.5rem",
-          }}>Education</h2>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.5rem" }}>
+            <h2 style={{ fontSize: "0.8rem", color: "var(--text-faint)" }}>Education</h2>
+            <a
+              href="#"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.5rem",
+                padding: "0.65rem 1.2rem",
+                border: "1px solid var(--accent)",
+                fontSize: "0.85rem",
+                color: "var(--accent)",
+                transition: "opacity 0.2s",
+                textDecoration: "none",
+                flexShrink: 0,
+              }}
+              onMouseEnter={e => { e.currentTarget.style.opacity = "0.7"; }}
+              onMouseLeave={e => { e.currentTarget.style.opacity = "1"; }}
+            >
+              Course List
+            </a>
+          </div>
 
           <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
             {[
