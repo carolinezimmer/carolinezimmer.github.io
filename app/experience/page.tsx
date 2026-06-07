@@ -55,7 +55,7 @@ export default function Experience() {
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.5rem" }}>
             <h2 style={{ fontSize: "0.8rem", color: "var(--text-faint)" }}>Education</h2>
             <a
-              href="#"
+              href="/courses"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
