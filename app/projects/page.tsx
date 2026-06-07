@@ -14,12 +14,7 @@ export default function Projects() {
           transition={{ duration: 0.5, ease: "easeOut" }}
           style={{ marginBottom: "4rem", paddingBottom: "2rem", borderBottom: "1px solid var(--border)" }}
         >
-          <p style={{
-            fontSize: "0.8rem",
-            color: "var(--text-faint)",
-            marginBottom: "1rem",
-          }}>Work</p>
-          <h1 style={{
+<h1 style={{
             fontFamily: "'Inter', sans-serif",
             fontSize: "clamp(2.5rem, 5vw, 4rem)",
             fontWeight: 600,

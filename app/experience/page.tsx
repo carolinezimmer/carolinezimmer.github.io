@@ -15,12 +15,7 @@ export default function Experience() {
           style={{ marginBottom: "4rem", paddingBottom: "2rem", borderBottom: "1px solid var(--border)", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}
         >
           <div>
-            <p style={{
-              fontSize: "0.8rem",
-              color: "var(--text-faint)",
-              marginBottom: "1rem",
-            }}>Background</p>
-            <h1 style={{
+<h1 style={{
               fontFamily: "'Inter', sans-serif",
               fontSize: "clamp(2.5rem, 5vw, 4rem)",
               fontWeight: 600,

@@ -180,7 +180,7 @@ export default function Home() {
         <div style={{ display: "flex", gap: "1.5rem" }}>
           {[
             { label: "LinkedIn", href: "https://www.linkedin.com/in/carolinezimmer1/" },
-            { label: "GitHub", href: "https://github.com/" },
+            { label: "GitHub", href: "https://github.com/carolinezimmer" },
             { label: "Email", href: "mailto:czimmer@seas.upenn.edu" },
           ].map((l) => (
             <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer"
