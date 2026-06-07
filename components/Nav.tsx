@@ -27,7 +27,6 @@ export function Nav() {
         zIndex: 100,
         height: "52px",
         background: "var(--nav-bg)",
-        borderBottom: "1px solid var(--border)",
         backdropFilter: "saturate(180%) blur(20px)",
         WebkitBackdropFilter: "saturate(180%) blur(20px)",
       }}
@@ -101,5 +100,15 @@ export function Nav() {
         )}
       </div>
     </nav>
+    <div style={{
+      position: "fixed",
+      top: "52px",
+      left: 0,
+      right: 0,
+      height: "48px",
+      background: "linear-gradient(to bottom, var(--bg), transparent)",
+      zIndex: 90,
+      pointerEvents: "none",
+    }} />
   );
 }
