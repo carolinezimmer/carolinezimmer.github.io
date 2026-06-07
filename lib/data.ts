@@ -100,7 +100,7 @@ export const experience = [
     company: "Enfra Solutions",
     role: "Mechanical Engineer Intern",
     period: "Summer 2025",
-    location: "Dallas, TX",
+    location: "Little Rock, AR",
     bullets: [
       "Delivered finalized AutoCAD models of complete HVAC ductwork and piping systems for construction plans within the Novant Health hospital network, contributing to the largest Energy-as-a-Service transaction in U.S. healthcare history.",
       "Created comprehensive 3D models of existing ductwork and piping layouts in Revit, coordinating with mechanical teams and point cloud data in ReCap to ensure spatial accuracy and support future renovation planning.",
