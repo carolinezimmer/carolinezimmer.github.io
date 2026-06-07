@@ -212,8 +212,9 @@ export default function Home() {
             <a key={l.label} href={l.href} target="_blank" rel="noopener noreferrer"
               style={{
                 fontSize: "0.8rem",
-                color: "var(--text-faint)",
-                transition: "color 0.2s",
+                color: "var(--accent)",
+                fontWeight: 500,
+                transition: "opacity 0.2s",
               }}
             >{l.label}</a>
           ))}
