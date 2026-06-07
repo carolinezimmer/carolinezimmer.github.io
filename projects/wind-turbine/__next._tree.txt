@@ -1,2 +1,2 @@
-:HL["/_next/static/chunks/0yfizolf8f9vk.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"projects","param":null,"prefetchHints":0,"slots":{"children":{"name":"id","param":{"type":"d","key":"wind-turbine","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"t4BmxIrQgi_DA95DiOXwQ"}
+:HL["/_next/static/chunks/19o4ax4qzn2mh.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"projects","param":null,"prefetchHints":0,"slots":{"children":{"name":"id","param":{"type":"d","key":"wind-turbine","siblings":null},"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"GNDQG_VgsiAhL-CulGh2E"}
