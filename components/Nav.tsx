@@ -49,7 +49,7 @@ export function Nav() {
             fontFamily: hoveredItem === "cz" ? "'Cormorant Garamond', serif" : "'Inter', sans-serif",
             fontStyle: hoveredItem === "cz" ? "italic" : "normal",
             fontWeight: 500,
-            fontSize: "0.78rem",
+            fontSize: hoveredItem === "cz" ? "0.96rem" : "0.78rem",
             letterSpacing: hoveredItem === "cz" ? "0" : "0.12em",
             color: "var(--text)",
             transition: "letter-spacing 0.15s",
@@ -69,7 +69,7 @@ export function Nav() {
                 fontFamily: hoveredItem === l.href ? "'Cormorant Garamond', serif" : "inherit",
                 fontStyle: hoveredItem === l.href ? "italic" : "normal",
                 fontWeight: pathname === l.href ? 500 : 400,
-                fontSize: "0.85rem",
+                fontSize: hoveredItem === l.href ? "1.05rem" : "0.85rem",
                 color: "var(--text)",
                 transition: "color 0.2s",
               }}
