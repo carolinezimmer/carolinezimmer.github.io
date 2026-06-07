@@ -50,7 +50,7 @@ const FollowCursor: React.FC<FollowCursorProps> = ({
       }
     }
 
-    const dot = new Dot(width / 2, height / 2, 10, 10);
+    const dot = new Dot(width / 2, height / 2, 4, 10);
 
     const onMouseMove = (e: MouseEvent) => {
       cursor.x = e.clientX;
@@ -58,11 +58,15 @@ const FollowCursor: React.FC<FollowCursorProps> = ({
     };
 
     const onWindowResize = () => {
+      const dpr = window.devicePixelRatio || 1;
       width = window.innerWidth;
       height = window.innerHeight;
       if (canvas) {
-        canvas.width = width;
-        canvas.height = height;
+        canvas.style.width = width + 'px';
+        canvas.style.height = height + 'px';
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        if (context) context.scale(dpr, dpr);
       }
     };
 
@@ -83,15 +87,19 @@ const FollowCursor: React.FC<FollowCursorProps> = ({
         return;
       }
 
+      const dpr = window.devicePixelRatio || 1;
       canvas = document.createElement('canvas');
       context = canvas.getContext('2d');
       canvas.style.position = 'fixed';
       canvas.style.top = '0';
       canvas.style.left = '0';
       canvas.style.pointerEvents = 'none';
-      canvas.width = width;
-      canvas.height = height;
+      canvas.style.width = width + 'px';
+      canvas.style.height = height + 'px';
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
       canvas.style.zIndex = zIndex ? zIndex.toString() : '';
+      if (context) context.scale(dpr, dpr);
       document.body.appendChild(canvas);
 
       window.addEventListener('mousemove', onMouseMove);
