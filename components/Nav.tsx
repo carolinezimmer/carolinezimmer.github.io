@@ -15,6 +15,7 @@ export function Nav() {
   const pathname = usePathname();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   useEffect(() => { setMounted(true); }, []);
 
@@ -42,12 +43,16 @@ export function Nav() {
       }}>
         <Link
           href="/"
+          onMouseEnter={() => setHoveredItem("cz")}
+          onMouseLeave={() => setHoveredItem(null)}
           style={{
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: hoveredItem === "cz" ? "'Cormorant Garamond', serif" : "'Inter', sans-serif",
+            fontStyle: hoveredItem === "cz" ? "italic" : "normal",
             fontWeight: 500,
             fontSize: "0.78rem",
-            letterSpacing: "0.12em",
+            letterSpacing: hoveredItem === "cz" ? "0" : "0.12em",
             color: "var(--text)",
+            transition: "letter-spacing 0.15s",
           }}
         >
           CZ
@@ -58,10 +63,15 @@ export function Nav() {
             <Link
               key={l.href}
               href={l.href}
+              onMouseEnter={() => setHoveredItem(l.href)}
+              onMouseLeave={() => setHoveredItem(null)}
               style={{
+                fontFamily: hoveredItem === l.href ? "'Cormorant Garamond', serif" : "inherit",
+                fontStyle: hoveredItem === l.href ? "italic" : "normal",
                 fontWeight: pathname === l.href ? 500 : 400,
                 fontSize: "0.85rem",
                 color: "var(--text)",
+                transition: "color 0.2s",
               }}
             >
               {l.label}
