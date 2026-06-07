@@ -2,14 +2,8 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { projects } from "@/lib/data";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
 export default function Home() {
-  const { theme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => { setMounted(true); }, []);
-
   return (
     <div>
       {/* ── HERO ── */}
@@ -22,90 +16,124 @@ export default function Home() {
         maxWidth: "960px",
         margin: "0 auto",
       }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "4rem" }}>
-          {/* Text content */}
-          <div style={{ flex: 1, minWidth: 0 }}>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              style={{
-                fontSize: "0.8rem",
-                color: "var(--accent)",
-                marginBottom: "1.5rem",
-              }}>
-              UPenn Mechanical Engineering · Class of 2027 · GPA: 3.70/4.00
-            </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          style={{
+            fontFamily: "'Roboto Mono', monospace",
+            fontSize: "0.72rem",
+            letterSpacing: "0.15em",
+            color: "var(--accent)",
+            marginBottom: "1.5rem",
+            textTransform: "uppercase",
+          }}>
+          UPenn Mechanical Engineering · Class of 2027 · GPA: 3.70/4.00
+        </motion.p>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              style={{
-                fontFamily: "’Inter’, sans-serif",
-                fontSize: "clamp(3.5rem, 8vw, 7rem)",
-                lineHeight: 1.0,
-                letterSpacing: "-0.02em",
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          style={{
+            fontFamily: "'Roboto Mono', monospace",
+            fontSize: "clamp(3.5rem, 8vw, 7rem)",
+            lineHeight: 1.0,
+            letterSpacing: "-0.02em",
+            color: "var(--text)",
+            marginBottom: "2rem",
+            fontWeight: 400,
+          }}>
+          Caroline<br />
+          <span style={{ color: "var(--text-muted)"}}>Zimmer.</span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          style={{
+            fontSize: "1.1rem",
+            color: "var(--text-muted)",
+            maxWidth: "480px",
+            lineHeight: 1.75,
+            marginBottom: "3rem",
+          }}>
+          I’m a rising senior at the University of Pennsylvania studying Mechanical Engineering, with minors in Math and Engineering Entrepreneurship. In Spring 2026, I studied abroad at ETH Zürich, a world-renowned engineering institution where I’m broadening my technical perspective in an international environment. I’m focusing my coursework on manufacturing and robotics, and I’m especially interested in developing hardware solutions that combine strong mechanical design with practical impact.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}
+        >
+          <Link href="/projects" style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.4rem",
+            padding: "0.7rem 1.5rem",
+            background: "var(--accent)",
+            color: "#ffffff",
+            borderRadius: "980px",
+            fontSize: "0.9rem",
+            fontWeight: 500,
+            transition: "opacity 0.2s",
+          }}>
+            View Projects
+          </Link>
+          <a href="mailto:czimmer@seas.upenn.edu" style={{
+            display: "inline-flex",
+            alignItems: "center",
+            padding: "0.7rem 1.5rem",
+            border: "1px solid var(--border-strong)",
+            borderRadius: "980px",
+            color: "var(--text-muted)",
+            fontSize: "0.9rem",
+            transition: "border-color 0.2s, color 0.2s",
+          }}>
+            Contact Me
+          </a>
+        </motion.div>
+
+        {/* Stats row */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.55 }}
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "0.75rem",
+            marginTop: "5rem",
+            maxWidth: "540px",
+          }}
+        >
+          {[
+            { label: "GPA", value: "3.70" },
+            { label: "Graduation", value: "2027" },
+            { label: "Currently", value: "Zürich" },
+          ].map((s) => (
+            <div key={s.label} style={{
+              background: "var(--bg-card)",
+              borderRadius: "var(--radius-card)",
+              border: "1px solid var(--border)",
+              padding: "1.4rem 1.5rem",
+              display: "flex",
+              flexDirection: "column",
+              gap: "0.4rem",
+            }}>
+              <span style={{
+                fontFamily: "'Roboto Mono', monospace",
+                fontSize: "0.62rem",
+                letterSpacing: "0.15em",
+                color: "var(--text-faint)",
+                textTransform: "uppercase",
+              }}>{s.label}</span>
+              <span style={{
+                fontFamily: "'Roboto Mono', monospace",
+                fontSize: "1.6rem",
                 color: "var(--text)",
-                marginBottom: "2rem",
-                fontWeight: 600,
-                display: "flex",
-                alignItems: "center",
-                gap: "0.35em",
-              }}>
-              <span>Caroline<br />Zimmer</span>
-              {mounted && theme === "dark" && (
-                <img src="/ghost.gif" alt="" style={{ height: "1.7em", flexShrink: 0, filter: "drop-shadow(0 0 8px rgba(255,255,255,0.45)) drop-shadow(0 0 20px rgba(255,255,255,0.2))" }} />
-              )}
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              style={{
-                fontSize: "1.1rem",
-                color: "var(--text-muted)",
-                maxWidth: "480px",
-                lineHeight: 1.75,
-                marginBottom: "3rem",
-              }}>
-              I’m a junior at the University of Pennsylvania studying Mechanical Engineering and Applied Mechanics, with minors in Math and Engineering Entrepreneurship. In Spring 2026, I’m studying abroad at ETH Zürich, a world-renowned engineering institution where I’m broadening my technical perspective in an international environment. I’m focusing my coursework on manufacturing and robotics, and I’m especially interested in sustainable hardware solutions that combine strong mechanical design with practical impact.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}
-            >
-              <Link href="/projects" style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.4rem",
-                padding: "0.7rem 1.5rem",
-                background: "var(--accent)",
-                color: "#ffffff",
-                borderRadius: "980px",
-                fontSize: "0.9rem",
-                fontWeight: 500,
-                transition: "opacity 0.2s",
-              }}>
-                View Projects
-              </Link>
-              <a href="mailto:czimmer@seas.upenn.edu" style={{
-                display: "inline-flex",
-                alignItems: "center",
-                padding: "0.7rem 1.5rem",
-                border: "1px solid var(--border-strong)",
-                borderRadius: "980px",
-                color: "var(--text-muted)",
-                fontSize: "0.9rem",
-                transition: "border-color 0.2s, color 0.2s",
-              }}>
-                Get in touch
-              </a>
-            </motion.div>
-          </div>
-
-        </div>
-
+                lineHeight: 1,
+              }}>{s.value}</span>
+            </div>
+          ))}
+        </motion.div>
       </section>
 
       {/* ── SELECTED PROJECTS ── */}
@@ -117,9 +145,9 @@ export default function Home() {
       }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "2.5rem" }}>
           <h2 style={{
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: "'Roboto Mono', monospace",
             fontSize: "2rem",
-            fontWeight: 600,
+            fontWeight: 400,
             color: "var(--text)",
           }}>Selected Projects</h2>
           <Link href="/projects" style={{
@@ -155,14 +183,17 @@ export default function Home() {
               >
                 <div>
                   <p style={{
-                    fontSize: "0.75rem",
+                    fontFamily: "'Roboto Mono', monospace",
+                    fontSize: "0.62rem",
+                    letterSpacing: "0.12em",
                     color: "var(--accent)",
                     marginBottom: "0.4rem",
+                    textTransform: "uppercase",
                   }}>{p.category} · {p.semester}</p>
                   <h3 style={{
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Roboto Mono', monospace",
                     fontSize: "1.3rem",
-                    fontWeight: 600,
+                    fontWeight: 400,
                     color: "var(--text)",
                     marginBottom: "0.5rem",
                   }}>{p.title}</h3>

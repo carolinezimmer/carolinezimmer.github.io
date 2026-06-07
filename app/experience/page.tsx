@@ -81,7 +81,13 @@ export default function Experience() {
                 school: "University of Pennsylvania",
                 degree: "BSE Mechanical Engineering",
                 detail: "GPA: 3.70 · Concentration: Dynamics, Controls & Robotics · Minors: Mathematics, Engineering Entrepreneurship",
-                period: "2023 – 2027",
+                period: "Fall 2023 – Spring 2027",
+              },
+              {
+                school: "University of Pennsylvania",
+                degree: "MSE Mechanical Engineering",
+                detail: "",
+                period: "2026 – 2027",
               },
               {
                 school: "ETH Zürich",

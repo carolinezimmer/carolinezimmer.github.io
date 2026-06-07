@@ -24,7 +24,7 @@ export const projects = [
     semester: "Fall 2025",
     shortDesc: "Derived equations of motion for a motor-actuated rotating rod, designed a PID controller in MATLAB, and validated it on physical hardware.",
     longDesc: "The goal of this Mechatronics project was to design and deploy a closed-loop controller that would balance a rotating rod actuated by a brushless DC motor, first in simulation then on physical hardware. In the first phase, we derived the full nonlinear equations of motion by hand, computing rotational inertia, summing gravitational and friction torques, and linearizing the system around equilibrium to produce a transfer function. We then implemented a discrete-time PID controller in MATLAB and used the built-in PID tuner to select three gain sets optimized for fastest response, minimum overshoot, and a balanced compromise, running nine closed-loop simulations across different perturbation and noise conditions to analyze stability and robustness trade-offs. In the second phase, we took our controller off the simulation and onto the real mechanism, commanding actual motor throttle based on live IMU angle feedback. We tested all three gain sets on the physical hardware and compared the experimental theta plots to our simulation results. Bridging the gap between simulation and hardware was the most instructive part, as sensor noise, actuator saturation, and real mechanical dynamics all showed up in ways the linearized model did not fully capture.",
-    tags: ["MATLAB", "PID Control", "State-Space", "IMU", "Mechatronics"],
+    tags: ["MATLAB", "PID Control", "State-Space", "IMU"],
     color: "#2a6496",
     images: [
       "/images/projects/pid-controller/pid-controller-01.jpg",
@@ -37,7 +37,7 @@ export const projects = [
     semester: "Spring 2026",
     shortDesc: "Hand-assembled and characterized a symmetric supercapacitor at ETH Zürich’s Electrochemical Energy Systems Laboratory.",
     longDesc: "In this lab at ETH Zürich’s Electrochemical Energy Systems Laboratory, we hand-assembled symmetric supercapacitors from scratch using activated carbon electrodes, a glass fiber separator, and a sulfuric acid electrolyte in a Swagelok cell configuration. Once assembled, we connected the cell to a BioLogic potentiostat and ran cyclic voltammetry at scan rates ranging from 1 to 100 mV/s to measure gravimetric capacitance and observe how charge storage behavior changes with speed. We also tested the effect of increasing the voltage window beyond the electrolyte’s stability limit, watching parasitic reactions appear in real time in the CV curves. Finally, we performed galvanostatic cycling to calculate coulombic efficiency and assess cycle life. We processed and plotted the data in MATLAB, and our report connected experimental results to theoretical models such as the Helmholtz double layer framework.",
-    tags: ["Electrochemistry", "Cyclic Voltammetry", "MATLAB", "Energy Storage", "Potentiostat"],
+    tags: ["Cyclic Voltammetry", "MATLAB"],
     color: "#2a7a4b",
     images: [
       "/images/projects/supercapacitor/supercapacitor-01.JPG",
@@ -52,7 +52,7 @@ export const projects = [
     semester: "Fall 2025",
     shortDesc: "Designed and built a small-scale Darrieus wind turbine for wind tunnel testing, then scaled predictions to a larger turbine.",
     longDesc: "As part of a lab project, our team designed and built a small-scale wind turbine to fit inside a wind tunnel for data collection. The objective was to use experimental results to scale the design to a larger turbine and predict its power output. We selected a three-bladed Darrieus configuration with a NACA 0015 airfoil cross-section for each blade. I modeled both turbine sizes in SolidWorks using plot data of a NACA 0015 airfoil and laser-cut the connectors and airfoil cross-sections for fabrication. During testing, our team assembled the turbines using dowels and plastic wrap to accurately replicate the geometry of the small-scale model. After gathering power output data from our large scale wind turbine, we compared our power coefficient with our previous model.",
-    tags: ["SolidWorks", "Wind Energy", "NACA Airfoil", "Laser Cutting", "Experimental Design"],
+    tags: ["SolidWorks", "Experimental Design"],
     color: "#3a7a5a",
     images: [
       "/images/projects/wind-turbine/wind-turbine-01.jpg",
@@ -70,7 +70,7 @@ export const projects = [
     semester: "Spring 2024",
     shortDesc: "Designed and built a gravity-driven water tower optimizing height and nozzle diameter to maximize jet power in a head-to-head competition.",
     longDesc: "Our project team designed and built a gravity-driven water tower that balanced structural stability with fluid performance. The goal was to optimize the tower height and nozzle diameter to maximize both endurance and jet power in a head-to-head competition, where teams used their water streams to push a block along a track. The truss-based tower, featuring 3D-printed joints and cross-bracing, minimized buckling while supporting a raised reservoir that discharged through an optimized 7.62 mm nozzle. Using Python models based on pump data and Torricelli’s law, we predicted the system’s fill and discharge behavior. The final design achieved a flow rate of 0.149 L/s, maintained structural stability under load, and advanced to the semifinal round of the competition.",
-    tags: ["Python", "Fluid Mechanics", "Structural Design", "3D Printing", "Torricelli’s Law"],
+    tags: ["Python", "SolidWorks", "FEA"],
     color: "#1a6b8a",
     images: [
       "/images/projects/water-tower/water-tower-01.png",
@@ -86,7 +86,7 @@ export const projects = [
     semester: "Spring 2024",
     shortDesc: "Designed and tested a custom bungee cord system with a Python model to predict safe configurations based on drop height, mass, and acceleration limits.",
     longDesc: "Our team designed and tested a custom bungee cord system and developed a Python model to predict safe and effective configurations based on drop height, mass, and maximum acceleration. The goal was to ensure the jumper stopped as close to the ground as possible without exceeding a 4g acceleration limit. We characterized various rubber band configurations using the MTS machine, balancing durability and stiffness. The final knotless design used looped bands folded in half, providing strong elasticity without excessive stiffness or stress concentrations. MTS testing yielded a stiffness of 35.1 N/m per cord element, which we used to model cords arranged in series and parallel combinations. The Python model simulated energy balance and elastic extension to determine feasible cord setups meeting safety and stretch constraints. On demo day, the jumper’s 1 kg mass produced 2–3g acceleration, safely under the limit, with a 0.63 m clearance above the crash pad, closely matching the model’s prediction.",
-    tags: ["Python", "Dynamics", "MTS Testing", "Experimental Design"],
+    tags: ["Python", "MTS Testing"],
     color: "#b05a1a",
     images: [
       "/images/projects/bungee/bungee-01.jpg",
