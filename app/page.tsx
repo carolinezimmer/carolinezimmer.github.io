@@ -40,13 +40,13 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           style={{
-            fontFamily: "'Cormorant Garamond', serif",
+            fontFamily: "'Inter', sans-serif",
+            fontWeight: 700,
             fontSize: "clamp(3.5rem, 8vw, 7rem)",
             lineHeight: 1.0,
             letterSpacing: "-0.02em",
             color: "var(--text)",
             marginBottom: "2rem",
-            fontWeight: 400,
             display: "flex",
             alignItems: "center",
             gap: "0.35em",
