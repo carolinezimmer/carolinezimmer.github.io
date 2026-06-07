@@ -15,7 +15,7 @@ export default function Projects() {
           style={{ marginBottom: "4rem", paddingBottom: "2rem", borderBottom: "1px solid var(--border)" }}
         >
 <h1 style={{
-            fontFamily: "'Roboto Mono', monospace",
+            fontFamily: "'Inter', sans-serif",
             fontSize: "clamp(2.5rem, 5vw, 4rem)",
             fontWeight: 600,
             color: "var(--text)",
@@ -58,7 +58,7 @@ export default function Projects() {
                   </div>
 
                   <h2 style={{
-                    fontFamily: "'Roboto Mono', monospace",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "1.5rem",
                     fontWeight: 600,
                     color: "var(--text)",
@@ -77,7 +77,7 @@ export default function Projects() {
                   <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem" }}>
                     {p.tags.map(t => (
                       <span key={t} style={{
-                        fontFamily: "'Roboto Mono', monospace",
+                        fontFamily: "'Inter', sans-serif",
                         fontSize: "0.6rem",
                         letterSpacing: "0.06em",
                         padding: "0.2rem 0.65rem",

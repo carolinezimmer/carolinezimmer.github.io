@@ -103,7 +103,7 @@ export default function Courses() {
             <Link href="/experience" style={{ fontSize: "0.8rem", color: "var(--text-faint)", display: "inline-flex", alignItems: "center", gap: "0.4rem", marginBottom: "1.2rem" }}>
               ← Experience
             </Link>
-            <h1 style={{ fontFamily: "'Roboto Mono', monospace", fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 600, color: "var(--text)", lineHeight: 1.1 }}>
+            <h1 style={{ fontFamily: "'Inter', sans-serif", fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: 600, color: "var(--text)", lineHeight: 1.1 }}>
               Course List
             </h1>
           </div>
@@ -118,7 +118,7 @@ export default function Courses() {
               transition={{ delay: i * 0.06, duration: 0.4 }}
             >
               <div style={{ display: "flex", alignItems: "baseline", gap: "1rem", marginBottom: "1rem", paddingBottom: "0.6rem", borderBottom: "1px solid var(--border)" }}>
-                <h2 style={{ fontFamily: "'Roboto Mono', monospace", fontSize: "1.1rem", fontWeight: 600, color: "var(--text)" }}>{s.term}</h2>
+                <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: "1.1rem", fontWeight: 600, color: "var(--text)" }}>{s.term}</h2>
                 {s.institution && (
                   <span style={{ fontSize: "0.8rem", color: "var(--text-faint)" }}>{s.institution}</span>
                 )}

@@ -46,7 +46,7 @@ export function Nav() {
           onMouseEnter={() => setHoveredItem("cz")}
           onMouseLeave={() => setHoveredItem(null)}
           style={{
-            fontFamily: hoveredItem === "cz" ? "'Cormorant Garamond', serif" : "'Roboto Mono', monospace",
+            fontFamily: hoveredItem === "cz" ? "'Cormorant Garamond', serif" : "'Inter', sans-serif",
             fontStyle: hoveredItem === "cz" ? "italic" : "normal",
             fontWeight: hoveredItem === "cz" ? 500 : 500,
             fontSize: hoveredItem === "cz" ? "1rem" : "0.78rem",

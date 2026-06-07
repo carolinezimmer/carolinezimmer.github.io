@@ -26,7 +26,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           style={{
-            fontFamily: "'Roboto Mono', monospace",
+            fontFamily: "'Inter', sans-serif",
             fontSize: "0.72rem",
             letterSpacing: "0.15em",
             color: "var(--accent)",
@@ -40,7 +40,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           style={{
-            fontFamily: "'Roboto Mono', monospace",
+            fontFamily: "'Cormorant Garamond', serif",
             fontSize: "clamp(3.5rem, 8vw, 7rem)",
             lineHeight: 1.0,
             letterSpacing: "-0.02em",
@@ -129,7 +129,7 @@ export default function Home() {
       }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "2.5rem" }}>
           <h2 style={{
-            fontFamily: "'Roboto Mono', monospace",
+            fontFamily: "'Inter', sans-serif",
             fontSize: "2rem",
             fontWeight: 400,
             color: "var(--text)",
@@ -167,7 +167,7 @@ export default function Home() {
               >
                 <div>
                   <p style={{
-                    fontFamily: "'Roboto Mono', monospace",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "0.62rem",
                     letterSpacing: "0.12em",
                     color: "var(--accent)",
@@ -175,7 +175,7 @@ export default function Home() {
                     textTransform: "uppercase",
                   }}>{p.category} · {p.semester}</p>
                   <h3 style={{
-                    fontFamily: "'Roboto Mono', monospace",
+                    fontFamily: "'Inter', sans-serif",
                     fontSize: "1.3rem",
                     fontWeight: 400,
                     color: "var(--text)",
