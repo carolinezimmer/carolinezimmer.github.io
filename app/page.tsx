@@ -47,10 +47,13 @@ export default function Home() {
                 color: "var(--text)",
                 marginBottom: "2rem",
                 fontWeight: 600,
+                display: "flex",
+                alignItems: "center",
+                gap: "0.35em",
               }}>
-              Caroline<br />
-              Zimmer{mounted && theme === "dark" && (
-                <img src="/ghost.gif" alt="" style={{ display: "inline", height: "0.85em", marginLeft: "0.3em", verticalAlign: "middle" }} />
+              <span>Caroline<br />Zimmer</span>
+              {mounted && theme === "dark" && (
+                <img src="/ghost.gif" alt="" style={{ height: "1.7em", flexShrink: 0 }} />
               )}
             </motion.h1>
 
