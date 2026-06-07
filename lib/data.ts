@@ -106,7 +106,6 @@ export const experience = [
       "Created comprehensive 3D models of existing ductwork and piping layouts in Revit, coordinating with mechanical teams and point cloud data in ReCap to ensure spatial accuracy and support future renovation planning.",
       "Drafted detailed reports quantifying energy and monetary savings by integrating metered energy consumption data with utility bills, verifying that facility performance met guaranteed energy efficiency targets.",
     ],
-    tags: ["AutoCAD", "Revit", "Energy Systems", "HVAC"],
   },
   {
     company: "Engineers Without Borders at Penn",
@@ -116,7 +115,6 @@ export const experience = [
     bullets: [
       "Produced AutoCAD construction drawings for an ADA-compliant accessibility ramp, coordinating with professional advisors and local stakeholders to meet safety and accessibility standards.",
     ],
-    tags: ["AutoCAD", "Community Engineering"],
   },
 ];
 

@@ -16,7 +16,7 @@ const semesters = [
   },
   {
     term: "Fall 2025",
-    institution: "University of Pennsylvania",
+    institution: "",
     courses: [
       { name: "Machine Design & Manufacturing", code: "MEAM 2010" },
       { name: "Fluid Mechanics", code: "MEAM 3020" },
@@ -28,7 +28,7 @@ const semesters = [
   },
   {
     term: "Spring 2025",
-    institution: "University of Pennsylvania",
+    institution: "",
     courses: [
       { name: "Thermodynamics I", code: "MEAM 2030" },
       { name: "Engineering Mechanics: Dynamics", code: "MEAM 2110" },
@@ -39,7 +39,7 @@ const semesters = [
   },
   {
     term: "Fall 2024",
-    institution: "University of Pennsylvania",
+    institution: "",
     courses: [
       { name: "Statics and Strength of Materials", code: "MEAM 2100" },
       { name: "Thermal-Fluids Engineering", code: "MEAM 2020" },
@@ -51,14 +51,14 @@ const semesters = [
   },
   {
     term: "Summer 2024",
-    institution: "University of Pennsylvania",
+    institution: "",
     courses: [
       { name: "Probability", code: "STAT 4300" },
     ],
   },
   {
     term: "Spring 2024",
-    institution: "University of Pennsylvania",
+    institution: "",
     courses: [
       { name: "Engineering Electromagnetics & Lab", code: "ESE 1120" },
       { name: "Intro to Mechanical Design", code: "MEAM 1010" },
@@ -69,7 +69,7 @@ const semesters = [
   },
   {
     term: "Fall 2023",
-    institution: "University of Pennsylvania",
+    institution: "",
     courses: [
       { name: "Intro to Mechanics", code: "MEAM 1100" },
       { name: "Intro to Mechanics Lab", code: "MEAM 1470" },

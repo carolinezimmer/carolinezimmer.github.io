@@ -5,19 +5,19 @@ const schools = [
   {
     school: "University of Pennsylvania",
     degree: "BSE Mechanical Engineering",
-    detail: "GPA: 3.70 · Concentration: Dynamics, Controls & Robotics · Minors: Mathematics, Engineering Entrepreneurship",
+    detail: "GPA: 3.70 · Minors: Mathematics, Engineering Entrepreneurship",
     period: "Fall 2023 – Spring 2027",
   },
   {
     school: "University of Pennsylvania",
     degree: "MSE Mechanical Engineering",
-    detail: "",
+    detail: "Accelerated Master's Program",
     period: "Fall 2026 – Fall 2027",
   },
   {
     school: "ETH Zürich",
     degree: "Exchange Student",
-    detail: "Electrochemical Energy Systems · Supercapacitor Fabrication & Characterization",
+    detail: "Department of Mechanical and Process Engineering",
     period: "Spring 2026",
   },
 ];

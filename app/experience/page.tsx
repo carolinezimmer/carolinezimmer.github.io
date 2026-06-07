@@ -67,19 +67,6 @@ export default function Experience() {
                       <li key={j} style={{ fontSize: "0.85rem", color: "var(--text-muted)", lineHeight: 1.7 }}>{b}</li>
                     ))}
                   </ul>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem", marginTop: "1rem" }}>
-                    {e.tags.map(t => (
-                      <span key={t} style={{
-                        fontFamily: "'Inter', sans-serif",
-                        fontSize: "0.58rem",
-                        letterSpacing: "0.06em",
-                        padding: "0.2rem 0.6rem",
-                        border: "1px solid var(--border-strong)",
-                        borderRadius: "980px",
-                        color: "var(--text-faint)",
-                      }}>{t}</span>
-                    ))}
-                  </div>
                 </div>
                 <div style={{ textAlign: "right" }}>
                   <span style={{ fontSize: "0.8rem", color: "var(--text-faint)", display: "block", marginBottom: "0.3rem" }}>{e.period}</span>
