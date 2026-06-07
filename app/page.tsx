@@ -53,7 +53,7 @@ export default function Home() {
               }}>
               <span>Caroline<br />Zimmer</span>
               {mounted && theme === "dark" && (
-                <img src="/ghost.gif" alt="" style={{ height: "1.7em", flexShrink: 0 }} />
+                <img src="/ghost.gif" alt="" style={{ height: "1.7em", flexShrink: 0, filter: "drop-shadow(0 0 8px rgba(255,255,255,0.45)) drop-shadow(0 0 20px rgba(255,255,255,0.2))" }} />
               )}
             </motion.h1>
 
