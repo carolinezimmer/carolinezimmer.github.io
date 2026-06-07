@@ -129,8 +129,7 @@ export default function Courses() {
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "baseline",
-                    padding: "0.75rem 0",
-                    borderBottom: "1px solid var(--border)",
+                    padding: "0.4rem 0",
                     gap: "2rem",
                   }}>
                     <span style={{ fontSize: "0.95rem", color: "var(--text-muted)" }}>{c.name}</span>
