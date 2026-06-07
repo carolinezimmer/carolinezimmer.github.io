@@ -90,6 +90,18 @@ export default function Home() {
           }}>
             Contact Me
           </a>
+          <a href="/resume.pdf" download style={{
+            display: "inline-flex",
+            alignItems: "center",
+            padding: "0.7rem 1.5rem",
+            border: "1px solid var(--border-strong)",
+            borderRadius: "980px",
+            color: "var(--text-muted)",
+            fontSize: "0.9rem",
+            transition: "border-color 0.2s, color 0.2s",
+          }}>
+            Resume
+          </a>
         </motion.div>
 
 

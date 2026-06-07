@@ -12,155 +12,41 @@ export default function Experience() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          style={{ marginBottom: "4rem", paddingBottom: "2rem", borderBottom: "1px solid var(--border)", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}
+          style={{ marginBottom: "4rem", paddingBottom: "2rem", borderBottom: "1px solid var(--border)" }}
         >
-          <div>
-<h1 style={{
-              fontFamily: "'Inter', sans-serif",
-              fontSize: "clamp(2.5rem, 5vw, 4rem)",
-              fontWeight: 600,
-              color: "var(--text)",
-              lineHeight: 1.1,
-            }}>Experience</h1>
-          </div>
-          <a
-            href="/resume.pdf"
-            download
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              padding: "0.65rem 1.2rem",
-              border: "1px solid var(--accent)",
-              fontSize: "0.85rem",
-              color: "var(--accent)",
-              transition: "opacity 0.2s",
-              textDecoration: "none",
-              flexShrink: 0,
-            }}
-            onMouseEnter={e => { e.currentTarget.style.opacity = "0.7"; }}
-            onMouseLeave={e => { e.currentTarget.style.opacity = "1"; }}
-          >
-            ↓ Resume PDF
-          </a>
-        </motion.div>
-
-        {/* Education */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1, duration: 0.5 }}
-          style={{ marginBottom: "4rem" }}
-        >
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.5rem" }}>
-            <h2 style={{ fontSize: "0.8rem", color: "var(--text-faint)" }}>Education</h2>
-            <a
-              href="/courses"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.5rem",
-                padding: "0.65rem 1.2rem",
-                border: "1px solid var(--accent)",
-                fontSize: "0.85rem",
-                color: "var(--accent)",
-                transition: "opacity 0.2s",
-                textDecoration: "none",
-                flexShrink: 0,
-              }}
-              onMouseEnter={e => { e.currentTarget.style.opacity = "0.7"; }}
-              onMouseLeave={e => { e.currentTarget.style.opacity = "1"; }}
-            >
-              Course List
-            </a>
-          </div>
-
-          <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-            {[
-              {
-                school: "University of Pennsylvania",
-                degree: "BSE Mechanical Engineering",
-                detail: "GPA: 3.70 · Concentration: Dynamics, Controls & Robotics · Minors: Mathematics, Engineering Entrepreneurship",
-                period: "Fall 2023 – Spring 2027",
-              },
-              {
-                school: "University of Pennsylvania",
-                degree: "MSE Mechanical Engineering",
-                detail: "",
-                period: "2026 – 2027",
-              },
-              {
-                school: "ETH Zürich",
-                degree: "Exchange Student",
-                detail: "Electrochemical Energy Systems · Supercapacitor Fabrication & Characterization",
-                period: "Spring 2026",
-              },
-            ].map((e, i) => (
-              <div key={i} style={{
-                background: "var(--bg-card)",
-                borderRadius: "var(--radius-card)",
-                border: "1px solid var(--border)",
-                padding: "1.8rem 2rem",
-                display: "grid",
-                gridTemplateColumns: "1fr 120px",
-                gap: "1rem",
-                alignItems: "start",
-              }}>
-                <div>
-                  <h3 style={{
-                    fontFamily: "'Inter', sans-serif",
-                    fontSize: "1.2rem",
-                    fontWeight: 600,
-                    color: "var(--text)",
-                    marginBottom: "0.2rem",
-                  }}>{e.school}</h3>
-                  <p style={{
-                    fontSize: "0.8rem",
-                    color: "var(--accent)",
-                    marginBottom: "0.6rem",
-                  }}>{e.degree}</p>
-                  <p style={{ fontSize: "0.85rem", color: "var(--text-muted)", lineHeight: 1.6 }}>{e.detail}</p>
-                </div>
-                <span style={{
-                  fontSize: "0.8rem",
-                  color: "var(--text-faint)",
-                  textAlign: "right",
-                  paddingTop: "0.15rem",
-                }}>{e.period}</span>
-              </div>
-            ))}
-          </div>
+          <h1 style={{
+            fontFamily: "'Inter', sans-serif",
+            fontSize: "clamp(2.5rem, 5vw, 4rem)",
+            fontWeight: 600,
+            color: "var(--text)",
+            lineHeight: 1.1,
+          }}>Experience</h1>
         </motion.div>
 
         {/* Experience */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.18, duration: 0.5 }}
+          transition={{ delay: 0.1, duration: 0.5 }}
           style={{ marginBottom: "4rem" }}
         >
-          <h2 style={{
-            fontSize: "0.8rem",
-            color: "var(--text-faint)",
-            marginBottom: "1.5rem",
-          }}>Work & Research</h2>
+          <h2 style={{ fontSize: "0.8rem", color: "var(--text-faint)", marginBottom: "2rem" }}>Work & Research</h2>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+          <div style={{ display: "flex", flexDirection: "column" }}>
             {experience.map((e, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.2 + i * 0.07 }}
+                transition={{ delay: 0.15 + i * 0.07 }}
                 style={{
-                  background: "var(--bg-card)",
-                  borderRadius: "var(--radius-card)",
-                  border: "1px solid var(--border)",
-                  padding: "2rem",
                   display: "grid",
                   gridTemplateColumns: "1fr 140px",
                   gap: "1rem",
                   alignItems: "start",
+                  paddingTop: i === 0 ? "0" : "2rem",
+                  paddingBottom: "2rem",
+                  borderBottom: "1px solid var(--border)",
                 }}
               >
                 <div>
@@ -196,16 +82,8 @@ export default function Experience() {
                   </div>
                 </div>
                 <div style={{ textAlign: "right" }}>
-                  <span style={{
-                    fontSize: "0.8rem",
-                    color: "var(--text-faint)",
-                    display: "block",
-                    marginBottom: "0.3rem",
-                  }}>{e.period}</span>
-                  <span style={{
-                    fontSize: "0.75rem",
-                    color: "var(--text-faint)",
-                  }}>{e.location}</span>
+                  <span style={{ fontSize: "0.8rem", color: "var(--text-faint)", display: "block", marginBottom: "0.3rem" }}>{e.period}</span>
+                  <span style={{ fontSize: "0.75rem", color: "var(--text-faint)" }}>{e.location}</span>
                 </div>
               </motion.div>
             ))}
@@ -218,33 +96,31 @@ export default function Experience() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.28, duration: 0.5 }}
         >
-          <h2 style={{
-            fontSize: "0.8rem",
-            color: "var(--text-faint)",
-            marginBottom: "1.5rem",
-          }}>Technical Skills</h2>
+          <h2 style={{ fontSize: "0.8rem", color: "var(--text-faint)", marginBottom: "2rem" }}>Technical Skills</h2>
 
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
-            gap: "0.75rem",
-          }}>
-            {Object.entries(skills).map(([category, items]) => (
-              <div key={category} style={{ background: "var(--bg-card)", borderRadius: "var(--radius-card)", border: "1px solid var(--border)", padding: "1.5rem" }}>
-                <p style={{
-                  fontSize: "0.75rem",
-                  color: "var(--accent)",
-                  marginBottom: "1rem",
-                }}>{category}</p>
-                <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.4rem" }}>
-                  {items.map(item => (
-                    <li key={item} style={{ fontSize: "0.85rem", color: "var(--text-muted)" }}>{item}</li>
-                  ))}
-                </ul>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            {Object.entries(skills).map(([category, items], i, arr) => (
+              <div
+                key={category}
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "160px 1fr",
+                  gap: "1rem",
+                  paddingTop: i === 0 ? "0" : "1.25rem",
+                  paddingBottom: "1.25rem",
+                  borderBottom: i < arr.length - 1 ? "1px solid var(--border)" : "none",
+                  alignItems: "start",
+                }}
+              >
+                <p style={{ fontSize: "0.78rem", color: "var(--accent)" }}>{category}</p>
+                <p style={{ fontSize: "0.85rem", color: "var(--text-muted)", lineHeight: 1.7 }}>
+                  {items.join(" · ")}
+                </p>
               </div>
             ))}
           </div>
         </motion.div>
+
       </div>
     </div>
   );
