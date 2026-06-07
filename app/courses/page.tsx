@@ -132,8 +132,8 @@ export default function Courses() {
                     padding: "0.4rem 0",
                     gap: "2rem",
                   }}>
-                    <span style={{ fontSize: "0.95rem", color: "var(--text-muted)" }}>{c.name}</span>
-                    <span style={{ fontSize: "0.8rem", color: "var(--accent)", flexShrink: 0, opacity: 0.7 }}>{c.code}</span>
+                    <span style={{ fontSize: "0.95rem", color: "var(--text)" }}>{c.name}</span>
+                    <span style={{ fontSize: "0.8rem", color: "var(--text-muted)", flexShrink: 0 }}>{c.code}</span>
                   </div>
                 ))}
               </div>

@@ -50,3 +50,9 @@ img { display: block; max-width: 100%; }
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 2px; }
+
+.nav-hamburger { display: none; }
+@media (max-width: 640px) {
+  .nav-links { display: none !important; }
+  .nav-hamburger { display: flex !important; }
+}
