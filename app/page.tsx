@@ -113,7 +113,7 @@ export default function Home() {
             fontWeight: 500,
             transition: "opacity 0.2s",
           }}>
-            Resume
+            ↓ Resume
           </a>
         </motion.div>
 
