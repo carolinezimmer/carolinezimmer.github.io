@@ -109,17 +109,6 @@ export const experience = [
     tags: ["AutoCAD", "Revit", "Energy Systems", "HVAC"],
   },
   {
-    company: "ETH Zürich",
-    role: "Exchange Student — Electrochemical Energy Systems Lab",
-    period: "Spring 2026",
-    location: "Zürich, Switzerland",
-    bullets: [
-      "Fabricated and characterized electrochemical energy storage devices at the laboratory level as part of the Electrochemical Energy Systems course.",
-      "Conducted cyclic voltammetry and galvanostatic cycling experiments; analyzed results in MATLAB to extract device performance metrics.",
-    ],
-    tags: ["Research", "Electrochemistry", "MATLAB"],
-  },
-  {
     company: "Engineers Without Borders at Penn",
     role: "Project Team Member",
     period: "Sept 2023 – May 2025",
