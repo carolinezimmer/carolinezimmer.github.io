@@ -117,7 +117,7 @@ export default function Courses() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.06, duration: 0.4 }}
             >
-              <div style={{ display: "flex", alignItems: "baseline", gap: "1rem", marginBottom: "1rem", paddingBottom: "0.6rem", borderBottom: "1px solid var(--border)" }}>
+              <div style={{ display: "flex", alignItems: "baseline", gap: "1rem", marginBottom: "1rem" }}>
                 <h2 style={{ fontFamily: "'Inter', sans-serif", fontSize: "1.1rem", fontWeight: 600, color: "var(--text)" }}>{s.term}</h2>
                 {s.institution && (
                   <span style={{ fontSize: "0.8rem", color: "var(--text-faint)" }}>{s.institution}</span>
