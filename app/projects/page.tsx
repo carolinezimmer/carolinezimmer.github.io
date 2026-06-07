@@ -15,12 +15,9 @@ export default function Projects() {
           style={{ marginBottom: "4rem", paddingBottom: "2rem", borderBottom: "1px solid var(--border)" }}
         >
           <p style={{
-            fontFamily: "'Roboto Mono', monospace",
-            fontSize: "0.68rem",
-            letterSpacing: "0.15em",
+            fontSize: "0.8rem",
             color: "var(--text-faint)",
             marginBottom: "1rem",
-            textTransform: "uppercase",
           }}>Work</p>
           <h1 style={{
             fontFamily: "'Inter', sans-serif",
@@ -56,15 +53,11 @@ export default function Projects() {
                 <div>
                   <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "0.6rem" }}>
                     <span style={{
-                      fontFamily: "'Roboto Mono', monospace",
-                      fontSize: "0.62rem",
-                      letterSpacing: "0.12em",
+                      fontSize: "0.75rem",
                       color: "var(--accent)",
-                      textTransform: "uppercase",
                     }}>{p.category}</span>
                     <span style={{
-                      fontFamily: "'Roboto Mono', monospace",
-                      fontSize: "0.62rem",
+                      fontSize: "0.75rem",
                       color: "var(--text-faint)",
                     }}>{p.semester}</span>
                   </div>

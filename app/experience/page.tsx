@@ -16,12 +16,9 @@ export default function Experience() {
         >
           <div>
             <p style={{
-              fontFamily: "'Roboto Mono', monospace",
-              fontSize: "0.68rem",
-              letterSpacing: "0.15em",
+              fontSize: "0.8rem",
               color: "var(--text-faint)",
               marginBottom: "1rem",
-              textTransform: "uppercase",
             }}>Background</p>
             <h1 style={{
               fontFamily: "'Inter', sans-serif",
@@ -63,11 +60,8 @@ export default function Experience() {
           style={{ marginBottom: "4rem" }}
         >
           <h2 style={{
-            fontFamily: "'Roboto Mono', monospace",
-            fontSize: "0.68rem",
-            letterSpacing: "0.15em",
+            fontSize: "0.8rem",
             color: "var(--text-faint)",
-            textTransform: "uppercase",
             marginBottom: "1.5rem",
           }}>Education</h2>
 
@@ -105,18 +99,14 @@ export default function Experience() {
                     marginBottom: "0.2rem",
                   }}>{e.school}</h3>
                   <p style={{
-                    fontFamily: "'Roboto Mono', monospace",
-                    fontSize: "0.65rem",
-                    letterSpacing: "0.08em",
+                    fontSize: "0.8rem",
                     color: "var(--accent)",
                     marginBottom: "0.6rem",
-                    textTransform: "uppercase",
                   }}>{e.degree}</p>
                   <p style={{ fontSize: "0.85rem", color: "var(--text-muted)", lineHeight: 1.6 }}>{e.detail}</p>
                 </div>
                 <span style={{
-                  fontFamily: "'Roboto Mono', monospace",
-                  fontSize: "0.65rem",
+                  fontSize: "0.8rem",
                   color: "var(--text-faint)",
                   textAlign: "right",
                   paddingTop: "0.15rem",
@@ -134,11 +124,8 @@ export default function Experience() {
           style={{ marginBottom: "4rem" }}
         >
           <h2 style={{
-            fontFamily: "'Roboto Mono', monospace",
-            fontSize: "0.68rem",
-            letterSpacing: "0.15em",
+            fontSize: "0.8rem",
             color: "var(--text-faint)",
-            textTransform: "uppercase",
             marginBottom: "1.5rem",
           }}>Work & Research</h2>
 
@@ -169,11 +156,8 @@ export default function Experience() {
                     marginBottom: "0.2rem",
                   }}>{e.company}</h3>
                   <p style={{
-                    fontFamily: "'Roboto Mono', monospace",
-                    fontSize: "0.62rem",
-                    letterSpacing: "0.08em",
+                    fontSize: "0.8rem",
                     color: "var(--accent)",
-                    textTransform: "uppercase",
                     marginBottom: "1rem",
                   }}>{e.role}</p>
                   <ul style={{ paddingLeft: "1rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}>
@@ -197,15 +181,13 @@ export default function Experience() {
                 </div>
                 <div style={{ textAlign: "right" }}>
                   <span style={{
-                    fontFamily: "'Roboto Mono', monospace",
-                    fontSize: "0.62rem",
+                    fontSize: "0.8rem",
                     color: "var(--text-faint)",
                     display: "block",
                     marginBottom: "0.3rem",
                   }}>{e.period}</span>
                   <span style={{
-                    fontFamily: "'Roboto Mono', monospace",
-                    fontSize: "0.58rem",
+                    fontSize: "0.75rem",
                     color: "var(--text-faint)",
                   }}>{e.location}</span>
                 </div>
@@ -221,11 +203,8 @@ export default function Experience() {
           transition={{ delay: 0.28, duration: 0.5 }}
         >
           <h2 style={{
-            fontFamily: "'Roboto Mono', monospace",
-            fontSize: "0.68rem",
-            letterSpacing: "0.15em",
+            fontSize: "0.8rem",
             color: "var(--text-faint)",
-            textTransform: "uppercase",
             marginBottom: "1.5rem",
           }}>Technical Skills</h2>
 
@@ -237,11 +216,8 @@ export default function Experience() {
             {Object.entries(skills).map(([category, items]) => (
               <div key={category} style={{ background: "var(--bg-card)", borderRadius: "var(--radius-card)", border: "1px solid var(--border)", padding: "1.5rem" }}>
                 <p style={{
-                  fontFamily: "'Roboto Mono', monospace",
-                  fontSize: "0.62rem",
-                  letterSpacing: "0.12em",
+                  fontSize: "0.75rem",
                   color: "var(--accent)",
-                  textTransform: "uppercase",
                   marginBottom: "1rem",
                 }}>{category}</p>
                 <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: "0.4rem" }}>

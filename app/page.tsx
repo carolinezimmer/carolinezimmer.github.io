@@ -23,12 +23,9 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
               style={{
-                fontFamily: "’Roboto Mono’, monospace",
-                fontSize: "0.72rem",
-                letterSpacing: "0.15em",
+                fontSize: "0.8rem",
                 color: "var(--accent)",
                 marginBottom: "1.5rem",
-                textTransform: "uppercase",
               }}>
               UPenn Mechanical Engineering · Class of 2027 · GPA: 3.70/4.00
             </motion.p>
@@ -46,7 +43,7 @@ export default function Home() {
                 fontWeight: 600,
               }}>
               Caroline<br />
-              <span style={{ color: "var(--text-muted)"}}>Zimmer.</span>
+              Zimmer
             </motion.h1>
 
             <motion.p
@@ -147,12 +144,9 @@ export default function Home() {
               >
                 <div>
                   <p style={{
-                    fontFamily: "'Roboto Mono', monospace",
-                    fontSize: "0.62rem",
-                    letterSpacing: "0.12em",
+                    fontSize: "0.75rem",
                     color: "var(--accent)",
                     marginBottom: "0.4rem",
-                    textTransform: "uppercase",
                   }}>{p.category} · {p.semester}</p>
                   <h3 style={{
                     fontFamily: "'Inter', sans-serif",

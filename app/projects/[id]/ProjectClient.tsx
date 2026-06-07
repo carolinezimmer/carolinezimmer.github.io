@@ -14,11 +14,10 @@ export function ProjectClient({ project, next, prev }: { project: Project; next:
 
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }} style={{ marginBottom: "3rem" }}>
           <Link href="/projects" style={{
-            fontFamily: "'Roboto Mono', monospace", fontSize: "0.68rem",
-            letterSpacing: "0.1em", color: "var(--text-faint)", display: "inline-flex",
+            fontSize: "0.8rem", color: "var(--text-faint)", display: "inline-flex",
             alignItems: "center", gap: "0.4rem",
           }}>
-            ← ALL PROJECTS
+            ← All Projects
           </Link>
         </motion.div>
 
@@ -28,9 +27,9 @@ export function ProjectClient({ project, next, prev }: { project: Project; next:
           style={{ marginBottom: "3rem", paddingBottom: "2.5rem", borderBottom: "1px solid var(--border)" }}
         >
           <div style={{ display: "flex", gap: "1rem", alignItems: "center", marginBottom: "1rem" }}>
-            <span style={{ fontFamily: "'Roboto Mono', monospace", fontSize: "0.65rem", letterSpacing: "0.12em", color: "var(--accent)", textTransform: "uppercase" as const }}>{project.category}</span>
+            <span style={{ fontSize: "0.8rem", color: "var(--accent)" }}>{project.category}</span>
             <span style={{ color: "var(--border)" }}>·</span>
-            <span style={{ fontFamily: "'Roboto Mono', monospace", fontSize: "0.65rem", color: "var(--text-faint)" }}>{project.semester}</span>
+            <span style={{ fontSize: "0.8rem", color: "var(--text-faint)" }}>{project.semester}</span>
           </div>
           <h1 style={{ fontFamily: "'Inter', sans-serif", fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 600, color: "var(--text)", lineHeight: 1.15, marginBottom: "1.5rem" }}>{project.title}</h1>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem" }}>
@@ -66,8 +65,8 @@ export function ProjectClient({ project, next, prev }: { project: Project; next:
               <div style={{ background: "var(--bg)", padding: "1.5rem", transition: "background 0.15s", height: "100%" }}
                 onMouseEnter={e => (e.currentTarget.style.background = "var(--bg-hover)")}
                 onMouseLeave={e => (e.currentTarget.style.background = "var(--bg)")}>
-                <p style={{ fontFamily: "'Roboto Mono', monospace", fontSize: "0.6rem", letterSpacing: "0.1em", color: "var(--text-faint)", marginBottom: "0.5rem" }}>{label}</p>
-                <p style={{ fontFamily: "'Roboto Mono', monospace", fontSize: "1rem", color: "var(--text)" }}>{np.title}</p>
+                <p style={{ fontSize: "0.75rem", color: "var(--text-faint)", marginBottom: "0.5rem" }}>{label}</p>
+                <p style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: "1rem", color: "var(--text)" }}>{np.title}</p>
               </div>
             </Link>
           ))}
