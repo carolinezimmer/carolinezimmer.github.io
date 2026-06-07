@@ -132,9 +132,9 @@ export const experience = [
 ];
 
 export const skills = {
-  "CAD & Modeling": ["SolidWorks", "AutoCAD", "Revit", "COMSOL"],
-  "Programming": ["Python", "MATLAB", "Java", "Arduino"],
-  "Manufacturing": ["CNC / Mastercam", "Lathe & Mill", "GD&T", "Tolerance Stack-up"],
-  "Controls": ["PID Design", "State-Space Modeling", "IMU Integration", "Mechatronics"],
-  "Tools": ["ReCap", "DraftSight", "Git", "LaTeX"],
+  "CAD & Modeling": ["SolidWorks", "AutoCAD", "Revit", "COMSOL", "ReCap"],
+  "Programming": ["Python", "MATLAB", "Java"],
+  "Manufacturing": ["CNC / Mastercam", "Prototrak CNC", "Lathe & Mill", "Threading and Reaming", "GD&T", "Tolerance Stack-up"],
+  "Controls": ["PID Design", "State-Space Modeling", "IMU Integration"],
+  "Tools": ["Git", "LaTeX"],
 };
