@@ -104,7 +104,6 @@ export function Nav() {
               cursor: "pointer",
               color: "var(--text)",
               padding: "0.25rem",
-              display: "flex",
               alignItems: "center",
             }}
           >
