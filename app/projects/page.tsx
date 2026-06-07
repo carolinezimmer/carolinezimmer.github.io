@@ -15,7 +15,7 @@ export default function Projects() {
           style={{ marginBottom: "4rem", paddingBottom: "2rem", borderBottom: "1px solid var(--border)" }}
         >
 <h1 style={{
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: "'Roboto Mono', monospace",
             fontSize: "clamp(2.5rem, 5vw, 4rem)",
             fontWeight: 600,
             color: "var(--text)",
@@ -58,7 +58,7 @@ export default function Projects() {
                   </div>
 
                   <h2 style={{
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Roboto Mono', monospace",
                     fontSize: "1.5rem",
                     fontWeight: 600,
                     color: "var(--text)",

@@ -35,7 +35,7 @@ export default function Education() {
           style={{ marginBottom: "4rem", paddingBottom: "2rem", borderBottom: "1px solid var(--border)", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}
         >
           <h1 style={{
-            fontFamily: "'Inter', sans-serif",
+            fontFamily: "'Roboto Mono', monospace",
             fontSize: "clamp(2.5rem, 5vw, 4rem)",
             fontWeight: 600,
             color: "var(--text)",
@@ -81,7 +81,7 @@ export default function Education() {
               }}>
                 <div>
                   <h3 style={{
-                    fontFamily: "'Inter', sans-serif",
+                    fontFamily: "'Roboto Mono', monospace",
                     fontSize: "1.2rem",
                     fontWeight: 600,
                     color: "var(--text)",

@@ -2,8 +2,14 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { projects } from "@/lib/data";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
+
   return (
     <div>
       {/* ── HERO ── */}
@@ -41,9 +47,14 @@ export default function Home() {
             color: "var(--text)",
             marginBottom: "2rem",
             fontWeight: 400,
+            display: "flex",
+            alignItems: "center",
+            gap: "0.35em",
           }}>
-          Caroline<br />
-          <span style={{ color: "var(--text-muted)"}}>Zimmer.</span>
+          <span>Caroline<br /><span style={{ color: "var(--text-muted)" }}>Zimmer</span></span>
+          {mounted && theme === "dark" && (
+            <img src="/ghost.gif" alt="" style={{ height: "1.7em", flexShrink: 0, filter: "drop-shadow(0 0 8px rgba(255,255,255,0.45)) drop-shadow(0 0 20px rgba(255,255,255,0.2))" }} />
+          )}
         </motion.h1>
 
         <motion.p

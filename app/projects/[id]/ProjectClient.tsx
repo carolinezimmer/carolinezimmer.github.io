@@ -31,7 +31,7 @@ export function ProjectClient({ project, next, prev }: { project: Project; next:
             <span style={{ color: "var(--border)" }}>·</span>
             <span style={{ fontSize: "0.8rem", color: "var(--text-faint)" }}>{project.semester}</span>
           </div>
-          <h1 style={{ fontFamily: "'Inter', sans-serif", fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 600, color: "var(--text)", lineHeight: 1.15, marginBottom: "1.5rem" }}>{project.title}</h1>
+          <h1 style={{ fontFamily: "'Roboto Mono', monospace", fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 600, color: "var(--text)", lineHeight: 1.15, marginBottom: "1.5rem" }}>{project.title}</h1>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem" }}>
             {project.tags.map(t => (
               <span key={t} style={{ fontFamily: "'Roboto Mono', monospace", fontSize: "0.6rem", letterSpacing: "0.06em", padding: "0.25rem 0.65rem", border: "1px solid var(--border)", color: "var(--text-faint)" }}>{t}</span>
@@ -66,7 +66,7 @@ export function ProjectClient({ project, next, prev }: { project: Project; next:
                 onMouseEnter={e => (e.currentTarget.style.background = "var(--bg-hover)")}
                 onMouseLeave={e => (e.currentTarget.style.background = "var(--bg)")}>
                 <p style={{ fontSize: "0.75rem", color: "var(--text-faint)", marginBottom: "0.5rem" }}>{label}</p>
-                <p style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600, fontSize: "1rem", color: "var(--text)" }}>{np.title}</p>
+                <p style={{ fontFamily: "'Roboto Mono', monospace", fontWeight: 600, fontSize: "1rem", color: "var(--text)" }}>{np.title}</p>
               </div>
             </Link>
           ))}
