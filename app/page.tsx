@@ -2,8 +2,14 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { projects } from "@/lib/data";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
+
   return (
     <div>
       {/* ── HERO ── */}
@@ -43,7 +49,9 @@ export default function Home() {
                 fontWeight: 600,
               }}>
               Caroline<br />
-              Zimmer
+              Zimmer{mounted && theme === "dark" && (
+                <img src="/ghost.gif" alt="" style={{ display: "inline", height: "0.85em", marginLeft: "0.3em", verticalAlign: "middle" }} />
+              )}
             </motion.h1>
 
             <motion.p
