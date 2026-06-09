@@ -30,17 +30,7 @@ export default function Home() {
   return (
     <div>
       {/* ── HERO ── */}
-      <section style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        padding: "8rem 2.5rem 4rem",
-        maxWidth: "960px",
-        margin: "0 auto",
-        position: "relative",
-        overflow: "hidden",
-      }}>
+      <div style={{ position: "relative", overflow: "hidden" }}>
         {mounted && theme === "dark" && (
           <div style={{
             position: "absolute",
@@ -63,6 +53,16 @@ export default function Home() {
             ))}
           </div>
         )}
+        <section style={{
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          padding: "8rem 2.5rem 4rem",
+          maxWidth: "960px",
+          margin: "0 auto",
+          position: "relative",
+        }}>
         <motion.p
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
@@ -158,8 +158,8 @@ export default function Home() {
           </a>
         </motion.div>
 
-
-      </section>
+        </section>
+      </div>
 
       {/* ── SELECTED PROJECTS ── */}
       <section style={{
