@@ -8,7 +8,24 @@ import { useEffect, useState } from "react";
 export default function Home() {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  useEffect(() => { setMounted(true); }, []);
+  const [scrollY, setScrollY] = useState(0);
+  const [stars] = useState(() =>
+    Array.from({ length: 70 }, () => ({
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      r: Math.random() * 1.2 + 0.4,
+      o: Math.random() * 0.45 + 0.15,
+    }))
+  );
+
+  useEffect(() => {
+    setMounted(true);
+    const onScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const starLayerOpacity = Math.max(0, 1 - scrollY / 500);
 
   return (
     <div>
@@ -21,7 +38,33 @@ export default function Home() {
         padding: "8rem 2.5rem 4rem",
         maxWidth: "960px",
         margin: "0 auto",
+        position: "relative",
+        overflow: "hidden",
       }}>
+        {mounted && (
+          <div style={{
+            position: "absolute",
+            inset: 0,
+            pointerEvents: "none",
+            opacity: starLayerOpacity,
+            transition: "opacity 0.05s linear",
+          }}>
+            {stars.map((s, i) => (
+              <div key={i} style={{
+                position: "absolute",
+                left: `${s.x}%`,
+                top: `${s.y}%`,
+                width: `${s.r * 2}px`,
+                height: `${s.r * 2}px`,
+                borderRadius: "50%",
+                background: theme === "dark"
+                  ? `rgba(255,255,255,${s.o})`
+                  : `rgba(60,60,80,${s.o * 0.6})`,
+                transform: "translate(-50%, -50%)",
+              }} />
+            ))}
+          </div>
+        )}
         <motion.p
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}

@@ -97,6 +97,13 @@ export const projects = [
 
 export const experience = [
   {
+    company: "Heliospace",
+    role: "Mechanical Engineer Intern",
+    period: "Summer 2026",
+    location: "",
+    bullets: [],
+  },
+  {
     company: "Enfra Solutions",
     role: "Mechanical Engineer Intern",
     period: "Summer 2025",

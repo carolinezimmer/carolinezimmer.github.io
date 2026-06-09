@@ -58,7 +58,7 @@ export default function Experience() {
                     marginBottom: "0.2rem",
                   }}>{e.company}</h3>
                   <p style={{
-                    fontSize: "0.8rem",
+                    fontSize: "0.95rem",
                     color: "var(--accent)",
                     marginBottom: "1rem",
                   }}>{e.role}</p>
