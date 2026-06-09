@@ -100,7 +100,7 @@ export const experience = [
     company: "Heliospace",
     role: "Mechanical Engineer Intern",
     period: "Summer 2026",
-    location: "",
+    location: "Berkeley, CA",
     bullets: [],
   },
   {
