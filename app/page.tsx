@@ -41,7 +41,7 @@ export default function Home() {
         position: "relative",
         overflow: "hidden",
       }}>
-        {mounted && (
+        {mounted && theme === "dark" && (
           <div style={{
             position: "absolute",
             inset: 0,
@@ -57,9 +57,7 @@ export default function Home() {
                 width: `${s.r * 2}px`,
                 height: `${s.r * 2}px`,
                 borderRadius: "50%",
-                background: theme === "dark"
-                  ? `rgba(255,255,255,${s.o})`
-                  : `rgba(60,60,80,${s.o * 0.6})`,
+                background: `rgba(255,255,255,${s.o + 0.25})`,
                 transform: "translate(-50%, -50%)",
               }} />
             ))}
