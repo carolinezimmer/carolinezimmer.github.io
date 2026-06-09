@@ -47,7 +47,7 @@ export default function Home() {
             inset: 0,
             pointerEvents: "none",
             opacity: starLayerOpacity,
-            transition: "opacity 0.05s linear",
+            transform: `translateY(${scrollY * 0.35}px)`,
           }}>
             {stars.map((s, i) => (
               <div key={i} style={{
