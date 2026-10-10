@@ -16,7 +16,7 @@ const schools = [
   },
   {
     school: "ETH Zürich",
-    degree: "Exchange Student",
+    degree: "Exchange Semester",
     detail: "Department of Mechanical and Process Engineering",
     period: "Spring 2026",
   },
@@ -88,7 +88,7 @@ export default function Education() {
                     marginBottom: "0.2rem",
                   }}>{e.school}</h3>
                   <p style={{
-                    fontSize: "0.8rem",
+                    fontSize: "0.95rem",
                     color: "var(--accent)",
                     marginBottom: e.detail ? "0.6rem" : "0",
                   }}>{e.degree}</p>

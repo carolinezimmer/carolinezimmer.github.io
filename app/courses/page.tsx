@@ -4,10 +4,19 @@ import { motion } from "framer-motion";
 
 const semesters = [
   {
+    term: "Fall 2026",
+    institution: "",
+    courses: [
+      { name: "Engineering Economics", code: "ENGR 5400" },
+      { name: "Mechanical Engineering Design Projects", code: "MEAM 4450" },
+      { name: "Design of Mechatronic Systems", code: "MEAM 5100" },
+      { name: "Advanced Dynamics", code: "MEAM 5350" },
+    ],
+  },
+  {
     term: "Spring 2026",
     institution: "ETH Zürich",
     courses: [
-      { name: "Introduction to Energy Systems", code: "151-0244-00L" },
       { name: "Experimental Methods for Engineers", code: "151-0123-00L" },
       { name: "Finite Element Analysis", code: "151-0518-00L" },
       { name: "Biomechatronics", code: "376-0210-00L" },
