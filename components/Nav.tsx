@@ -67,6 +67,8 @@ export function Nav() {
             letterSpacing: hoveredItem === "cz" ? "0" : "0.12em",
             color: "var(--text)",
             transition: "letter-spacing 0.15s",
+            display: "inline-block",
+            width: "2rem",
           }}
         >
           CZ
