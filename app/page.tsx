@@ -74,7 +74,7 @@ export default function Home() {
             marginBottom: "1.5rem",
             textTransform: "uppercase",
           }}>
-          UPenn BSE Mechanical Engineering + MSE Robotics · Class of 2027
+          UPenn BSE Mechanical Engineering + MSE Robotics · Class of 2027 · GPA: 3.70/4.00
         </motion.p>
 
         <motion.h1
@@ -130,7 +130,7 @@ export default function Home() {
           }}>
             View Projects
           </Link>
-          <a href="mailto:czimmer@seas.upenn.edu" style={{
+          <a href="mailto:czimmer@engineering.upenn.edu" style={{
             display: "inline-flex",
             alignItems: "center",
             padding: "0.7rem 1.5rem",
