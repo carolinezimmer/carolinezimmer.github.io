@@ -4,15 +4,15 @@ import { motion } from "framer-motion";
 const schools = [
   {
     school: "University of Pennsylvania",
-    degree: "BSE Mechanical Engineering",
-    detail: "GPA: 3.70 · Minors: Mathematics, Engineering Entrepreneurship",
-    period: "Fall 2023 – Spring 2027",
+    degree: "MSE Robotics",
+    detail: "Accelerated Master's Program · GRASP Lab",
+    period: "Fall 2026 – Dec 2027",
   },
   {
     school: "University of Pennsylvania",
-    degree: "MSE Mechanical Engineering",
-    detail: "Accelerated Master's Program",
-    period: "Fall 2026 – Fall 2027",
+    degree: "BSE Mechanical Engineering",
+    detail: "GPA: 3.70 · Minors: Mathematics, Engineering Entrepreneurship",
+    period: "Fall 2023 – May 2027",
   },
   {
     school: "ETH Zürich",

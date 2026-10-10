@@ -1,5 +1,16 @@
 export const projects = [
   {
+    id: "tunnel-boring-machine",
+    title: "Tunnel Boring Machine Steering Platform",
+    category: "Senior Design",
+    semester: "Fall 2026 – Spring 2027",
+    shortDesc: "Designing a fully electromechanical steering module to replace the hydraulic power pack on a full-scale tunnel boring machine.",
+    longDesc: "For my senior design capstone, I am the manufacturing engineer on a team redesigning the steering system for a full-scale tunnel boring machine. The existing hydraulic power pack is being replaced with a fully electromechanical module capable of delivering ±5° of independent yaw and pitch using off-the-shelf linear actuators — eliminating hydraulic fluid, reducing maintenance overhead, and enabling more precise directional control. My primary responsibility is the articulation joint at the core of the steering mechanism. I am leading all manufacturing planning and sourcing for this assembly: selecting raw stock, defining machining processes, and identifying vendors for each structural component while keeping the build within our $3.25k budget. This involves balancing tolerance requirements against process cost, evaluating what can be machined in-house versus outsourced, and coordinating with the rest of the team to make sure the manufactured parts integrate cleanly with the actuator geometry and load paths. The project runs through Spring 2027.",
+    tags: ["SolidWorks", "DFM", "Linear Actuators", "Mechanical Design", "Manufacturing Planning"],
+    color: "#5a4a8a",
+    images: [],
+  },
+  {
     id: "stirling-engine",
     title: "Stirling Engine",
     category: "Machine Design & Manufacturing",
@@ -97,11 +108,15 @@ export const projects = [
 
 export const experience = [
   {
-    company: "Heliospace",
-    role: "Mechanical Engineer Intern",
+    company: "Heliospace Corporation",
+    role: "Mechanical Engineering Intern",
     period: "Summer 2026",
-    location: "Berkeley, CA",
-    bullets: [],
+    location: "San Francisco, CA",
+    bullets: [
+      "Produced all SolidWorks models of parts and assemblies for the Quasi-Static Release Mechanism, a NASA SBIR low-shock spacecraft release device combining PEEK and precision metal components.",
+      "Led design for manufacturing analysis across the full mechanism, selecting the manufacturing process for each part based on geometry, tolerance requirements, production volume, and cost.",
+      "Performed FEA in SolidWorks to verify that applied loads produced the deformation required to drive actuation.",
+    ],
   },
   {
     company: "Enfra Solutions",

@@ -74,7 +74,7 @@ export default function Home() {
             marginBottom: "1.5rem",
             textTransform: "uppercase",
           }}>
-          UPenn Mechanical Engineering · Class of 2027 · GPA: 3.70/4.00
+          UPenn BSE Mechanical Engineering + MSE Robotics · Class of 2027
         </motion.p>
 
         <motion.h1
@@ -108,7 +108,7 @@ export default function Home() {
             lineHeight: 1.75,
             marginBottom: "3rem",
           }}>
-          I’m a rising senior at the University of Pennsylvania studying Mechanical Engineering, with minors in Math and Engineering Entrepreneurship. In Spring 2026, I studied abroad at ETH Zürich, a world-renowned engineering institution where I’m broadening my technical perspective in an international environment. I’m focusing my coursework on manufacturing and robotics, and I’m especially interested in developing hardware solutions that combine strong mechanical design with practical impact.
+          I’m a senior in Mechanical Engineering at the University of Pennsylvania (BSE May 2027), concurrently pursuing an accelerated Master’s in Robotics (MSE December 2027), with minors in Mathematics and Engineering Entrepreneurship. I spent Spring 2026 on exchange at ETH Zürich, and this past summer I worked at Heliospace designing a low-shock release mechanism for spacecraft, carrying it from CAD through tolerance and manufacturability analysis to supplier quoting. I’m interested in design for manufacturing at scale.
         </motion.p>
 
         <motion.div
